@@ -231,7 +231,7 @@ If you encounter issues:
 🎉 **Congratulations!** Your portfolio should now be live on GitHub Pages.
 \`\`\`
 
-```typescriptreact file="app/page.tsx"
+\`\`\`typescriptreact file="app/page.tsx"
 [v0-no-op-code-block-prefix]import LoadingScreen from "@/components/loading-screen"
 import Navigation from "@/components/navigation"
 import HeroSection from "@/components/hero-section"
