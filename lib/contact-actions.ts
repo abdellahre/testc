@@ -11,65 +11,56 @@ export interface ContactFormResponse {
   message: string
 }
 
-// Validate email format
-export function validateEmail(email: string): boolean {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return emailRegex.test(email)
-}
-
-// Validate form data
-export function validateContactForm(data: ContactFormData): { isValid: boolean; errors: string[] } {
-  const errors: string[] = []
-
-  if (!data.name.trim()) {
-    errors.push("Name is required")
-  }
-
-  if (!data.email.trim()) {
-    errors.push("Email is required")
-  } else if (!validateEmail(data.email)) {
-    errors.push("Please enter a valid email address")
-  }
-
-  if (!data.subject.trim()) {
-    errors.push("Subject is required")
-  }
-
-  if (!data.message.trim()) {
-    errors.push("Message is required")
-  } else if (data.message.trim().length < 10) {
-    errors.push("Message must be at least 10 characters long")
-  }
-
-  return {
-    isValid: errors.length === 0,
-    errors,
-  }
-}
-
 // Simulate form submission (replace with actual service integration)
 export async function submitContactForm(data: ContactFormData): Promise<ContactFormResponse> {
   // Simulate API delay
-  await new Promise((resolve) => setTimeout(resolve, 1500))
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 
-  // Validate data
-  const validation = validateContactForm(data)
-
-  if (!validation.isValid) {
+  // Basic validation
+  if (!data.name || !data.email || !data.message) {
     return {
       success: false,
-      message: validation.errors.join(", "),
+      message: "Please fill in all required fields.",
     }
   }
 
-  // In a real implementation, you would integrate with:
-  // - Formspree: https://formspree.io/
-  // - EmailJS: https://www.emailjs.com/
-  // - Netlify Forms: https://www.netlify.com/products/forms/
-  // - Or your own backend API
+  // Email validation
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(data.email)) {
+    return {
+      success: false,
+      message: "Please enter a valid email address.",
+    }
+  }
+
+  // Simulate successful submission
+  console.log("Contact form submitted:", data)
 
   return {
     success: true,
-    message: "Thank you for your message! I will get back to you soon.",
+    message: `Thank you ${data.name}! Your message has been received. I'll get back to you soon.`,
+  }
+}
+
+// For integration with third-party services like Formspree
+export function getFormspreeAction(formId: string): string {
+  return `https://formspree.io/f/${formId}`
+}
+
+// For EmailJS integration
+export async function sendEmailJS(data: ContactFormData): Promise<ContactFormResponse> {
+  try {
+    // This would integrate with EmailJS service
+    // emailjs.send('service_id', 'template_id', data, 'public_key')
+
+    return {
+      success: true,
+      message: "Message sent successfully via EmailJS!",
+    }
+  } catch (error) {
+    return {
+      success: false,
+      message: "Failed to send message. Please try again.",
+    }
   }
 }

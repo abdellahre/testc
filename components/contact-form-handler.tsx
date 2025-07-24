@@ -7,13 +7,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Loader2, Send, CheckCircle, AlertCircle } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import { type ContactFormData, submitContactForm, type ContactFormResponse } from "@/lib/contact-actions"
+import { Card, CardContent } from "@/components/ui/card"
+import { Loader2, CheckCircle, AlertCircle } from "lucide-react"
+import { submitContactForm, type ContactFormData, type ContactFormResponse } from "@/lib/contact-actions"
 
-export default function ContactFormHandler() {
+interface ContactFormProps {
+  className?: string
+}
+
+export default function ContactFormHandler({ className }: ContactFormProps) {
   const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
@@ -23,20 +25,36 @@ export default function ContactFormHandler() {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [response, setResponse] = useState<ContactFormResponse | null>(null)
+  const [errors, setErrors] = useState<Partial<ContactFormData>>({})
 
-  const handleInputChange = (field: keyof ContactFormData, value: string) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }))
-    // Clear response when user starts typing again
-    if (response) {
-      setResponse(null)
+  const validateForm = (): boolean => {
+    const newErrors: Partial<ContactFormData> = {}
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required"
     }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required"
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address"
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required"
+    }
+
+    setErrors(newErrors)
+    return Object.keys(newErrors).length === 0
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+
+    if (!validateForm()) {
+      return
+    }
+
     setIsSubmitting(true)
     setResponse(null)
 
@@ -52,27 +70,30 @@ export default function ContactFormHandler() {
           subject: "",
           message: "",
         })
+        setErrors({})
       }
     } catch (error) {
       setResponse({
         success: false,
-        message: "An unexpected error occurred. Please try again later.",
+        message: "An unexpected error occurred. Please try again.",
       })
     } finally {
       setIsSubmitting(false)
     }
   }
 
+  const handleInputChange = (field: keyof ContactFormData, value: string) => {
+    setFormData((prev) => ({ ...prev, [field]: value }))
+
+    // Clear error when user starts typing
+    if (errors[field]) {
+      setErrors((prev) => ({ ...prev, [field]: undefined }))
+    }
+  }
+
   return (
-    <Card className="w-full max-w-2xl mx-auto">
-      <CardHeader>
-        <CardTitle className="flex items-center gap-2">
-          <Send className="h-5 w-5" />
-          Get In Touch
-        </CardTitle>
-        <CardDescription>Send me a message and I'll get back to you as soon as possible.</CardDescription>
-      </CardHeader>
-      <CardContent>
+    <Card className={className}>
+      <CardContent className="p-6">
         <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
@@ -80,36 +101,48 @@ export default function ContactFormHandler() {
               <Input
                 id="name"
                 type="text"
-                placeholder="Your full name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
-                required
+                className={errors.name ? "border-red-500" : ""}
+                placeholder="Your full name"
                 disabled={isSubmitting}
               />
+              {errors.name && (
+                <p className="text-sm text-red-500 flex items-center gap-1">
+                  <AlertCircle className="h-4 w-4" />
+                  {errors.name}
+                </p>
+              )}
             </div>
+
             <div className="space-y-2">
               <Label htmlFor="email">Email *</Label>
               <Input
                 id="email"
                 type="email"
-                placeholder="your.email@example.com"
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
-                required
+                className={errors.email ? "border-red-500" : ""}
+                placeholder="your.email@example.com"
                 disabled={isSubmitting}
               />
+              {errors.email && (
+                <p className="text-sm text-red-500 flex items-center gap-1">
+                  <AlertCircle className="h-4 w-4" />
+                  {errors.email}
+                </p>
+              )}
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="subject">Subject *</Label>
+            <Label htmlFor="subject">Subject</Label>
             <Input
               id="subject"
               type="text"
-              placeholder="What's this about?"
               value={formData.subject}
               onChange={(e) => handleInputChange("subject", e.target.value)}
-              required
+              placeholder="What's this about?"
               disabled={isSubmitting}
             />
           </div>
@@ -118,61 +151,49 @@ export default function ContactFormHandler() {
             <Label htmlFor="message">Message *</Label>
             <Textarea
               id="message"
-              placeholder="Tell me about your project, question, or just say hello..."
-              rows={6}
               value={formData.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
-              required
+              className={errors.message ? "border-red-500" : ""}
+              placeholder="Tell me about your project, question, or how I can help..."
+              rows={5}
               disabled={isSubmitting}
-              className="resize-none"
             />
+            {errors.message && (
+              <p className="text-sm text-red-500 flex items-center gap-1">
+                <AlertCircle className="h-4 w-4" />
+                {errors.message}
+              </p>
+            )}
           </div>
 
-          <AnimatePresence>
-            {response && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Alert className={response.success ? "border-green-200 bg-green-50" : "border-red-200 bg-red-50"}>
-                  {response.success ? (
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                  ) : (
-                    <AlertCircle className="h-4 w-4 text-red-600" />
-                  )}
-                  <AlertDescription className={response.success ? "text-green-800" : "text-red-800"}>
-                    {response.message}
-                  </AlertDescription>
-                </Alert>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <Button type="submit" disabled={isSubmitting} className="w-full" size="lg">
+          <Button type="submit" className="w-full" disabled={isSubmitting}>
             {isSubmitting ? (
               <>
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
                 Sending Message...
               </>
             ) : (
-              <>
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
-              </>
+              "Send Message"
             )}
           </Button>
-        </form>
 
-        <div className="mt-6 pt-6 border-t text-center text-sm text-muted-foreground">
-          <p>
-            You can also reach me directly at{" "}
-            <a href="mailto:abdellah.recham@email.com" className="text-primary hover:underline">
-              abdellah.recham@email.com
-            </a>
-          </p>
-        </div>
+          {response && (
+            <div
+              className={`p-4 rounded-lg flex items-center gap-2 ${
+                response.success
+                  ? "bg-green-50 text-green-800 border border-green-200"
+                  : "bg-red-50 text-red-800 border border-red-200"
+              }`}
+            >
+              {response.success ? (
+                <CheckCircle className="h-5 w-5 text-green-600" />
+              ) : (
+                <AlertCircle className="h-5 w-5 text-red-600" />
+              )}
+              <p className="text-sm font-medium">{response.message}</p>
+            </div>
+          )}
+        </form>
       </CardContent>
     </Card>
   )
