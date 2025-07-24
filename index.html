@@ -23,10 +23,6 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Three.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-    
     <style>
         :root {
             /* Dark Teal Theme Colors */
@@ -194,152 +190,6 @@
             white-space: nowrap;
             pointer-events: none;
             user-select: none;
-        }
-
-        /* 3D Molecule Containers */
-        .molecule-3d-container {
-            width: 100%;
-            height: 350px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-primary);
-            border-radius: 1rem;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s ease;
-            cursor: grab;
-        }
-
-        .molecule-3d-container:hover {
-            border-color: var(--border-hover);
-            box-shadow: var(--shadow-glow);
-        }
-
-        .molecule-3d-container:active {
-            cursor: grabbing;
-        }
-
-        .molecule-3d-canvas {
-            width: 100%;
-            height: 100%;
-            display: block;
-        }
-
-        .molecule-info {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(10, 15, 15, 0.95));
-            padding: 1rem;
-            color: var(--text-primary);
-        }
-
-        .molecule-name {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: var(--accent-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .molecule-formula {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-bottom: 0.5rem;
-        }
-
-        /* Animation Controls */
-        .animation-controls {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            display: flex;
-            gap: 0.5rem;
-            z-index: 10;
-        }
-
-        .control-btn {
-            width: 32px;
-            height: 32px;
-            border: 1px solid var(--border-primary);
-            background: rgba(10, 15, 15, 0.8);
-            color: var(--text-secondary);
-            border-radius: 0.25rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-size: 0.75rem;
-        }
-
-        .control-btn:hover {
-            border-color: var(--border-hover);
-            color: var(--accent-primary);
-            background: rgba(10, 15, 15, 0.9);
-        }
-
-        .control-btn.active {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            background: rgba(0, 255, 255, 0.1);
-        }
-
-        .animation-selector {
-            position: absolute;
-            top: 50px;
-            right: 10px;
-            background: rgba(10, 15, 15, 0.9);
-            border: 1px solid var(--border-primary);
-            border-radius: 0.5rem;
-            padding: 0.5rem;
-            min-width: 150px;
-            z-index: 10;
-            display: none;
-        }
-
-        .animation-selector.show {
-            display: block;
-        }
-
-        .animation-option {
-            padding: 0.5rem;
-            color: var(--text-secondary);
-            cursor: pointer;
-            border-radius: 0.25rem;
-            font-size: 0.875rem;
-            transition: all 0.3s ease;
-        }
-
-        .animation-option:hover {
-            background: var(--bg-card);
-            color: var(--accent-primary);
-        }
-
-        .animation-option.active {
-            background: rgba(0, 255, 255, 0.1);
-            color: var(--accent-primary);
-        }
-
-        /* 3D Molecules Grid */
-        .molecules-3d-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        /* Small 3D molecule for hero section */
-        .hero-molecule-3d {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 120px;
-            height: 120px;
-            background: rgba(30, 41, 59, 0.2);
-            border: 1px solid var(--border-primary);
-            border-radius: 50%;
-            overflow: hidden;
         }
 
         /* Navigation */
@@ -578,7 +428,6 @@
         .hero-image {
             display: flex;
             justify-content: center;
-            position: relative;
         }
 
         .image-container {
@@ -1101,10 +950,6 @@
             .formula-bg {
                 font-size: 4rem;
             }
-
-            .molecules-3d-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 768px) {
@@ -1151,18 +996,6 @@
 
             .formula-bg {
                 font-size: 2rem;
-            }
-
-            .hero-molecule-3d {
-                display: none;
-            }
-
-            .molecule-3d-container {
-                height: 300px;
-            }
-
-            .molecules-3d-grid {
-                grid-template-columns: 1fr;
             }
         }
 
@@ -1257,8 +1090,8 @@
             <a href="#" class="logo">Abdellah Recham</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#molecules">Molecules</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1334,8 +1167,6 @@
                     <div class="image-card">
                         <img src="public/images/abdellah-professional.png" alt="Abdellah Recham - Professional Portrait">
                     </div>
-                    <!-- Small 3D Molecule -->
-                    <div class="hero-molecule-3d" id="heroMolecule3D"></div>
                 </div>
             </div>
         </div>
@@ -1406,166 +1237,6 @@
                         <div class="stat-number">4</div>
                         <div class="stat-label">Years Study</div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 3D Molecules Section -->
-    <section class="section" id="molecules">
-        <h2 class="section-title fade-in">Interactive Molecular Structures</h2>
-        <p class="section-subtitle fade-in">
-            Explore key molecules in biochemistry and medical analysis through interactive 3D models with realistic animations
-        </p>
-
-        <div class="molecules-3d-grid">
-            <div class="molecule-3d-container fade-in" id="waterMolecule">
-                <canvas class="molecule-3d-canvas"></canvas>
-                <div class="animation-controls">
-                    <div class="control-btn" onclick="toggleAnimation('waterMolecule')" title="Play/Pause">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="control-btn" onclick="toggleAnimationSelector('waterMolecule')" title="Animation Type">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <div class="control-btn" onclick="resetMolecule('waterMolecule')" title="Reset">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                </div>
-                <div class="animation-selector" id="waterMolecule-selector">
-                    <div class="animation-option active" data-animation="rotation">Rotation</div>
-                    <div class="animation-option" data-animation="vibration">Vibration</div>
-                    <div class="animation-option" data-animation="stretching">Bond Stretching</div>
-                    <div class="animation-option" data-animation="bending">Bond Bending</div>
-                </div>
-                <div class="molecule-info">
-                    <div class="molecule-name">Water</div>
-                    <div class="molecule-formula">H₂O</div>
-                </div>
-            </div>
-
-            <div class="molecule-3d-container fade-in" id="glucoseMolecule">
-                <canvas class="molecule-3d-canvas"></canvas>
-                <div class="animation-controls">
-                    <div class="control-btn" onclick="toggleAnimation('glucoseMolecule')" title="Play/Pause">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="control-btn" onclick="toggleAnimationSelector('glucoseMolecule')" title="Animation Type">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <div class="control-btn" onclick="resetMolecule('glucoseMolecule')" title="Reset">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                </div>
-                <div class="animation-selector" id="glucoseMolecule-selector">
-                    <div class="animation-option active" data-animation="rotation">Rotation</div>
-                    <div class="animation-option" data-animation="vibration">Vibration</div>
-                    <div class="animation-option" data-animation="ring-breathing">Ring Breathing</div>
-                    <div class="animation-option" data-animation="conformational">Conformational</div>
-                </div>
-                <div class="molecule-info">
-                    <div class="molecule-name">Glucose</div>
-                    <div class="molecule-formula">C₆H₁₂O₆</div>
-                </div>
-            </div>
-
-            <div class="molecule-3d-container fade-in" id="caffeineMolecule">
-                <canvas class="molecule-3d-canvas"></canvas>
-                <div class="animation-controls">
-                    <div class="control-btn" onclick="toggleAnimation('caffeineMolecule')" title="Play/Pause">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="control-btn" onclick="toggleAnimationSelector('caffeineMolecule')" title="Animation Type">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <div class="control-btn" onclick="resetMolecule('caffeineMolecule')" title="Reset">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                </div>
-                <div class="animation-selector" id="caffeineMolecule-selector">
-                    <div class="animation-option active" data-animation="rotation">Rotation</div>
-                    <div class="animation-option" data-animation="vibration">Vibration</div>
-                    <div class="animation-option" data-animation="aromatic">Aromatic Breathing</div>
-                    <div class="animation-option" data-animation="methyl-rotation">Methyl Rotation</div>
-                </div>
-                <div class="molecule-info">
-                    <div class="molecule-name">Caffeine</div>
-                    <div class="molecule-formula">C₈H₁₀N₄O₂</div>
-                </div>
-            </div>
-
-            <div class="molecule-3d-container fade-in" id="aspirinMolecule">
-                <canvas class="molecule-3d-canvas"></canvas>
-                <div class="animation-controls">
-                    <div class="control-btn" onclick="toggleAnimation('aspirinMolecule')" title="Play/Pause">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="control-btn" onclick="toggleAnimationSelector('aspirinMolecule')" title="Animation Type">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <div class="control-btn" onclick="resetMolecule('aspirinMolecule')" title="Reset">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                </div>
-                <div class="animation-selector" id="aspirinMolecule-selector">
-                    <div class="animation-option active" data-animation="rotation">Rotation</div>
-                    <div class="animation-option" data-animation="vibration">Vibration</div>
-                    <div class="animation-option" data-animation="hydrolysis">Hydrolysis Reaction</div>
-                    <div class="animation-option" data-animation="carboxyl-vibration">Carboxyl Vibration</div>
-                </div>
-                <div class="molecule-info">
-                    <div class="molecule-name">Aspirin</div>
-                    <div class="molecule-formula">C₉H₈O₄</div>
-                </div>
-            </div>
-
-            <div class="molecule-3d-container fade-in" id="ethanolMolecule">
-                <canvas class="molecule-3d-canvas"></canvas>
-                <div class="animation-controls">
-                    <div class="control-btn" onclick="toggleAnimation('ethanolMolecule')" title="Play/Pause">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="control-btn" onclick="toggleAnimationSelector('ethanolMolecule')" title="Animation Type">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <div class="control-btn" onclick="resetMolecule('ethanolMolecule')" title="Reset">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                </div>
-                <div class="animation-selector" id="ethanolMolecule-selector">
-                    <div class="animation-option active" data-animation="rotation">Rotation</div>
-                    <div class="animation-option" data-animation="vibration">Vibration</div>
-                    <div class="animation-option" data-animation="oh-stretching">OH Stretching</div>
-                    <div class="animation-option" data-animation="conformational">Conformational</div>
-                </div>
-                <div class="molecule-info">
-                    <div class="molecule-name">Ethanol</div>
-                    <div class="molecule-formula">C₂H₆O</div>
-                </div>
-            </div>
-
-            <div class="molecule-3d-container fade-in" id="dnaBaseMolecule">
-                <canvas class="molecule-3d-canvas"></canvas>
-                <div class="animation-controls">
-                    <div class="control-btn" onclick="toggleAnimation('dnaBaseMolecule')" title="Play/Pause">
-                        <i class="fas fa-play"></i>
-                    </div>
-                    <div class="control-btn" onclick="toggleAnimationSelector('dnaBaseMolecule')" title="Animation Type">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <div class="control-btn" onclick="resetMolecule('dnaBaseMolecule')" title="Reset">
-                        <i class="fas fa-undo"></i>
-                    </div>
-                </div>
-                <div class="animation-selector" id="dnaBaseMolecule-selector">
-                    <div class="animation-option active" data-animation="rotation">Rotation</div>
-                    <div class="animation-option" data-animation="vibration">Vibration</div>
-                    <div class="animation-option" data-animation="base-pairing">Base Pairing</div>
-                    <div class="animation-option" data-animation="tautomerization">Tautomerization</div>
-                </div>
-                <div class="molecule-info">
-                    <div class="molecule-name">Adenine</div>
-                    <div class="molecule-formula">C₅H₅N₅</div>
                 </div>
             </div>
         </div>
@@ -1770,32 +1441,6 @@
     </footer>
 
     <script>
-        // Global variables for 3D scenes
-        let scenes = {};
-        let renderers = {};
-        let cameras = {};
-        let controls = {};
-        let molecules = {};
-        let animationStates = {};
-        let animationFrames = {};
-
-        // Animation presets
-        const animationPresets = {
-            rotation: { speed: 0.01, type: 'rotation' },
-            vibration: { speed: 0.05, amplitude: 0.1, type: 'vibration' },
-            stretching: { speed: 0.03, amplitude: 0.2, type: 'stretching' },
-            bending: { speed: 0.04, amplitude: 0.3, type: 'bending' },
-            'ring-breathing': { speed: 0.02, amplitude: 0.15, type: 'ring-breathing' },
-            conformational: { speed: 0.01, amplitude: 0.2, type: 'conformational' },
-            aromatic: { speed: 0.03, amplitude: 0.1, type: 'aromatic' },
-            'methyl-rotation': { speed: 0.05, amplitude: 1, type: 'methyl-rotation' },
-            hydrolysis: { speed: 0.02, amplitude: 0.3, type: 'hydrolysis' },
-            'carboxyl-vibration': { speed: 0.06, amplitude: 0.2, type: 'carboxyl-vibration' },
-            'oh-stretching': { speed: 0.08, amplitude: 0.25, type: 'oh-stretching' },
-            'base-pairing': { speed: 0.015, amplitude: 0.4, type: 'base-pairing' },
-            tautomerization: { speed: 0.01, amplitude: 0.3, type: 'tautomerization' }
-        };
-
         // Loading Screen
         window.addEventListener('load', function() {
             setTimeout(() => {
@@ -1808,11 +1453,12 @@
             const bg = document.getElementById('moleculesBg');
             const moleculeCount = 60;
             const moleculeTypes = ['carbon', 'oxygen', 'nitrogen', 'hydrogen', 'teal'];
-            const typeWeights = [0.3, 0.2, 0.15, 0.25, 0.1];
+            const typeWeights = [0.3, 0.2, 0.15, 0.25, 0.1]; // Probability weights
 
             for (let i = 0; i < moleculeCount; i++) {
                 const molecule = document.createElement('div');
                 
+                // Select molecule type based on weights
                 const random = Math.random();
                 let cumulativeWeight = 0;
                 let selectedType = 'carbon';
@@ -1829,609 +1475,13 @@
                 molecule.style.left = Math.random() * 100 + '%';
                 molecule.style.animationDelay = Math.random() * 25 + 's';
                 molecule.style.animationDuration = (Math.random() * 15 + 20) + 's';
+                
+                // Add some variation to starting positions
                 molecule.style.transform = `translateY(${Math.random() * 100}vh)`;
                 
                 bg.appendChild(molecule);
             }
         }
-
-        // 3D Molecule Creation Functions
-        function createAtom(x, y, z, color, size = 0.5) {
-            const geometry = new THREE.SphereGeometry(size, 16, 16);
-            const material = new THREE.MeshPhongMaterial({ 
-                color: color,
-                shininess: 100,
-                transparent: true,
-                opacity: 0.9
-            });
-            const atom = new THREE.Mesh(geometry, material);
-            atom.position.set(x, y, z);
-            atom.userData = { originalPosition: { x, y, z }, originalScale: { x: 1, y: 1, z: 1 } };
-            return atom;
-        }
-
-        function createBond(start, end, color = 0x888888) {
-            const direction = new THREE.Vector3().subVectors(end, start);
-            const length = direction.length();
-            const geometry = new THREE.CylinderGeometry(0.1, 0.1, length, 8);
-            const material = new THREE.MeshPhongMaterial({ color: color });
-            const bond = new THREE.Mesh(geometry, material);
-            
-            bond.position.copy(start).add(direction.multiplyScalar(0.5));
-            bond.lookAt(end);
-            bond.rotateX(Math.PI / 2);
-            bond.userData = { originalPosition: bond.position.clone(), originalRotation: bond.rotation.clone() };
-            
-            return bond;
-        }
-
-        function createWaterMolecule() {
-            const group = new THREE.Group();
-            
-            const oxygen = createAtom(0, 0, 0, 0xff4444, 0.8);
-            group.add(oxygen);
-            
-            const hydrogen1 = createAtom(-1.2, 0.8, 0, 0xffffff, 0.4);
-            const hydrogen2 = createAtom(1.2, 0.8, 0, 0xffffff, 0.4);
-            group.add(hydrogen1);
-            group.add(hydrogen2);
-            
-            const bond1 = createBond(oxygen.position, hydrogen1.position);
-            const bond2 = createBond(oxygen.position, hydrogen2.position);
-            group.add(bond1);
-            group.add(bond2);
-            
-            group.userData = { 
-                atoms: [oxygen, hydrogen1, hydrogen2],
-                bonds: [bond1, bond2],
-                type: 'water'
-            };
-            
-            return group;
-        }
-
-        function createGlucoseMolecule() {
-            const group = new THREE.Group();
-            
-            const carbonPositions = [
-                [1, 0, 0], [0.5, 0.866, 0], [-0.5, 0.866, 0],
-                [-1, 0, 0], [-0.5, -0.866, 0], [0.5, -0.866, 0]
-            ];
-            
-            const carbons = [];
-            carbonPositions.forEach((pos, i) => {
-                const carbon = createAtom(pos[0], pos[1], pos[2], 0x64748b, 0.6);
-                carbons.push(carbon);
-                group.add(carbon);
-            });
-            
-            const oxygen1 = createAtom(2, 0, 0, 0xff4444, 0.7);
-            const oxygen2 = createAtom(-2, 0, 0, 0xff4444, 0.7);
-            group.add(oxygen1);
-            group.add(oxygen2);
-            
-            const bonds = [];
-            for (let i = 0; i < carbons.length; i++) {
-                const nextIndex = (i + 1) % carbons.length;
-                const bond = createBond(carbons[i].position, carbons[nextIndex].position);
-                bonds.push(bond);
-                group.add(bond);
-            }
-            
-            const bond1 = createBond(carbons[0].position, oxygen1.position);
-            const bond2 = createBond(carbons[3].position, oxygen2.position);
-            bonds.push(bond1, bond2);
-            group.add(bond1);
-            group.add(bond2);
-            
-            group.userData = { 
-                atoms: [...carbons, oxygen1, oxygen2],
-                bonds: bonds,
-                type: 'glucose'
-            };
-            
-            return group;
-        }
-
-        function createCaffeineMolecule() {
-            const group = new THREE.Group();
-            
-            const atoms = [
-                [0, 0, 0, 0x64748b], [1, 0, 0, 0x3b82f6], [1.5, 1, 0, 0x64748b],
-                [1, 2, 0, 0x3b82f6], [0, 2, 0, 0x64748b], [-0.5, 1, 0, 0x64748b],
-                [2.5, 0.5, 0, 0x64748b], [-1.5, 1, 0, 0xff4444], [1.5, 3, 0, 0x64748b]
-            ];
-            
-            const atomMeshes = [];
-            atoms.forEach(atom => {
-                const sphere = createAtom(atom[0], atom[1], atom[2], atom[3], 0.5);
-                atomMeshes.push(sphere);
-                group.add(sphere);
-            });
-            
-            const bondPairs = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0], [1, 6], [5, 7], [3, 8]];
-            const bonds = [];
-            
-            bondPairs.forEach(pair => {
-                const start = new THREE.Vector3(atoms[pair[0]][0], atoms[pair[0]][1], atoms[pair[0]][2]);
-                const end = new THREE.Vector3(atoms[pair[1]][0], atoms[pair[1]][1], atoms[pair[1]][2]);
-                const bond = createBond(start, end);
-                bonds.push(bond);
-                group.add(bond);
-            });
-            
-            group.userData = { 
-                atoms: atomMeshes,
-                bonds: bonds,
-                type: 'caffeine'
-            };
-            
-            return group;
-        }
-
-        function createAspirinMolecule() {
-            const group = new THREE.Group();
-            
-            const ringPositions = [
-                [1, 0, 0], [0.5, 0.866, 0], [-0.5, 0.866, 0],
-                [-1, 0, 0], [-0.5, -0.866, 0], [0.5, -0.866, 0]
-            ];
-            
-            const carbons = [];
-            ringPositions.forEach((pos, i) => {
-                const carbon = createAtom(pos[0], pos[1], pos[2], 0x64748b, 0.6);
-                carbons.push(carbon);
-                group.add(carbon);
-            });
-            
-            const carboxylC = createAtom(2, 0, 0, 0x64748b, 0.6);
-            const carboxylO1 = createAtom(2.8, 0.8, 0, 0xff4444, 0.7);
-            const carboxylO2 = createAtom(2.8, -0.8, 0, 0xff4444, 0.7);
-            const acetylC = createAtom(-2, 0, 0, 0x64748b, 0.6);
-            const acetylO = createAtom(-2.8, 0, 0, 0xff4444, 0.7);
-            
-            group.add(carboxylC);
-            group.add(carboxylO1);
-            group.add(carboxylO2);
-            group.add(acetylC);
-            group.add(acetylO);
-            
-            const bonds = [];
-            for (let i = 0; i < carbons.length; i++) {
-                const nextIndex = (i + 1) % carbons.length;
-                const bond = createBond(carbons[i].position, carbons[nextIndex].position);
-                bonds.push(bond);
-                group.add(bond);
-            }
-            
-            const functionalBonds = [
-                createBond(carbons[0].position, carboxylC.position),
-                createBond(carboxylC.position, carboxylO1.position),
-                createBond(carboxylC.position, carboxylO2.position),
-                createBond(carbons[3].position, acetylC.position),
-                createBond(acetylC.position, acetylO.position)
-            ];
-            
-            functionalBonds.forEach(bond => {
-                bonds.push(bond);
-                group.add(bond);
-            });
-            
-            group.userData = { 
-                atoms: [...carbons, carboxylC, carboxylO1, carboxylO2, acetylC, acetylO],
-                bonds: bonds,
-                type: 'aspirin'
-            };
-            
-            return group;
-        }
-
-        function createEthanolMolecule() {
-            const group = new THREE.Group();
-            
-            const carbon1 = createAtom(-0.8, 0, 0, 0x64748b, 0.6);
-            const carbon2 = createAtom(0.8, 0, 0, 0x64748b, 0.6);
-            const oxygen = createAtom(1.8, 0, 0, 0xff4444, 0.7);
-            const hydrogen = createAtom(2.4, 0.6, 0, 0xffffff, 0.4);
-            
-            group.add(carbon1);
-            group.add(carbon2);
-            group.add(oxygen);
-            group.add(hydrogen);
-            
-            const bond1 = createBond(carbon1.position, carbon2.position);
-            const bond2 = createBond(carbon2.position, oxygen.position);
-            const bond3 = createBond(oxygen.position, hydrogen.position);
-            
-            group.add(bond1);
-            group.add(bond2);
-            group.add(bond3);
-            
-            group.userData = { 
-                atoms: [carbon1, carbon2, oxygen, hydrogen],
-                bonds: [bond1, bond2, bond3],
-                type: 'ethanol'
-            };
-            
-            return group;
-        }
-
-        function createAdenineMolecule() {
-            const group = new THREE.Group();
-            
-            const atoms = [
-                [0, 0, 0, 0x64748b], [1, 0, 0, 0x3b82f6], [1.5, 1, 0, 0x64748b],
-                [1, 2, 0, 0x3b82f6], [0, 2, 0, 0x64748b], [-0.5, 1, 0, 0x3b82f6],
-                [2, 1.5, 0, 0x3b82f6], [-1, 2, 0, 0x3b82f6], [2.5, 0.5, 0, 0x3b82f6]
-            ];
-            
-            const atomMeshes = [];
-            atoms.forEach(atom => {
-                const sphere = createAtom(atom[0], atom[1], atom[2], atom[3], 0.5);
-                atomMeshes.push(sphere);
-                group.add(sphere);
-            });
-            
-            const bondPairs = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0], [2, 6], [4, 7], [1, 8]];
-            const bonds = [];
-            
-            bondPairs.forEach(pair => {
-                const start = new THREE.Vector3(atoms[pair[0]][0], atoms[pair[0]][1], atoms[pair[0]][2]);
-                const end = new THREE.Vector3(atoms[pair[1]][0], atoms[pair[1]][1], atoms[pair[1]][2]);
-                const bond = createBond(start, end);
-                bonds.push(bond);
-                group.add(bond);
-            });
-            
-            group.userData = { 
-                atoms: atomMeshes,
-                bonds: bonds,
-                type: 'adenine'
-            };
-            
-            return group;
-        }
-
-        // Animation Functions
-        function applyAnimation(moleculeId, animationType, time) {
-            const molecule = molecules[moleculeId];
-            const preset = animationPresets[animationType];
-            
-            if (!molecule || !preset) return;
-            
-            const { atoms, bonds, type } = molecule.userData;
-            
-            switch (preset.type) {
-                case 'rotation':
-                    molecule.rotation.y = time * preset.speed;
-                    molecule.rotation.x = time * preset.speed * 0.5;
-                    break;
-                    
-                case 'vibration':
-                    atoms.forEach((atom, index) => {
-                        const offset = Math.sin(time * preset.speed + index) * preset.amplitude;
-                        atom.position.y = atom.userData.originalPosition.y + offset;
-                    });
-                    break;
-                    
-                case 'stretching':
-                    bonds.forEach((bond, index) => {
-                        const stretch = Math.sin(time * preset.speed + index) * preset.amplitude;
-                        bond.scale.y = 1 + stretch;
-                    });
-                    break;
-                    
-                case 'bending':
-                    if (type === 'water') {
-                        const angle = Math.sin(time * preset.speed) * preset.amplitude;
-                        atoms[1].position.x = atoms[1].userData.originalPosition.x + Math.cos(angle) * 0.2;
-                        atoms[2].position.x = atoms[2].userData.originalPosition.x - Math.cos(angle) * 0.2;
-                    }
-                    break;
-                    
-                case 'ring-breathing':
-                    if (type === 'glucose') {
-                        atoms.forEach((atom, index) => {
-                            if (index < 6) { // Ring carbons
-                                const scale = 1 + Math.sin(time * preset.speed) * preset.amplitude;
-                                const originalPos = atom.userData.originalPosition;
-                                atom.position.x = originalPos.x * scale;
-                                atom.position.y = originalPos.y * scale;
-                            }
-                        });
-                    }
-                    break;
-                    
-                case 'aromatic':
-                    if (type === 'caffeine') {
-                        atoms.forEach((atom, index) => {
-                            const vibration = Math.sin(time * preset.speed + index * 0.5) * preset.amplitude;
-                            atom.position.z = atom.userData.originalPosition.z + vibration;
-                        });
-                    }
-                    break;
-                    
-                case 'methyl-rotation':
-                    if (type === 'caffeine' && atoms.length > 6) {
-                        const methylAtom = atoms[6];
-                        methylAtom.rotation.z = time * preset.speed;
-                    }
-                    break;
-                    
-                case 'hydrolysis':
-                    if (type === 'aspirin') {
-                        const separation = Math.sin(time * preset.speed) * preset.amplitude;
-                        atoms.forEach((atom, index) => {
-                            if (index > 5) { // Functional group atoms
-                                atom.position.x = atom.userData.originalPosition.x + separation;
-                            }
-                        });
-                    }
-                    break;
-                    
-                case 'carboxyl-vibration':
-                    if (type === 'aspirin') {
-                        atoms.forEach((atom, index) => {
-                            if (index >= 6 && index <= 8) { // Carboxyl group
-                                const vibration = Math.sin(time * preset.speed + index) * preset.amplitude;
-                                atom.position.y = atom.userData.originalPosition.y + vibration;
-                            }
-                        });
-                    }
-                    break;
-                    
-                case 'oh-stretching':
-                    if (type === 'ethanol') {
-                        const stretch = Math.sin(time * preset.speed) * preset.amplitude;
-                        const ohBond = bonds[2]; // OH bond
-                        ohBond.scale.y = 1 + stretch;
-                    }
-                    break;
-                    
-                case 'conformational':
-                    atoms.forEach((atom, index) => {
-                        const rotation = Math.sin(time * preset.speed + index) * preset.amplitude;
-                        atom.rotation.z = rotation;
-                    });
-                    break;
-                    
-                case 'base-pairing':
-                    if (type === 'adenine') {
-                        const movement = Math.sin(time * preset.speed) * preset.amplitude;
-                        molecule.position.x = movement;
-                    }
-                    break;
-                    
-                case 'tautomerization':
-                    if (type === 'adenine') {
-                        atoms.forEach((atom, index) => {
-                            if (atom.material.color.getHex() === 0x3b82f6) { // Nitrogen atoms
-                                const intensity = 0.5 + Math.sin(time * preset.speed + index) * 0.3;
-                                atom.material.opacity = Math.max(0.3, intensity);
-                            }
-                        });
-                    }
-                    break;
-            }
-        }
-
-        function resetMoleculePositions(moleculeId) {
-            const molecule = molecules[moleculeId];
-            if (!molecule) return;
-            
-            const { atoms, bonds } = molecule.userData;
-            
-            // Reset molecule rotation
-            molecule.rotation.set(0, 0, 0);
-            molecule.position.set(0, 0, 0);
-            
-            // Reset atom positions
-            atoms.forEach(atom => {
-                atom.position.copy(atom.userData.originalPosition);
-                atom.rotation.set(0, 0, 0);
-                atom.scale.set(1, 1, 1);
-                if (atom.material.opacity !== undefined) {
-                    atom.material.opacity = 0.9;
-                }
-            });
-            
-            // Reset bond scales and rotations
-            bonds.forEach(bond => {
-                bond.scale.set(1, 1, 1);
-                if (bond.userData.originalRotation) {
-                    bond.rotation.copy(bond.userData.originalRotation);
-                }
-            });
-        }
-
-        // Initialize 3D Scene
-        function init3DScene(containerId, moleculeCreator) {
-            const container = document.getElementById(containerId);
-            const canvas = container.querySelector('.molecule-3d-canvas');
-            
-            // Scene setup
-            const scene = new THREE.Scene();
-            scene.background = new THREE.Color(0x0a0f0f);
-            
-            // Camera setup
-            const camera = new THREE.PerspectiveCamera(75, canvas.clientWidth / canvas.clientHeight, 0.1, 1000);
-            camera.position.set(0, 0, 5);
-            
-            // Renderer setup
-            const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
-            renderer.setSize(canvas.clientWidth, canvas.clientHeight);
-            renderer.shadowMap.enabled = true;
-            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-            
-            // Lighting
-            const ambientLight = new THREE.AmbientLight(0x404040, 0.6);
-            scene.add(ambientLight);
-            
-            const directionalLight = new THREE.DirectionalLight(0x00ffff, 0.8);
-            directionalLight.position.set(5, 5, 5);
-            directionalLight.castShadow = true;
-            scene.add(directionalLight);
-            
-            const pointLight = new THREE.PointLight(0x06b6d4, 0.5);
-            pointLight.position.set(-5, -5, 5);
-            scene.add(pointLight);
-            
-            // Controls
-            const orbitControls = new THREE.OrbitControls(camera, canvas);
-            orbitControls.enableDamping = true;
-            orbitControls.dampingFactor = 0.05;
-            orbitControls.enableZoom = true;
-            orbitControls.enablePan = false;
-            
-            // Create molecule
-            const molecule = moleculeCreator();
-            scene.add(molecule);
-            
-            // Store references
-            scenes[containerId] = scene;
-            cameras[containerId] = camera;
-            renderers[containerId] = renderer;
-            controls[containerId] = orbitControls;
-            molecules[containerId] = molecule;
-            animationStates[containerId] = {
-                isPlaying: true,
-                currentAnimation: 'rotation',
-                startTime: Date.now()
-            };
-            
-            // Start animation loop
-            animate(containerId);
-            
-            // Handle resize
-            const resizeObserver = new ResizeObserver(() => {
-                const width = canvas.clientWidth;
-                const height = canvas.clientHeight;
-                camera.aspect = width / height;
-                camera.updateProjectionMatrix();
-                renderer.setSize(width, height);
-            });
-            resizeObserver.observe(canvas);
-        }
-
-        function animate(containerId) {
-            const scene = scenes[containerId];
-            const camera = cameras[containerId];
-            const renderer = renderers[containerId];
-            const orbitControls = controls[containerId];
-            const animationState = animationStates[containerId];
-            
-            if (!scene || !camera || !renderer) return;
-            
-            animationFrames[containerId] = requestAnimationFrame(() => animate(containerId));
-            
-            // Update controls
-            orbitControls.update();
-            
-            // Apply animations
-            if (animationState.isPlaying) {
-                const currentTime = (Date.now() - animationState.startTime) * 0.001;
-                applyAnimation(containerId, animationState.currentAnimation, currentTime);
-            }
-            
-            // Render
-            renderer.render(scene, camera);
-        }
-
-        // Control Functions
-        function toggleAnimation(containerId) {
-            const state = animationStates[containerId];
-            const button = document.querySelector(`#${containerId} .control-btn i.fa-play, #${containerId} .control-btn i.fa-pause`);
-            
-            if (state.isPlaying) {
-                state.isPlaying = false;
-                button.className = 'fas fa-play';
-            } else {
-                state.isPlaying = true;
-                state.startTime = Date.now();
-                button.className = 'fas fa-pause';
-            }
-        }
-
-        function toggleAnimationSelector(containerId) {
-            const selector = document.getElementById(`${containerId}-selector`);
-            selector.classList.toggle('show');
-        }
-
-        function resetMolecule(containerId) {
-            resetMoleculePositions(containerId);
-            const state = animationStates[containerId];
-            state.startTime = Date.now();
-        }
-
-        function setAnimation(containerId, animationType) {
-            const state = animationStates[containerId];
-            state.currentAnimation = animationType;
-            state.startTime = Date.now();
-            
-            // Update UI
-            const selector = document.getElementById(`${containerId}-selector`);
-            selector.querySelectorAll('.animation-option').forEach(option => {
-                option.classList.remove('active');
-                if (option.dataset.animation === animationType) {
-                    option.classList.add('active');
-                }
-            });
-            
-            selector.classList.remove('show');
-            resetMoleculePositions(containerId);
-        }
-
-        // Initialize hero molecule
-        function initHeroMolecule() {
-            const container = document.getElementById('heroMolecule3D');
-            if (!container) return;
-            
-            const scene = new THREE.Scene();
-            const camera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
-            const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-            
-            renderer.setSize(120, 120);
-            renderer.setClearColor(0x000000, 0);
-            container.appendChild(renderer.domElement);
-            
-            // Simple rotating molecule
-            const molecule = createWaterMolecule();
-            molecule.scale.set(0.5, 0.5, 0.5);
-            scene.add(molecule);
-            
-            const light = new THREE.AmbientLight(0x00ffff, 1);
-            scene.add(light);
-            
-            camera.position.z = 3;
-            
-            function animateHero() {
-                requestAnimationFrame(animateHero);
-                molecule.rotation.x += 0.01;
-                molecule.rotation.y += 0.01;
-                renderer.render(scene, camera);
-            }
-            animateHero();
-        }
-
-        // Event Listeners
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.animation-option')) {
-                const option = e.target.closest('.animation-option');
-                const selector = option.closest('.animation-selector');
-                const containerId = selector.id.replace('-selector', '');
-                const animationType = option.dataset.animation;
-                setAnimation(containerId, animationType);
-            }
-        });
-
-        // Close animation selectors when clicking outside
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.animation-controls') && !e.target.closest('.animation-selector')) {
-                document.querySelectorAll('.animation-selector').forEach(selector => {
-                    selector.classList.remove('show');
-                });
-            }
-        });
 
         // Navbar Scroll Effect
         window.addEventListener('scroll', function() {
@@ -2483,15 +1533,24 @@
             const button = this.querySelector('button[type="submit"]');
             const originalText = button.innerHTML;
             
+            // Show processing state
             button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             button.disabled = true;
             
+            // Get form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Simulate form submission
             setTimeout(() => {
+                // Show success state
                 button.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
                 button.style.background = 'var(--accent-secondary)';
                 
+                // Show success notification
                 showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
                 
+                // Reset form and button
                 this.reset();
                 setTimeout(() => {
                     button.innerHTML = originalText;
@@ -2500,6 +1559,12 @@
                 }, 3000);
                 
             }, 2000);
+        });
+
+        // Mobile Menu Toggle
+        document.getElementById('mobileMenu').addEventListener('click', function() {
+            // Mobile menu functionality would go here
+            console.log('Mobile menu clicked');
         });
 
         // Resume Download Function
@@ -2526,57 +1591,50 @@ instruments, quality control protocols, and clinical diagnostics.
 EDUCATION
 ═══════════════════════════════════════════════════════════════
 🎓 University of Bouira Akli Mohand Oulhadj
- Bachelor's in Fundamental Chemistry | 2020-2024
- 
- • Advanced analytical and physical chemistry
- • Laboratory techniques and instrumentation
- • Scientific methodology and problem-solving
- • Quality control and safety protocols
+   Bachelor's in Fundamental Chemistry | 2020-2024
+   
+   • Advanced analytical and physical chemistry
+   • Laboratory techniques and instrumentation
+   • Scientific methodology and problem-solving
+   • Quality control and safety protocols
 
 PROFESSIONAL EXPERIENCE
 ═══════════════════════════════════════════════════════════════
 🏥 Medical Laboratory Technician | 6 Months
- Healthcare Laboratory
- 
- • Conducted biochemistry and hematology analyses
- • Operated analytical instruments and equipment
- • Performed sample preparation and processing
- • Ensured accurate diagnostic reporting
- • Maintained quality control standards
- • Followed laboratory safety protocols
+   Healthcare Laboratory
+   
+   • Conducted biochemistry and hematology analyses
+   • Operated analytical instruments and equipment
+   • Performed sample preparation and processing
+   • Ensured accurate diagnostic reporting
+   • Maintained quality control standards
+   • Followed laboratory safety protocols
 
 CORE COMPETENCIES
 ═══════════════════════════════════════════════════════════════
 🔬 Analytical Chemistry:
- • HPLC (High-Performance Liquid Chromatography)
- • GC-MS (Gas Chromatography-Mass Spectrometry)
- • UV-Vis Spectroscopy
- • Chromatographic techniques
- 
+   • HPLC (High-Performance Liquid Chromatography)
+   • GC-MS (Gas Chromatography-Mass Spectrometry)
+   • UV-Vis Spectroscopy
+   • Chromatographic techniques
+   
 🧪 Laboratory Diagnostics:
- • Biochemistry analysis
- • Hematology testing
- • Sample preparation
- • Quality control protocols
- 
+   • Biochemistry analysis
+   • Hematology testing
+   • Sample preparation
+   • Quality control protocols
+   
 📊 Data Analysis:
- • Statistical analysis
- • Method validation
- • Result interpretation
- • Technical reporting
- 
+   • Statistical analysis
+   • Method validation
+   • Result interpretation
+   • Technical reporting
+   
 ⚙️ Instrumentation:
- • Mass spectrometers
- • Chromatographs
- • Spectrophotometers
- • Laboratory equipment maintenance
-
-MOLECULAR EXPERTISE
-═══════════════════════════════════════════════════════════════
-• Interactive 3D Molecular Modeling and Visualization
-• Molecular Vibration and Reaction Animation Analysis
-• Chemical Bond Dynamics and Conformational Studies
-• Biochemical Pathway Visualization and Analysis
+   • Mass spectrometers
+   • Chromatographs
+   • Spectrophotometers
+   • Laboratory equipment maintenance
 
 CHEMICAL FORMULAS & EXPERTISE
 ═══════════════════════════════════════════════════════════════
@@ -2613,6 +1671,7 @@ Contact: abdellah.recham@email.com | +213 XXX XXX XXX
 ═══════════════════════════════════════════════════════════════
             `;
 
+            // Create and download the resume
             const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
@@ -2681,22 +1740,11 @@ Contact: abdellah.recham@email.com | +213 XXX XXX XXX
         // Initialize everything when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
             createMolecules();
-            initHeroMolecule();
-            
-            // Initialize 3D molecules with a delay to ensure proper rendering
-            setTimeout(() => {
-                init3DScene('waterMolecule', createWaterMolecule);
-                init3DScene('glucoseMolecule', createGlucoseMolecule);
-                init3DScene('caffeineMolecule', createCaffeineMolecule);
-                init3DScene('aspirinMolecule', createAspirinMolecule);
-                init3DScene('ethanolMolecule', createEthanolMolecule);
-                init3DScene('dnaBaseMolecule', createAdenineMolecule);
-            }, 100);
         });
 
-        console.log('🧪 Enhanced 3D Laboratory Portfolio with Molecular Animations Loaded!');
-        console.log('Features: Interactive 3D Molecules + Realistic Animations + Dark Teal Theme');
-        console.log('Animations: Vibration, Stretching, Bending, Reactions, Conformational Changes');
+        console.log('🧪 Dark Teal Laboratory Portfolio with Chemistry Molecules Loaded!');
+        console.log('Theme: Professional Dark with Teal Accents + Floating Molecules');
+        console.log('Chemical Formula: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP');
         console.log('Status: Ready for Professional Opportunities');
     </script>
 </body>
