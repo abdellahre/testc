@@ -994,25 +994,33 @@
                         <a href="https://linkedin.com/in/abdellah-recham" target="_blank" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-molecule-500/20 transition-all duration-300 group relative">
                             <i class="fab fa-linkedin text-xl group-hover:scale-110 transition-transform text-molecule-400"></i>
                             <div class="absolute -top-1 -right-1">
-                                <div class="atom atom-carbon" style="width: 12px; height: 12px; font-size: 6px;">C</div>
+                                <div class="periodic-element" style="width: 12px; height: 12px;">
+                                    <div class="element-symbol" style="font-size: 6px;">C</div>
+                                </div>
                             </div>
                         </a>
                         <a href="mailto:abdellah.recham@email.com" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-nitrogen-500/20 transition-all duration-300 group relative">
                             <i class="fas fa-envelope text-xl group-hover:scale-110 transition-transform text-nitrogen-400"></i>
                             <div class="absolute -top-1 -right-1">
-                                <div class="atom atom-nitrogen" style="width: 12px; height: 12px; font-size: 6px;">N</div>
+                                <div class="periodic-element" style="width: 12px; height: 12px;">
+                                    <div class="element-symbol" style="font-size: 6px;">N</div>
+                                </div>
                             </div>
                         </a>
                         <a href="https://github.com/abdellahre" target="_blank" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-oxygen-500/20 transition-all duration-300 group relative">
                             <i class="fab fa-github text-xl group-hover:scale-110 transition-transform text-oxygen-400"></i>
                             <div class="absolute -top-1 -right-1">
-                                <div class="atom atom-oxygen" style="width: 12px; height: 12px; font-size: 6px;">O</div>
+                                <div class="periodic-element" style="width: 12px; height: 12px;">
+                                    <div class="element-symbol" style="font-size: 6px;">O</div>
+                                </div>
                             </div>
                         </a>
                         <a href="#" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-hydrogen-500/20 transition-all duration-300 group relative">
                             <i class="fas fa-atom text-xl group-hover:scale-110 transition-transform text-hydrogen-400"></i>
                             <div class="absolute -top-1 -right-1">
-                                <div class="atom atom-hydrogen" style="width: 12px; height: 12px; font-size: 6px;">H</div>
+                                <div class="periodic-element" style="width: 12px; height: 12px;">
+                                    <div class="element-symbol" style="font-size: 6px;">H</div>
+                                </div>
                             </div>
                         </a>
                     </div>
@@ -1129,9 +1137,6 @@
                             <div class="flex items-center justify-center mb-3">
                                 <div class="periodic-element mr-2" style="width: 32px; height: 32px;">
                                     <div class="element-number" style="font-size: 8px;">6</div>
-                                    <div class="element-symbol"
-
- style="font-size: 8px;">6</div>
                                     <div class="element-symbol" style="font-size: 12px;">C</div>
                                 </div>
                                 <div class="text-4xl font-bold molecular-gradient">4+</div>
@@ -2136,4 +2141,179 @@ TECHNICAL MOLECULAR SKILLS
    C₆ • Spectrophotometry (90%) - UV-Vis molecular absorption analysis
    N₇ • Sample Preparation (85%) - Complex compound isolation
    O₈ • Centrifugation (80%) - Molecular separation techniques
-   H₁ • Chromatography (75%) - HPL
+   H₁ • Chromatography (75%) - HPL and GC molecular analysis
+   
+💻 Computer & Molecular Modeling:
+   ⚛️ • MS Office Suite - Data analysis and molecular reporting
+   🧪 • Laboratory Software - Chemical database management
+   📊 • Data Analysis - Statistical molecular interpretation
+   💾 • Database Management - Chemical compound libraries
+
+🌍 Languages - Communication Bonds:
+   C₆ • Arabic (Native) - ●●●●●
+   N₇ • English (Intermediate) - ●●●○○
+   O₈ • French (Intermediate) - ●●●○○
+
+MOLECULAR SPECIALIZATIONS
+═══════════════════════════════════════════════════════════════
+⚛️ Biochemistry & Molecular Diagnostics
+🧪 Hematology & Blood Chemistry Analysis
+🛢️ Petroleum Chemistry & Hydrocarbon Analysis
+🔬 Analytical Chemistry & Instrumentation
+📊 Quality Control & Laboratory Management
+💻 Computer-Aided Molecular Analysis
+
+PROFESSIONAL MOLECULAR OBJECTIVES
+═══════════════════════════════════════════════════════════════
+Seeking opportunities to apply advanced molecular chemistry expertise in:
+• Medical laboratory diagnostics and biochemical analysis
+• Petroleum industry chemical analysis and quality control
+• Research institutions focusing on molecular structure studies
+• Industrial laboratories requiring analytical chemistry expertise
+
+MOLECULAR PHILOSOPHY
+═══════════════════════════════════════════════════════════════
+"Every molecule tells a story, every chemical bond holds potential, 
+and every analysis reveals the fundamental truth of matter. 
+I am passionate about unlocking these molecular secrets to drive 
+innovation in healthcare, energy, and scientific discovery."
+
+═══════════════════════════════════════════════════════════════
+Generated with Advanced Molecular Chemistry Portfolio System ⚛️
+© 2024 Abdellah Recham - All Rights Reserved
+═══════════════════════════════════════════════════════════════
+            `;
+
+            // Create and download the enhanced resume
+            const blob = new Blob([resumeContent], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'Abdellah_Recham_Advanced_Molecular_Chemistry_Resume.txt';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            // Show download confirmation with molecular theme
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-4 right-4 glass-effect rounded-xl p-4 z-50 border border-molecule-500/30';
+            notification.innerHTML = `
+                <div class="flex items-center gap-3">
+                    <div class="periodic-element" style="width: 24px; height: 24px;">
+                        <div class="element-symbol" style="font-size: 10px;">✓</div>
+                    </div>
+                    <div>
+                        <p class="text-white font-semibold font-orbitron">Resume Downloaded!</p>
+                        <p class="text-gray-400 text-sm">Advanced molecular chemistry resume ready</p>
+                        <div class="chemical-formula text-xs mt-1">C₆H₁₂O₆ → Career Success</div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.remove();
+            }, 5000);
+        }
+
+        // Enhanced molecular interactions on mouse movement
+        document.addEventListener('mousemove', (e) => {
+            const molecules = document.querySelectorAll('.molecule-container');
+            const mouseX = e.clientX / window.innerWidth;
+            const mouseY = e.clientY / window.innerHeight;
+
+            molecules.forEach((molecule, index) => {
+                const speed = (index + 1) * 0.5;
+                const x = (mouseX - 0.5) * speed;
+                const y = (mouseY - 0.5) * speed;
+                molecule.style.transform = `translate(${x}px, ${y}px) rotate(${x * 2}deg)`;
+            });
+        });
+
+        // Enhanced periodic table element interactions
+        document.querySelectorAll('.periodic-element').forEach(element => {
+            element.addEventListener('mouseenter', () => {
+                element.style.transform = 'scale(1.2) rotate(5deg)';
+                element.style.boxShadow = '0 0 30px rgba(14, 165, 233, 0.8)';
+            });
+            
+            element.addEventListener('mouseleave', () => {
+                element.style.transform = 'scale(1) rotate(0deg)';
+                element.style.boxShadow = '0 0 20px rgba(14, 165, 233, 0.5)';
+            });
+        });
+
+        // Advanced molecular bond animations
+        document.querySelectorAll('.chemical-bond').forEach(bond => {
+            bond.addEventListener('mouseenter', () => {
+                bond.style.animation = 'bondPulse 0.5s ease-in-out infinite';
+                bond.style.boxShadow = '0 0 20px rgba(14, 165, 233, 0.8)';
+            });
+            
+            bond.addEventListener('mouseleave', () => {
+                bond.style.animation = 'bondPulse 4s ease-in-out infinite';
+                bond.style.boxShadow = '0 0 10px rgba(14, 165, 233, 0.5)';
+            });
+        });
+
+        // Enhanced loading screen with molecular theme
+        window.addEventListener('load', () => {
+            const loadingScreen = document.createElement('div');
+            loadingScreen.className = 'fixed inset-0 bg-carbon-900 flex items-center justify-center z-50';
+            loadingScreen.innerHTML = `
+                <div class="text-center">
+                    <div class="molecule-container mb-8" style="width: 120px; height: 120px;">
+                        <div class="atom atom-carbon animate-pulse" style="top: 50px; left: 50px;">C</div>
+                        <div class="atom atom-oxygen animate-pulse" style="top: 30px; left: 70px; animation-delay: 0.5s;">O</div>
+                        <div class="atom atom-nitrogen animate-pulse" style="top: 70px; left: 30px; animation-delay: 1s;">N</div>
+                        <div class="atom atom-hydrogen animate-pulse" style="bottom: 20px; right: 20px; animation-delay: 1.5s;">H</div>
+                        <div class="chemical-bond animate-pulse" style="top: 40px; left: 60px; width: 20px; transform: rotate(45deg);"></div>
+                    </div>
+                    <h2 class="text-3xl font-bold molecular-gradient mb-4 font-orbitron">Loading Molecular Portfolio</h2>
+                    <div class="chemical-formula text-lg">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP</div>
+                    <div class="mt-4">
+                        <div class="w-64 h-2 bg-carbon-700 rounded-full mx-auto overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-full animate-pulse" style="width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(loadingScreen);
+
+            setTimeout(() => {
+                loadingScreen.style.opacity = '0';
+                loadingScreen.style.transition = 'opacity 1s ease';
+                setTimeout(() => {
+                    loadingScreen.remove();
+                }, 1000);
+            }, 2000);
+        });
+
+        // Enhanced performance optimization
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const performanceObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                } else {
+                    entry.target.classList.remove('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.glass-card, .molecule-container, .periodic-element').forEach(el => {
+            performanceObserver.observe(el);
+        });
+
+        console.log('🧪 Advanced Molecular Chemistry Portfolio Loaded Successfully! ⚛️');
+        console.log('Chemical Formula: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP');
+        console.log('Molecular Bonds: Strong 💪 | Adaptability: High 📈 | Innovation: Unlimited ∞');
+    </script>
+</body>
+</html>
