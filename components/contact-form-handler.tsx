@@ -1,54 +1,62 @@
-'use client'
+"use client"
 
-import { useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import { Textarea } from '@/components/ui/textarea'
-import { Label } from '@/components/ui/label'
-import { Card, CardContent } from '@/components/ui/card'
-import { Mail, User, MessageSquare, Send, CheckCircle, AlertCircle } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { submitContactForm, type ContactFormData } from '@/lib/contact-actions'
+import type React from "react"
+
+import { useState } from "react"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Loader2, Send, CheckCircle, AlertCircle } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
+import { type ContactFormData, submitContactForm, type ContactFormResponse } from "@/lib/contact-actions"
 
 export default function ContactFormHandler() {
   const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<{
-    type: 'success' | 'error' | null
-    message: string
-  }>({ type: null, message: '' })
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-    // Clear status when user starts typing
-    if (submitStatus.type) {
-      setSubmitStatus({ type: null, message: '' })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [response, setResponse] = useState<ContactFormResponse | null>(null)
+
+  const handleInputChange = (field: keyof ContactFormData, value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }))
+    // Clear response when user starts typing again
+    if (response) {
+      setResponse(null)
     }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    
+    setResponse(null)
+
     try {
-      const response = await submitContactForm(formData)
-      
-      if (response.success) {
-        setSubmitStatus({ type: 'success', message: response.message })
-        setFormData({ name: '', email: '', subject: '', message: '' })
-      } else {
-        setSubmitStatus({ type: 'error', message: response.message })
+      const result = await submitContactForm(formData)
+      setResponse(result)
+
+      if (result.success) {
+        // Reset form on success
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
       }
     } catch (error) {
-      setSubmitStatus({ 
-        type: 'error', 
-        message: 'An error occurred. Please try again later.' 
+      setResponse({
+        success: false,
+        message: "An unexpected error occurred. Please try again later.",
       })
     } finally {
       setIsSubmitting(false)
@@ -56,119 +64,115 @@ export default function ContactFormHandler() {
   }
 
   return (
-    <Card className="bg-gray-900/50 border-gray-800 backdrop-blur-sm">
-      <CardContent className="p-8">
+    <Card className="w-full max-w-2xl mx-auto">
+      <CardHeader>
+        <CardTitle className="flex items-center gap-2">
+          <Send className="h-5 w-5" />
+          Get In Touch
+        </CardTitle>
+        <CardDescription>Send me a message and I'll get back to you as soon as possible.</CardDescription>
+      </CardHeader>
+      <CardContent>
         <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-gray-300 flex items-center gap-2">
-                <User className="w-4 h-4" />
-                Full Name *
-              </Label>
+              <Label htmlFor="name">Name *</Label>
               <Input
                 id="name"
-                name="name"
                 type="text"
-                value={formData.name}
-                onChange={handleInputChange}
-                required
-                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-cyan-500"
                 placeholder="Your full name"
+                value={formData.name}
+                onChange={(e) => handleInputChange("name", e.target.value)}
+                required
+                disabled={isSubmitting}
               />
             </div>
-            
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-gray-300 flex items-center gap-2">
-                <Mail className="w-4 h-4" />
-                Email Address *
-              </Label>
+              <Label htmlFor="email">Email *</Label>
               <Input
                 id="email"
-                name="email"
                 type="email"
-                value={formData.email}
-                onChange={handleInputChange}
-                required
-                className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-cyan-500"
                 placeholder="your.email@example.com"
+                value={formData.email}
+                onChange={(e) => handleInputChange("email", e.target.value)}
+                required
+                disabled={isSubmitting}
               />
             </div>
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="subject" className="text-gray-300 flex items-center gap-2">
-              <MessageSquare className="w-4 h-4" />
-              Subject
-            </Label>
+            <Label htmlFor="subject">Subject *</Label>
             <Input
               id="subject"
-              name="subject"
               type="text"
-              value={formData.subject}
-              onChange={handleInputChange}
-              className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-cyan-500"
               placeholder="What's this about?"
+              value={formData.subject}
+              onChange={(e) => handleInputChange("subject", e.target.value)}
+              required
+              disabled={isSubmitting}
             />
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="message" className="text-gray-300 flex items-center gap-2">
-              <MessageSquare className="w-4 h-4" />
-              Message *
-            </Label>
+            <Label htmlFor="message">Message *</Label>
             <Textarea
               id="message"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
+              placeholder="Tell me about your project, question, or just say hello..."
               rows={6}
-              className="bg-gray-800/50 border-gray-700 text-white placeholder:text-gray-400 focus:border-cyan-500 resize-none"
-              placeholder="Tell me about your project, question, or how I can help you..."
+              value={formData.message}
+              onChange={(e) => handleInputChange("message", e.target.value)}
+              required
+              disabled={isSubmitting}
+              className="resize-none"
             />
           </div>
 
           <AnimatePresence>
-            {submitStatus.type && (
+            {response && (
               <motion.div
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
-                className={`flex items-center gap-2 p-4 rounded-lg ${
-                  submitStatus.type === 'success' 
-                    ? 'bg-emerald-500/10 border border-emerald-500/20 text-emerald-400' 
-                    : 'bg-red-500/10 border border-red-500/20 text-red-400'
-                }`}
+                transition={{ duration: 0.3 }}
               >
-                {submitStatus.type === 'success' ? (
-                  <CheckCircle className="w-5 h-5" />
-                ) : (
-                  <AlertCircle className="w-5 h-5" />
-                )}
-                <span>{submitStatus.message}</span>
+                <Alert className={response.success ? "border-green-200 bg-green-50" : "border-red-200 bg-red-50"}>
+                  {response.success ? (
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                  ) : (
+                    <AlertCircle className="h-4 w-4 text-red-600" />
+                  )}
+                  <AlertDescription className={response.success ? "text-green-800" : "text-red-800"}>
+                    {response.message}
+                  </AlertDescription>
+                </Alert>
               </motion.div>
             )}
           </AnimatePresence>
 
-          <Button
-            type="submit"
-            disabled={isSubmitting}
-            className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-600 hover:to-emerald-600 text-white font-medium py-3 transition-all duration-300 disabled:opacity-50"
-          >
+          <Button type="submit" disabled={isSubmitting} className="w-full" size="lg">
             {isSubmitting ? (
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
-              />
+              <>
+                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                Sending Message...
+              </>
             ) : (
               <>
-                <Send className="w-5 h-5 mr-2" />
+                <Send className="mr-2 h-4 w-4" />
                 Send Message
               </>
             )}
           </Button>
         </form>
+
+        <div className="mt-6 pt-6 border-t text-center text-sm text-muted-foreground">
+          <p>
+            You can also reach me directly at{" "}
+            <a href="mailto:abdellah.recham@email.com" className="text-primary hover:underline">
+              abdellah.recham@email.com
+            </a>
+          </p>
+        </div>
       </CardContent>
     </Card>
   )
