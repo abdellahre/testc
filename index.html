@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdellah Recham - Laboratory Technician & Molecular Chemistry Specialist</title>
-    <meta name="description" content="Professional Laboratory Technician specializing in advanced molecular analysis, petroleum chemistry, and precision diagnostic techniques.">
-    <meta name="keywords" content="laboratory technician, molecular analysis, petroleum chemistry, chemical analysis, diagnostics, spectroscopy, chromatography">
+    <title>Abdellah Recham - Laboratory Technician & Chemistry Specialist</title>
+    <meta name="description" content="Professional Laboratory Technician specializing in fundamental chemistry, medical laboratory analysis, biochemistry and hematology.">
+    <meta name="keywords" content="laboratory technician, chemistry, medical analysis, biochemistry, hematology, analytical chemistry">
     <meta name="author" content="Abdellah Recham">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="Abdellah Recham - Laboratory Chemistry Specialist">
-    <meta property="og:description" content="Expert in molecular analysis, petroleum chemistry, and advanced laboratory diagnostics">
+    <meta property="og:title" content="Abdellah Recham - Laboratory Technician">
+    <meta property="og:description" content="Expert in fundamental chemistry and medical laboratory analysis">
     <meta property="og:type" content="website">
     <meta property="og:image" content="public/images/abdellah-professional.png">
     
@@ -18,49 +18,32 @@
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
     <style>
         :root {
-            /* Dark Green Chemistry Theme */
-            --primary-dark: #0a1a0a;
-            --secondary-dark: #1a2e1a;
-            --tertiary-dark: #2a4a2a;
-            --accent-green: #00ff88;
-            --bright-green: #39ff14;
-            --neon-green: #00ff41;
-            --dark-green: #004d1a;
-            --forest-green: #228b22;
-            --lime-green: #32cd32;
+            /* Dark Teal Theme Colors */
+            --bg-primary: #0a0f0f;
+            --bg-secondary: #0f1419;
+            --bg-card: rgba(30, 41, 59, 0.3);
+            --bg-card-hover: rgba(30, 41, 59, 0.5);
             
-            /* Supporting Colors */
-            --pure-white: #ffffff;
-            --off-white: #f8fff8;
-            --light-gray: #e8f5e8;
-            --medium-gray: #a0c4a0;
-            --dark-gray: #4a6b4a;
+            --text-primary: #ffffff;
+            --text-secondary: #cbd5e1;
+            --text-muted: #64748b;
             
-            /* Chemistry Colors */
-            --chemical-blue: #00bfff;
-            --chemical-yellow: #ffff00;
-            --chemical-orange: #ff8c00;
-            --chemical-red: #ff4500;
+            --accent-primary: #00ffff;
+            --accent-secondary: #06b6d4;
+            --accent-hover: #0891b2;
             
-            /* Gradients */
-            --gradient-primary: linear-gradient(135deg, #0a1a0a 0%, #1a2e1a 50%, #2a4a2a 100%);
-            --gradient-accent: linear-gradient(135deg, #00ff88 0%, #39ff14 50%, #00ff41 100%);
-            --gradient-glow: linear-gradient(135deg, rgba(0, 255, 136, 0.2) 0%, rgba(57, 255, 20, 0.1) 100%);
+            --border-primary: rgba(71, 85, 105, 0.5);
+            --border-hover: rgba(0, 255, 255, 0.3);
             
-            /* Shadows */
-            --shadow-green: 0 0 20px rgba(0, 255, 136, 0.3);
-            --shadow-neon: 0 0 30px rgba(57, 255, 20, 0.5);
-            --shadow-dark: 0 10px 30px rgba(0, 0, 0, 0.5);
+            --shadow-glow: 0 0 20px rgba(0, 255, 255, 0.2);
+            --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
         }
 
         * {
@@ -72,13 +55,12 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--pure-white);
-            background: var(--primary-dark);
+            color: var(--text-primary);
+            background: var(--bg-primary);
             overflow-x: hidden;
-            position: relative;
         }
 
-        /* Advanced Chemistry Background */
+        /* Subtle background pattern */
         body::before {
             content: '';
             position: fixed;
@@ -87,114 +69,10 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 30%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(57, 255, 20, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 40% 80%, rgba(0, 255, 65, 0.06) 0%, transparent 50%),
-                linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 50%, var(--tertiary-dark) 100%);
-            z-index: -2;
-        }
-
-        /* Chemical Formula Background */
-        body::after {
-            content: 'C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP';
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotate(-15deg);
-            font-family: 'Orbitron', monospace;
-            font-size: 12rem;
-            color: rgba(0, 255, 136, 0.03);
-            font-weight: 300;
+                radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.02) 0%, transparent 50%);
             z-index: -1;
-            white-space: nowrap;
             pointer-events: none;
-        }
-
-        /* Advanced Molecular Background Animation */
-        .molecular-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-
-        .molecule {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            background: var(--accent-green);
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: float 25s infinite linear;
-            box-shadow: 0 0 10px var(--accent-green);
-        }
-
-        .molecule::before {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 30px;
-            background: linear-gradient(90deg, var(--accent-green), var(--bright-green));
-            top: -15px;
-            left: 2px;
-            opacity: 0.4;
-            transform: rotate(45deg);
-            box-shadow: 0 0 5px var(--accent-green);
-        }
-
-        .molecule::after {
-            content: '';
-            position: absolute;
-            width: 2px;
-            height: 20px;
-            background: linear-gradient(90deg, var(--neon-green), var(--accent-green));
-            top: -10px;
-            left: 2px;
-            opacity: 0.3;
-            transform: rotate(-45deg);
-            box-shadow: 0 0 5px var(--neon-green);
-        }
-
-        .molecule.carbon {
-            background: var(--medium-gray);
-            box-shadow: 0 0 15px var(--medium-gray);
-        }
-
-        .molecule.oxygen {
-            background: var(--chemical-red);
-            box-shadow: 0 0 15px var(--chemical-red);
-        }
-
-        .molecule.nitrogen {
-            background: var(--chemical-blue);
-            box-shadow: 0 0 15px var(--chemical-blue);
-        }
-
-        .molecule.hydrogen {
-            background: var(--pure-white);
-            box-shadow: 0 0 10px var(--pure-white);
-            width: 4px;
-            height: 4px;
-        }
-
-        @keyframes float {
-            0% { 
-                transform: translateY(100vh) rotate(0deg) scale(0.5); 
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.6;
-            }
-            90% {
-                opacity: 0.6;
-            }
-            100% { 
-                transform: translateY(-100px) rotate(360deg) scale(1.2); 
-                opacity: 0;
-            }
         }
 
         /* Navigation */
@@ -202,101 +80,98 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(10, 26, 10, 0.95);
+            background: rgba(10, 15, 15, 0.95);
             backdrop-filter: blur(15px);
-            border-bottom: 1px solid rgba(0, 255, 136, 0.2);
+            border-bottom: 1px solid var(--border-primary);
             z-index: 1000;
             transition: all 0.3s ease;
         }
 
         .navbar.scrolled {
-            background: rgba(10, 26, 10, 0.98);
-            box-shadow: var(--shadow-green);
-            border-bottom: 1px solid var(--accent-green);
+            background: rgba(10, 15, 15, 0.98);
+            border-bottom: 1px solid var(--border-hover);
         }
 
         .nav-container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 80px;
+            height: 70px;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.25rem;
             font-weight: 700;
-            color: var(--pure-white);
+            color: var(--accent-primary);
             text-decoration: none;
-            position: relative;
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 10px var(--accent-green);
+            transition: all 0.3s ease;
         }
 
-        .logo::before {
-            content: '🧪';
-            margin-right: 0.5rem;
-            font-size: 1.5rem;
-            animation: pulse 2s infinite;
-        }
-
-        .logo::after {
-            content: '';
-            position: absolute;
-            bottom: -3px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--gradient-accent);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover::after {
-            transform: scaleX(1);
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+        .logo:hover {
+            text-shadow: 0 0 10px var(--accent-primary);
         }
 
         .nav-links {
             display: flex;
             list-style: none;
-            gap: 2.5rem;
+            gap: 2rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--pure-white);
+            color: var(--text-secondary);
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 0.875rem;
             transition: all 0.3s ease;
             position: relative;
-            padding: 0.5rem 0;
-        }
-
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-accent);
-            transition: width 0.3s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-green);
-            text-shadow: 0 0 10px var(--accent-green);
+            color: var(--accent-primary);
         }
 
-        .nav-links a:hover::before {
-            width: 100%;
+        .nav-cta {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 0.5rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-secondary);
+            transform: translateY(-1px);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid var(--border-primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--bg-card);
+            border-color: var(--border-hover);
         }
 
         .mobile-menu {
@@ -307,12 +182,11 @@
         }
 
         .mobile-menu span {
-            width: 30px;
-            height: 3px;
-            background: var(--accent-green);
-            margin: 4px 0;
+            width: 25px;
+            height: 2px;
+            background: var(--text-secondary);
+            margin: 3px 0;
             transition: 0.3s;
-            box-shadow: 0 0 5px var(--accent-green);
         }
 
         /* Hero Section */
@@ -321,325 +195,349 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            text-align: center;
-            position: relative;
-            background: var(--gradient-primary);
             padding: 2rem;
+            background: var(--bg-primary);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
         }
 
         .hero-content {
-            max-width: 900px;
-            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .status-avatar {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .status-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            background: var(--accent-primary);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .status-text {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+        }
+
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.875rem;
+            font-weight: 300;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            max-width: 500px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-lg {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-link {
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--bg-card-hover);
+            border-color: var(--border-hover);
+            color: var(--accent-primary);
         }
 
         .hero-image {
-            width: 250px;
-            height: 250px;
-            border-radius: 50%;
-            margin: 0 auto 2rem;
-            border: 4px solid var(--accent-green);
-            box-shadow: 
-                var(--shadow-neon),
-                inset 0 0 20px rgba(0, 255, 136, 0.1);
-            overflow: hidden;
-            position: relative;
-            animation: heroGlow 3s ease-in-out infinite alternate;
-        }
-
-        .hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-            filter: brightness(1.1) contrast(1.1);
-        }
-
-        .hero-image:hover img {
-            transform: scale(1.05);
-        }
-
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            right: -8px;
-            bottom: -8px;
-            border-radius: 50%;
-            background: var(--gradient-accent);
-            z-index: -1;
-            animation: rotate 10s linear infinite;
-        }
-
-        @keyframes heroGlow {
-            0% { box-shadow: var(--shadow-neon), inset 0 0 20px rgba(0, 255, 136, 0.1); }
-            100% { box-shadow: 0 0 40px rgba(57, 255, 20, 0.6), inset 0 0 30px rgba(0, 255, 136, 0.2); }
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--pure-white);
-            line-height: 1.2;
-            text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
-            font-family: 'Orbitron', monospace;
-        }
-
-        .hero .subtitle {
-            font-size: 1.8rem;
-            color: var(--accent-green);
-            margin-bottom: 1.5rem;
-            font-weight: 600;
-            text-shadow: 0 0 15px var(--accent-green);
-            font-family: 'Orbitron', monospace;
-        }
-
-        .hero .description {
-            font-size: 1.2rem;
-            color: var(--light-gray);
-            margin-bottom: 2.5rem;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            line-height: 1.8;
-        }
-
-        .chemical-formula-hero {
-            font-family: 'JetBrains Mono', monospace;
-            background: rgba(0, 255, 136, 0.1);
-            padding: 1rem 2rem;
-            border-radius: 15px;
-            border: 1px solid var(--accent-green);
-            margin: 2rem auto;
-            font-size: 1.1rem;
-            color: var(--accent-green);
-            text-shadow: 0 0 10px var(--accent-green);
-            box-shadow: var(--shadow-green);
-            max-width: 600px;
-        }
-
-        .cta-buttons {
             display: flex;
-            gap: 1.5rem;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 3rem;
         }
 
-        .btn {
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.7rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-family: 'Orbitron', monospace;
+        .image-container {
             position: relative;
-            overflow: hidden;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
+            max-width: 400px;
         }
 
-        .btn:hover::before {
-            left: 100%;
+        .image-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: all 0.5s ease;
         }
 
-        .btn-primary {
-            background: var(--gradient-accent);
-            color: var(--primary-dark);
-            box-shadow: var(--shadow-green);
-            border: 2px solid var(--accent-green);
+        .image-card:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-glow);
         }
 
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--shadow-neon);
-            text-shadow: 0 0 10px var(--primary-dark);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--accent-green);
-            border: 2px solid var(--accent-green);
-            box-shadow: inset 0 0 20px rgba(0, 255, 136, 0.1);
-        }
-
-        .btn-outline:hover {
-            background: var(--accent-green);
-            color: var(--primary-dark);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: var(--shadow-neon);
+        .image-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            display: block;
         }
 
         /* Sections */
         .section {
-            padding: 6rem 0;
-            max-width: 1400px;
+            padding: 5rem 2rem;
+            max-width: 1200px;
             margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-            position: relative;
-        }
-
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
         }
 
         .section-title {
-            font-size: 3rem;
+            font-size: 2.5rem;
             font-weight: 700;
             text-align: center;
-            margin-bottom: 4rem;
-            color: var(--pure-white);
-            position: relative;
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 20px var(--accent-green);
+            margin-bottom: 3rem;
+            color: var(--text-primary);
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-            box-shadow: 0 0 10px var(--accent-green);
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 3rem;
         }
 
         /* About Section */
-        .about-content {
+        .about-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 5rem;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
             align-items: center;
         }
 
-        .about-image {
-            position: relative;
+        .about-images {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
         }
 
-        .about-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: var(--shadow-dark);
-            border: 2px solid var(--accent-green);
-            transition: all 0.3s ease;
-            filter: brightness(1.1) contrast(1.1);
-        }
-
-        .about-image:hover img {
-            transform: scale(1.02);
-            box-shadow: var(--shadow-neon);
-        }
-
-        .about-image::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border-radius: 25px;
-            background: var(--gradient-glow);
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .about-image:hover::before {
-            opacity: 1;
-        }
-
-        .about-text h3 {
-            font-size: 2.2rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-green);
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 15px var(--accent-green);
-        }
-
-        .about-text p {
-            margin-bottom: 1.8rem;
-            color: var(--light-gray);
-            line-height: 1.9;
-            font-size: 1.1rem;
-        }
-
-        .molecular-formula {
-            font-family: 'JetBrains Mono', monospace;
-            background: rgba(0, 255, 136, 0.1);
+        .about-image-main {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 1rem;
             padding: 1.5rem;
-            border-radius: 15px;
-            border-left: 4px solid var(--accent-green);
-            margin: 2rem 0;
-            font-size: 1rem;
-            color: var(--accent-green);
-            box-shadow: var(--shadow-green);
-            position: relative;
+            transition: all 0.3s ease;
         }
 
-        .molecular-formula::before {
-            content: '⚗️';
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
+        .about-image-main:hover {
+            border-color: var(--border-hover);
+        }
+
+        .about-image-main img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .about-images-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .about-image-small {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .about-image-small:hover {
+            border-color: var(--border-hover);
+        }
+
+        .about-image-small img {
+            width: 100%;
+            height: auto;
+            border-radius: 0.5rem;
+        }
+
+        .about-badges {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+
+        .badge {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-align: center;
+            border: 1px solid var(--border-primary);
+            background: var(--bg-card);
+            color: var(--text-secondary);
+        }
+
+        .badge-primary {
+            border-color: var(--border-hover);
+            color: var(--accent-primary);
+            background: rgba(0, 255, 255, 0.1);
+        }
+
+        .about-content h3 {
             font-size: 1.5rem;
-            opacity: 0.7;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
         }
 
-        .molecular-formula small {
-            display: block;
-            margin-top: 0.5rem;
-            color: var(--medium-gray);
-            font-style: italic;
+        .about-content p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .education-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .education-card h4 {
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .education-card h4 i {
+            color: var(--accent-primary);
+        }
+
+        .education-details h5 {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-meta {
+            color: var(--text-muted);
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: var(--border-hover);
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.875rem;
         }
 
         /* Skills Section */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .skill-card {
-            background: rgba(26, 46, 26, 0.8);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-dark);
-            border: 1px solid rgba(0, 255, 136, 0.2);
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 1rem;
+            padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
-            backdrop-filter: blur(10px);
         }
 
         .skill-card::before {
@@ -648,63 +546,38 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 4px;
-            background: var(--gradient-accent);
-        }
-
-        .skill-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--gradient-accent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            height: 3px;
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
         }
 
         .skill-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: var(--shadow-neon);
-            border-color: var(--accent-green);
-        }
-
-        .skill-card:hover::after {
-            opacity: 1;
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-card);
         }
 
         .skill-icon {
-            font-size: 3rem;
-            color: var(--accent-green);
-            margin-bottom: 1.5rem;
-            text-shadow: 0 0 15px var(--accent-green);
-            animation: iconFloat 3s ease-in-out infinite;
-        }
-
-        @keyframes iconFloat {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-5px); }
+            font-size: 2.5rem;
+            color: var(--accent-primary);
+            margin-bottom: 1rem;
         }
 
         .skill-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
             margin-bottom: 1rem;
-            color: var(--pure-white);
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
 
         .skill-card p {
-            color: var(--light-gray);
-            line-height: 1.7;
-            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
 
         /* Experience Section */
         .experience-timeline {
             position: relative;
-            padding-left: 3rem;
+            padding-left: 2rem;
         }
 
         .experience-timeline::before {
@@ -713,79 +586,68 @@
             left: 0;
             top: 0;
             bottom: 0;
-            width: 3px;
-            background: var(--gradient-accent);
-            border-radius: 2px;
-            box-shadow: 0 0 10px var(--accent-green);
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent-primary), var(--accent-secondary));
         }
 
         .experience-item {
             position: relative;
-            margin-bottom: 4rem;
-            background: rgba(26, 46, 26, 0.8);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-dark);
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            backdrop-filter: blur(10px);
+            margin-bottom: 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 1rem;
+            padding: 2rem;
             transition: all 0.3s ease;
         }
 
         .experience-item::before {
             content: '';
             position: absolute;
-            left: -3.2rem;
-            top: 2.5rem;
-            width: 15px;
-            height: 15px;
-            background: var(--accent-green);
+            left: -2.5rem;
+            top: 2rem;
+            width: 12px;
+            height: 12px;
+            background: var(--accent-primary);
             border-radius: 50%;
-            border: 4px solid var(--primary-dark);
-            box-shadow: 0 0 15px var(--accent-green);
-            animation: pulse 2s infinite;
+            border: 3px solid var(--bg-primary);
+            box-shadow: 0 0 10px var(--accent-primary);
         }
 
         .experience-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-neon);
-            border-color: var(--accent-green);
+            border-color: var(--border-hover);
+            transform: translateX(5px);
         }
 
         .experience-date {
-            color: var(--accent-green);
+            color: var(--accent-primary);
             font-weight: 600;
-            font-size: 1rem;
+            font-size: 0.875rem;
             margin-bottom: 0.5rem;
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 10px var(--accent-green);
         }
 
         .experience-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--pure-white);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
             margin-bottom: 0.5rem;
-            font-family: 'Orbitron', monospace;
         }
 
         .experience-company {
-            color: var(--bright-green);
+            color: var(--accent-secondary);
             font-weight: 500;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-
-        .experience-item p {
-            color: var(--light-gray);
-            line-height: 1.8;
             margin-bottom: 1rem;
         }
 
+        .experience-description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
         /* Contact Section */
-        .contact-content {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 5rem;
+            gap: 3rem;
         }
 
         .contact-info {
@@ -794,201 +656,182 @@
             gap: 2rem;
         }
 
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            padding: 2rem;
-            background: rgba(26, 46, 26, 0.8);
-            border-radius: 20px;
-            box-shadow: var(--shadow-dark);
-            border: 1px solid rgba(0, 255, 136, 0.2);
+            gap: 1rem;
+            padding: 1.5rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 0.75rem;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            text-decoration: none;
+            color: inherit;
         }
 
         .contact-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-neon);
-            border-color: var(--accent-green);
+            border-color: var(--border-hover);
+            transform: translateY(-2px);
         }
 
         .contact-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-accent);
+            width: 3rem;
+            height: 3rem;
+            background: var(--accent-primary);
+            color: var(--bg-primary);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-dark);
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-green);
-            animation: iconPulse 2s ease-in-out infinite;
+            font-size: 1.125rem;
         }
 
-        @keyframes iconPulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+        .contact-details h4 {
+            color: var(--text-primary);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
         }
 
-        .contact-item h4 {
-            color: var(--accent-green);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-            font-family: 'Orbitron', monospace;
-        }
-
-        .contact-item p {
-            color: var(--light-gray);
-            font-size: 1rem;
+        .contact-details p {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin: 0;
         }
 
         .contact-form {
-            background: rgba(26, 46, 26, 0.8);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: var(--shadow-dark);
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            backdrop-filter: blur(10px);
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 1rem;
+            padding: 2rem;
+        }
+
+        .contact-form h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 1.5rem;
         }
 
         .form-group {
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 0.8rem;
-            font-weight: 600;
-            color: var(--accent-green);
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 5px var(--accent-green);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
         }
 
         .form-group input,
         .form-group textarea {
             width: 100%;
-            padding: 15px 20px;
-            border: 2px solid rgba(0, 255, 136, 0.3);
-            border-radius: 15px;
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-primary);
+            border-radius: 0.5rem;
             font-size: 1rem;
             transition: all 0.3s ease;
             font-family: inherit;
-            background: rgba(10, 26, 10, 0.8);
-            color: var(--pure-white);
-            backdrop-filter: blur(5px);
+            background: var(--bg-primary);
+            color: var(--text-primary);
         }
 
         .form-group input::placeholder,
         .form-group textarea::placeholder {
-            color: var(--medium-gray);
+            color: var(--text-muted);
         }
 
         .form-group input:focus,
         .form-group textarea:focus {
             outline: none;
-            border-color: var(--accent-green);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-            background: rgba(10, 26, 10, 0.9);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
         }
 
         .form-group textarea {
             resize: vertical;
-            min-height: 150px;
+            min-height: 120px;
         }
 
         /* Footer */
         .footer {
-            background: var(--primary-dark);
-            color: var(--pure-white);
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-primary);
+            padding: 3rem 2rem 2rem;
             text-align: center;
-            padding: 4rem 0;
-            border-top: 1px solid rgba(0, 255, 136, 0.2);
-            position: relative;
-        }
-
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 1px;
-            background: var(--gradient-accent);
         }
 
         .footer-content {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
         }
 
         .footer h3 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-            color: var(--accent-green);
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 15px var(--accent-green);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
         }
 
         .footer p {
-            color: var(--light-gray);
+            color: var(--text-secondary);
             margin-bottom: 2rem;
-            font-size: 1.1rem;
         }
 
-        .social-links {
+        .footer-social {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            gap: 1rem;
+            margin-bottom: 2rem;
         }
 
-        .social-link {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary-dark);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.5rem;
-            box-shadow: var(--shadow-green);
+        .footer-social .social-link {
+            background: var(--accent-primary);
+            color: var(--bg-primary);
         }
 
-        .social-link:hover {
-            background: var(--bright-green);
-            transform: translateY(-5px) scale(1.1);
-            box-shadow: var(--shadow-neon);
+        .footer-social .social-link:hover {
+            background: var(--accent-secondary);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(0, 255, 136, 0.2);
+            border-top: 1px solid var(--border-primary);
             padding-top: 2rem;
             margin-top: 2rem;
-        }
-
-        .footer-bottom p {
-            color: var(--medium-gray);
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            color: var(--text-muted);
+            font-size: 0.875rem;
         }
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .about-content,
-            .contact-content {
+            .hero-container,
+            .about-grid,
+            .contact-grid {
                 grid-template-columns: 1fr;
-                gap: 3rem;
+                gap: 2rem;
+            }
+
+            .hero-image {
+                order: -1;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links {
+            .nav-links,
+            .nav-cta {
                 display: none;
             }
 
@@ -996,66 +839,44 @@
                 display: flex;
             }
 
-            .hero h1 {
-                font-size: 2.8rem;
+            .hero-title {
+                font-size: 2.5rem;
             }
 
-            .hero .subtitle {
-                font-size: 1.4rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
+            .hero-subtitle {
+                font-size: 1.5rem;
             }
 
             .section {
-                padding: 4rem 0;
-                padding-left: 1rem;
-                padding-right: 1rem;
+                padding: 3rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
             }
 
             .skills-grid {
                 grid-template-columns: 1fr;
             }
 
-            .experience-timeline {
-                padding-left: 2rem;
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
 
-            body::after {
-                font-size: 6rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-image {
-                width: 200px;
-                height: 200px;
+            .about-images-grid {
+                grid-template-columns: 1fr;
             }
 
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero .subtitle {
-                font-size: 1.2rem;
-            }
-
-            .section-title {
-                font-size: 1.8rem;
+            .hero-actions {
+                flex-direction: column;
             }
         }
 
-        /* Scroll animations */
+        /* Animations */
         .fade-in {
             opacity: 0;
-            transform: translateY(50px);
-            transition: all 0.8s ease;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
         }
 
         .fade-in.visible {
@@ -1063,42 +884,20 @@
             transform: translateY(0);
         }
 
-        .slide-in-left {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-in-left.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        .slide-in-right {
-            opacity: 0;
-            transform: translateX(50px);
-            transition: all 0.8s ease;
-        }
-
-        .slide-in-right.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Loading animation */
+        /* Loading Screen */
         .loading {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--primary-dark);
+            background: var(--bg-primary);
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             z-index: 9999;
-            transition: opacity 0.8s ease;
+            transition: opacity 0.5s ease;
         }
 
         .loading.hidden {
@@ -1107,22 +906,18 @@
         }
 
         .loader {
-            width: 80px;
-            height: 80px;
-            border: 4px solid rgba(0, 255, 136, 0.2);
-            border-top: 4px solid var(--accent-green);
+            width: 50px;
+            height: 50px;
+            border: 3px solid var(--border-primary);
+            border-top: 3px solid var(--accent-primary);
             border-radius: 50%;
-            animation: spin 1.5s linear infinite;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 20px var(--accent-green);
+            animation: spin 1s linear infinite;
+            margin-bottom: 1rem;
         }
 
         .loading-text {
-            color: var(--accent-green);
-            font-size: 1.2rem;
-            font-family: 'Orbitron', monospace;
-            text-shadow: 0 0 10px var(--accent-green);
-            animation: pulse 2s ease-in-out infinite;
+            color: var(--accent-primary);
+            font-weight: 500;
         }
 
         @keyframes spin {
@@ -1132,38 +927,20 @@
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 12px;
+            width: 8px;
         }
 
         ::-webkit-scrollbar-track {
-            background: var(--primary-dark);
-            border-radius: 6px;
+            background: var(--bg-secondary);
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--gradient-accent);
-            border-radius: 6px;
-            box-shadow: 0 0 10px var(--accent-green);
+            background: var(--accent-primary);
+            border-radius: 4px;
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: var(--bright-green);
-            box-shadow: 0 0 15px var(--bright-green);
-        }
-
-        /* Accessibility */
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        /* Focus styles for accessibility */
-        *:focus {
-            outline: 2px solid var(--accent-green);
-            outline-offset: 2px;
+            background: var(--accent-secondary);
         }
     </style>
 </head>
@@ -1171,11 +948,8 @@
     <!-- Loading Screen -->
     <div class="loading" id="loading">
         <div class="loader"></div>
-        <div class="loading-text">Initializing Laboratory Systems...</div>
+        <div class="loading-text">Loading Laboratory Portfolio...</div>
     </div>
-
-    <!-- Molecular Background -->
-    <div class="molecular-bg" id="molecularBg"></div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -1183,10 +957,21 @@
             <a href="#" class="logo">Abdellah Recham</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
-                <li><a href="#skills">Expertise</a></li>
                 <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="nav-cta">
+                <a href="#" class="btn btn-outline" onclick="downloadResume()">
+                    <i class="fas fa-download"></i>
+                    Resume
+                </a>
+                <a href="#contact" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i>
+                    Contact
+                </a>
+            </div>
             <div class="mobile-menu" id="mobileMenu">
                 <span></span>
                 <span></span>
@@ -1197,61 +982,129 @@
 
     <!-- Hero Section -->
     <section class="hero" id="hero">
-        <div class="hero-content fade-in">
+        <div class="hero-container fade-in">
+            <!-- Left Content -->
+            <div class="hero-content">
+                <!-- Status Indicator -->
+                <div class="status-indicator">
+                    <div class="status-avatar">
+                        <div class="status-dot"></div>
+                    </div>
+                    <span class="status-text">Available for Opportunities</span>
+                </div>
+
+                <!-- Main Content -->
+                <div>
+                    <h1 class="hero-title">Abdellah Recham</h1>
+                    <h2 class="hero-subtitle">Laboratory Technician</h2>
+                    <p class="hero-description">
+                        Bachelor's degree holder in Fundamental Chemistry with hands-on experience in medical laboratory analysis, specializing in biochemistry and hematology.
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <i class="fas fa-envelope"></i>
+                        Get In Touch
+                    </a>
+                    <a href="#" class="btn btn-outline btn-lg" onclick="downloadResume()">
+                        <i class="fas fa-eye"></i>
+                        View Resume
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/abdellah-recham" class="social-link" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="mailto:abdellah.recham@email.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+213XXXXXXXXX" class="social-link">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Image -->
             <div class="hero-image">
-                <img src="public/images/abdellah-professional.png" alt="Abdellah Recham - Professional Laboratory Technician">
-            </div>
-            <h1>Abdellah Recham</h1>
-            <p class="subtitle">Laboratory Technician & Molecular Chemistry Specialist</p>
-            <p class="description">
-                Expert in advanced molecular analysis, petroleum chemistry diagnostics, and precision analytical techniques. 
-                Dedicated to delivering accurate results through cutting-edge instrumentation and rigorous quality protocols.
-            </p>
-            <div class="chemical-formula-hero">
-                C₈H₁₈ + 12.5O₂ → 8CO₂ + 9H₂O + Energy<br>
-                <small>Octane Combustion Analysis - Petroleum Chemistry Expertise</small>
-            </div>
-            <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">
-                    <i class="fas fa-flask"></i>
-                    Start Collaboration
-                </a>
-                <a href="#" class="btn btn-outline" onclick="downloadResume()">
-                    <i class="fas fa-download"></i>
-                    Download Resume
-                </a>
+                <div class="image-container">
+                    <div class="image-card">
+                        <img src="public/images/abdellah-professional.png" alt="Abdellah Recham - Professional Portrait">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section class="section" id="about">
-        <h2 class="section-title fade-in">Laboratory Excellence</h2>
-        <div class="about-content">
-            <div class="about-image slide-in-left">
-                <img src="public/images/abdellah-lab-work.png" alt="Abdellah Recham conducting molecular analysis">
-            </div>
-            <div class="about-text slide-in-right">
-                <h3>Precision in Molecular Analysis</h3>
-                <p>
-                    As a dedicated Laboratory Technician specializing in molecular chemistry and petroleum analysis, 
-                    I bring precision, innovation, and scientific rigor to every analytical challenge. My expertise 
-                    spans advanced chromatographic techniques, spectroscopic analysis, and quality assurance protocols.
-                </p>
-                <p>
-                    With extensive experience in HPLC, GC-MS, and UV-Vis spectroscopy, I ensure accurate molecular 
-                    characterization and compound identification. My work contributes to critical decision-making 
-                    processes in industrial, research, and diagnostic environments.
-                </p>
-                <div class="molecular-formula">
-                    C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
-                    <small>Glucose Metabolism Analysis - Biochemical Diagnostics</small>
+        <h2 class="section-title fade-in">About Me</h2>
+        <p class="section-subtitle fade-in">
+            Passionate about applying scientific knowledge and analytical skills in laboratory environments
+        </p>
+
+        <div class="about-grid">
+            <!-- Images -->
+            <div class="about-images fade-in">
+                <div class="about-image-main">
+                    <img src="public/images/abdellah-lab-work.png" alt="Abdellah in laboratory setting">
                 </div>
+                <div class="about-images-grid">
+                    <div class="about-image-small">
+                        <img src="public/images/abdellah-lab-portrait.png" alt="Laboratory work">
+                    </div>
+                    <div class="about-badges">
+                        <div class="badge badge-primary">6 Months Experience</div>
+                        <div class="badge">Chemistry Graduate</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="about-content fade-in">
+                <h3>Professional Background</h3>
                 <p>
-                    My commitment extends beyond technical proficiency to include continuous professional development, 
-                    adherence to safety protocols, and collaborative problem-solving in dynamic laboratory settings. 
-                    I specialize in method development, validation, and regulatory compliance.
+                    As a dedicated Laboratory Technician with a Bachelor's degree in Fundamental Chemistry, I bring a strong foundation in analytical and physical chemistry, combined with practical experience in medical laboratory analysis.
                 </p>
+                <p>
+                    My expertise spans biochemistry and hematology, with hands-on experience in conducting clinical diagnostics, operating analytical instruments, and ensuring accurate data reporting in healthcare settings.
+                </p>
+
+                <div class="education-card">
+                    <h4>
+                        <i class="fas fa-graduation-cap"></i>
+                        Education
+                    </h4>
+                    <div class="education-details">
+                        <h5>Bachelor's in Fundamental Chemistry</h5>
+                        <div class="education-meta">
+                            <i class="fas fa-map-marker-alt"></i>
+                            University of Bouira Akli Mohand Oulhadj
+                        </div>
+                        <div class="education-meta">
+                            <i class="fas fa-calendar"></i>
+                            2020 - 2024
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">6+</div>
+                        <div class="stat-label">Months Experience</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Languages</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Years Study</div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1264,150 +1117,165 @@
                 <div class="skill-icon">
                     <i class="fas fa-microscope"></i>
                 </div>
-                <h3>Advanced Analytical Chemistry</h3>
-                <p>Expert proficiency in HPLC, GC-MS, FTIR, and UV-Vis spectroscopy for precise molecular analysis, compound identification, and quantitative determination of chemical species.</p>
-            </div>
-            <div class="skill-card fade-in">
-                <div class="skill-icon">
-                    <i class="fas fa-oil-can"></i>
-                </div>
-                <h3>Petroleum Chemistry Analysis</h3>
-                <p>Specialized expertise in hydrocarbon analysis, fuel quality assessment, octane rating determination, distillation curves, and petroleum product characterization.</p>
+                <h3>Analytical Chemistry</h3>
+                <p>Advanced proficiency in HPLC, GC-MS, UV-Vis spectroscopy, and chromatographic techniques for precise molecular analysis and compound identification.</p>
             </div>
             <div class="skill-card fade-in">
                 <div class="skill-icon">
                     <i class="fas fa-flask"></i>
                 </div>
                 <h3>Laboratory Diagnostics</h3>
-                <p>Comprehensive experience in diagnostic testing, sample preparation protocols, quality control systems, and laboratory safety management with regulatory compliance.</p>
+                <p>Comprehensive experience in diagnostic testing, sample preparation, quality control protocols, and laboratory safety management.</p>
             </div>
             <div class="skill-card fade-in">
                 <div class="skill-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
-                <h3>Data Analysis & Validation</h3>
-                <p>Proficient in statistical analysis, method validation, result interpretation, uncertainty calculation, and technical report preparation for regulatory submissions.</p>
+                <h3>Data Analysis</h3>
+                <p>Proficient in statistical analysis, method validation, result interpretation, and technical report preparation for regulatory compliance.</p>
             </div>
             <div class="skill-card fade-in">
                 <div class="skill-icon">
                     <i class="fas fa-cogs"></i>
                 </div>
-                <h3>Instrumentation Expertise</h3>
-                <p>Expert operation, maintenance, and troubleshooting of analytical instruments including mass spectrometers, chromatographs, and spectrophotometers.</p>
+                <h3>Instrumentation</h3>
+                <p>Expert operation and maintenance of analytical instruments including mass spectrometers, chromatographs, and spectrophotometers.</p>
             </div>
             <div class="skill-card fade-in">
                 <div class="skill-icon">
                     <i class="fas fa-shield-alt"></i>
                 </div>
-                <h3>Quality Assurance Systems</h3>
-                <p>Implementation of QA/QC protocols, method development, calibration procedures, and compliance with ISO 17025 and international laboratory standards.</p>
+                <h3>Quality Assurance</h3>
+                <p>Implementation of QA/QC protocols, method development, calibration procedures, and compliance with international laboratory standards.</p>
+            </div>
+            <div class="skill-card fade-in">
+                <div class="skill-icon">
+                    <i class="fas fa-vial"></i>
+                </div>
+                <h3>Biochemistry & Hematology</h3>
+                <p>Specialized expertise in biochemical analysis, blood chemistry, hematological testing, and clinical laboratory procedures.</p>
             </div>
         </div>
     </section>
 
     <!-- Experience Section -->
     <section class="section" id="experience">
-        <h2 class="section-title fade-in">Professional Journey</h2>
+        <h2 class="section-title fade-in">Professional Experience</h2>
         <div class="experience-timeline">
             <div class="experience-item fade-in">
                 <div class="experience-date">2020 - 2024</div>
                 <h3 class="experience-title">Bachelor's in Fundamental Chemistry</h3>
                 <div class="experience-company">University of Bouira Akli Mohand Oulhadj</div>
-                <p>Comprehensive study of molecular structures, chemical bonds, and analytical chemistry. Developed strong problem-solving skills and scientific methodology applicable across various industrial settings, including energy and petrochemical sectors.</p>
-                <div class="molecular-formula">
-                    Key Focus: CH₄ + 2O₂ → CO₂ + 2H₂O (Combustion Analysis)
-                    <small>Specialized in hydrocarbon chemistry and petroleum analysis</small>
-                </div>
+                <p class="experience-description">
+                    Comprehensive study of analytical and physical chemistry, molecular structures, and chemical processes. Developed strong foundation in laboratory techniques, scientific methodology, and analytical problem-solving applicable to various industrial and research environments.
+                </p>
             </div>
             <div class="experience-item fade-in">
                 <div class="experience-date">6 Months Experience</div>
                 <h3 class="experience-title">Medical Laboratory Technician</h3>
-                <div class="experience-company">Ain Bessem Hospital</div>
-                <p>Conducted advanced molecular biochemistry and hematology analyses as part of clinical diagnostics team. Operated analytical instruments, performed chemical sample preparations with precision, and ensured accurate molecular diagnostics reporting.</p>
-                <div class="molecular-formula">
-                    Clinical Analysis: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
-                    <small>Glucose metabolism and biochemical pathway analysis</small>
-                </div>
-                <p>Maintained stringent quality control standards in chemical laboratory procedures, ensuring compliance with medical diagnostic protocols and patient safety requirements.</p>
+                <div class="experience-company">Healthcare Laboratory</div>
+                <p class="experience-description">
+                    Conducted advanced biochemistry and hematology analyses in clinical laboratory setting. Operated analytical instruments, performed sample preparations, and ensured accurate diagnostic reporting while maintaining strict quality control standards and safety protocols.
+                </p>
             </div>
             <div class="experience-item fade-in">
-                <div class="experience-date">Ongoing Development</div>
-                <h3 class="experience-title">Continuous Professional Growth</h3>
-                <div class="experience-company">Self-Directed Learning & Certification</div>
-                <p>Actively pursuing advanced certifications in analytical chemistry, petroleum analysis, and laboratory management. Staying current with emerging technologies in molecular diagnostics and analytical instrumentation.</p>
+                <div class="experience-date">Ongoing</div>
+                <h3 class="experience-title">Professional Development</h3>
+                <div class="experience-company">Continuous Learning</div>
+                <p class="experience-description">
+                    Actively pursuing advanced certifications in analytical chemistry and laboratory management. Staying current with emerging technologies in molecular diagnostics and analytical instrumentation.
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section class="section" id="contact">
-        <h2 class="section-title fade-in">Laboratory Collaboration</h2>
-        <div class="contact-content">
-            <div class="contact-info slide-in-left">
-                <div class="contact-item">
+        <h2 class="section-title fade-in">Get In Touch</h2>
+        <p class="section-subtitle fade-in">
+            Ready to discuss opportunities in laboratory analysis, medical diagnostics, or research collaboration? Let's connect and explore how my expertise can contribute to your team.
+        </p>
+
+        <div class="contact-grid">
+            <!-- Contact Information -->
+            <div class="contact-info fade-in">
+                <h3>Contact Information</h3>
+                <p>
+                    I'm always interested in new opportunities and collaborations. Whether you have a question about my experience or want to discuss a potential role, feel free to reach out.
+                </p>
+
+                <a href="mailto:abdellah.recham@email.com" class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-envelope"></i>
                     </div>
-                    <div>
-                        <h4>Professional Email</h4>
+                    <div class="contact-details">
+                        <h4>Email</h4>
                         <p>abdellah.recham@email.com</p>
                     </div>
-                </div>
-                <div class="contact-item">
+                </a>
+
+                <a href="tel:+213XXXXXXXXX" class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-phone"></i>
                     </div>
-                    <div>
-                        <h4>Direct Contact</h4>
+                    <div class="contact-details">
+                        <h4>Phone</h4>
                         <p>+213 XXX XXX XXX</p>
                     </div>
-                </div>
-                <div class="contact-item">
+                </a>
+
+                <a href="https://maps.google.com/?q=Bouira,Algeria" target="_blank" class="contact-item">
                     <div class="contact-icon">
                         <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div>
-                        <h4>Laboratory Location</h4>
+                    <div class="contact-details">
+                        <h4>Location</h4>
                         <p>Bouira, Algeria</p>
                     </div>
-                </div>
-                <div class="contact-item">
+                </a>
+
+                <a href="https://linkedin.com/in/abdellah-recham" target="_blank" class="contact-item">
                     <div class="contact-icon">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-linkedin-in"></i>
                     </div>
-                    <div>
-                        <h4>Professional Network</h4>
+                    <div class="contact-details">
+                        <h4>LinkedIn</h4>
                         <p>linkedin.com/in/abdellah-recham</p>
                     </div>
-                </div>
-                <div class="molecular-formula">
-                    Available for: Full-time • Part-time • Consulting • Research Collaboration
-                    <small>Specializing in petroleum chemistry and molecular diagnostics</small>
-                </div>
-            </div>
-            <form class="contact-form slide-in-right" id="contactForm">
-                <h3 style="color: var(--accent-green); margin-bottom: 1.5rem; font-family: 'Orbitron', monospace;">Initiate Collaboration</h3>
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="Your professional name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="your.email@company.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Project Subject</label>
-                    <input type="text" id="subject" name="subject" placeholder="Laboratory analysis project" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Project Details</label>
-                    <textarea id="message" name="message" placeholder="Describe your analytical requirements, project scope, and collaboration objectives..." required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i>
-                    Send Collaboration Request
+                </a>
+
+                <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1rem;" onclick="downloadResume()">
+                    <i class="fas fa-download"></i>
+                    Download Resume
                 </button>
-            </form>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form fade-in">
+                <h3>Send a Message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" placeholder="What's this about?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" placeholder="Tell me about your project or opportunity..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
         </div>
     </section>
 
@@ -1415,12 +1283,9 @@
     <footer class="footer">
         <div class="footer-content">
             <h3>Abdellah Recham</h3>
-            <p>Laboratory Technician | Molecular Chemistry Specialist | Petroleum Analysis Expert</p>
-            <div class="molecular-formula">
-                C₆H₆ + 3H₂ → C₆H₁₂ (Benzene Hydrogenation - Industrial Chemistry)
-                <small>Committed to advancing analytical chemistry and molecular diagnostics</small>
-            </div>
-            <div class="social-links">
+            <p>Laboratory Technician | Chemistry Specialist | Medical Analysis Expert</p>
+            
+            <div class="footer-social">
                 <a href="https://linkedin.com/in/abdellah-recham" class="social-link" target="_blank">
                     <i class="fab fa-linkedin-in"></i>
                 </a>
@@ -1430,68 +1295,43 @@
                 <a href="mailto:abdellah.recham@email.com" class="social-link">
                     <i class="fas fa-envelope"></i>
                 </a>
-                <a href="#" class="social-link">
-                    <i class="fas fa-flask"></i>
+                <a href="tel:+213XXXXXXXXX" class="social-link">
+                    <i class="fas fa-phone"></i>
                 </a>
             </div>
+            
             <div class="footer-bottom">
                 <p>&copy; 2024 Abdellah Recham. All rights reserved.</p>
-                <p>Professional Laboratory Services | Molecular Analysis | Quality Assurance</p>
-                <p>Built with precision and scientific excellence 🧪</p>
+                <p>Professional Laboratory Services | Quality Analysis | Scientific Excellence</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         // Loading Screen
         window.addEventListener('load', function() {
             setTimeout(() => {
                 document.getElementById('loading').classList.add('hidden');
-            }, 2000);
+            }, 1500);
         });
 
-        // Advanced Molecular Background Animation
-        function createAdvancedMolecules() {
-            const bg = document.getElementById('molecularBg');
-            const moleculeCount = 80;
-            const moleculeTypes = ['', 'carbon', 'oxygen', 'nitrogen', 'hydrogen'];
-
-            for (let i = 0; i < moleculeCount; i++) {
-                const molecule = document.createElement('div');
-                const randomType = moleculeTypes[Math.floor(Math.random() * moleculeTypes.length)];
-                molecule.className = `molecule ${randomType}`;
-                molecule.style.left = Math.random() * 100 + '%';
-                molecule.style.animationDelay = Math.random() * 25 + 's';
-                molecule.style.animationDuration = (Math.random() * 15 + 20) + 's';
-                
-                // Add random size variation
-                const size = Math.random() * 4 + 4;
-                molecule.style.width = size + 'px';
-                molecule.style.height = size + 'px';
-                
-                bg.appendChild(molecule);
-            }
-        }
-
-        // Enhanced Navbar Scroll Effect
+        // Navbar Scroll Effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
-            if (window.scrollY > 100) {
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
         });
 
-        // Smooth Scrolling with offset for fixed navbar
+        // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 80;
+                    const offsetTop = target.offsetTop - 70;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
@@ -1500,7 +1340,7 @@
             });
         });
 
-        // Advanced Scroll Animations
+        // Fade In Animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -1514,12 +1354,11 @@
             });
         }, observerOptions);
 
-        // Observe all animation elements
-        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+        document.querySelectorAll('.fade-in').forEach(el => {
             observer.observe(el);
         });
 
-        // Enhanced Contact Form with Chemistry Theme
+        // Contact Form
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1527,7 +1366,7 @@
             const originalText = button.innerHTML;
             
             // Show processing state
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing Analysis...';
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
             button.disabled = true;
             
             // Get form data
@@ -1537,44 +1376,11 @@
             // Simulate form submission
             setTimeout(() => {
                 // Show success state
-                button.innerHTML = '<i class="fas fa-check"></i> Analysis Complete!';
-                button.style.background = 'var(--forest-green)';
+                button.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+                button.style.background = 'var(--accent-secondary)';
                 
-                // Show success message
-                const successMessage = document.createElement('div');
-                successMessage.style.cssText = `
-                    position: fixed;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background: rgba(26, 46, 26, 0.95);
-                    color: var(--accent-green);
-                    padding: 2rem;
-                    border-radius: 15px;
-                    border: 2px solid var(--accent-green);
-                    box-shadow: var(--shadow-neon);
-                    z-index: 10000;
-                    text-align: center;
-                    font-family: 'Orbitron', monospace;
-                    backdrop-filter: blur(10px);
-                `;
-                successMessage.innerHTML = `
-                    <h3 style="margin-bottom: 1rem;">🧪 Laboratory Message Received!</h3>
-                    <p>Thank you ${data.name}! Your collaboration request has been processed.</p>
-                    <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--medium-gray);">
-                        Response time: 24-48 hours | Priority: High
-                    </p>
-                    <div style="margin-top: 1rem; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: var(--accent-green);">
-                        C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O (Message Processed)
-                    </div>
-                `;
-                
-                document.body.appendChild(successMessage);
-                
-                // Remove success message after 5 seconds
-                setTimeout(() => {
-                    successMessage.remove();
-                }, 5000);
+                // Show success notification
+                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
                 
                 // Reset form and button
                 this.reset();
@@ -1589,151 +1395,102 @@
 
         // Mobile Menu Toggle
         document.getElementById('mobileMenu').addEventListener('click', function() {
-            const navLinks = document.querySelector('.nav-links');
-            const spans = this.querySelectorAll('span');
-            
-            if (navLinks.style.display === 'flex') {
-                navLinks.style.display = 'none';
-                spans.forEach(span => span.style.transform = '');
-            } else {
-                navLinks.style.display = 'flex';
-                navLinks.style.flexDirection = 'column';
-                navLinks.style.position = 'absolute';
-                navLinks.style.top = '80px';
-                navLinks.style.left = '0';
-                navLinks.style.width = '100%';
-                navLinks.style.background = 'rgba(10, 26, 10, 0.98)';
-                navLinks.style.padding = '2rem';
-                navLinks.style.borderTop = '1px solid var(--accent-green)';
-                
-                // Animate hamburger to X
-                spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-                spans[1].style.opacity = '0';
-                spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
-            }
+            // Mobile menu functionality would go here
+            console.log('Mobile menu clicked');
         });
 
-        // Enhanced Resume Download Function
+        // Resume Download Function
         function downloadResume() {
             const resumeContent = `
-🧪 ABDELLAH RECHAM 🧪
-Laboratory Technician & Molecular Chemistry Specialist
+ABDELLAH RECHAM
+Laboratory Technician & Chemistry Specialist
 ═══════════════════════════════════════════════════════════════
 
-PROFESSIONAL CONTACT INFORMATION
+CONTACT INFORMATION
 📧 Email: abdellah.recham@email.com
 📱 Phone: +213 XXX XXX XXX
 📍 Location: Bouira, Algeria
 💼 LinkedIn: linkedin.com/in/abdellah-recham
 🌐 Portfolio: https://abdellahre.github.io/testc
 
-MOLECULAR CHEMISTRY EXPERTISE SUMMARY
+PROFESSIONAL SUMMARY
 ═══════════════════════════════════════════════════════════════
-Dedicated Laboratory Technician with specialized expertise in molecular 
-chemistry, petroleum analysis, and advanced analytical techniques. 
-Bachelor's degree in Fundamental Chemistry with hands-on experience in 
-medical laboratory diagnostics. Expert in HPLC, GC-MS, spectroscopy, 
-and quality assurance protocols. Passionate about applying molecular 
-science in industrial and research environments.
+Dedicated Laboratory Technician with a Bachelor's degree in Fundamental 
+Chemistry and hands-on experience in medical laboratory analysis. 
+Specialized in biochemistry and hematology with expertise in analytical 
+instruments, quality control protocols, and clinical diagnostics.
 
-CHEMICAL ANALYSIS SPECIALIZATIONS
-═══════════════════════════════════════════════════════════════
-• Petroleum Chemistry: C₈H₁₈ + 12.5O₂ → 8CO₂ + 9H₂O + Energy
-• Biochemical Analysis: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
-• Organic Synthesis: C₆H₆ + Br₂ → C₆H₅Br + HBr
-• Combustion Analysis: CH₄ + 2O₂ → CO₂ + 2H₂O
-
-EDUCATION & PROFESSIONAL FOUNDATION
+EDUCATION
 ═══════════════════════════════════════════════════════════════
 🎓 University of Bouira Akli Mohand Oulhadj
    Bachelor's in Fundamental Chemistry | 2020-2024
    
-   ⚛️ Advanced molecular structures and chemical bond analysis
-   🧪 Complex organic and inorganic chemistry
-   📊 Laboratory techniques and analytical instrumentation
-   🔬 Scientific methodology and problem-solving
-   🛢️ Petroleum chemistry and hydrocarbon analysis
+   • Advanced analytical and physical chemistry
+   • Laboratory techniques and instrumentation
+   • Scientific methodology and problem-solving
+   • Quality control and safety protocols
 
-PROFESSIONAL LABORATORY EXPERIENCE
+PROFESSIONAL EXPERIENCE
 ═══════════════════════════════════════════════════════════════
-🏥 Ain Bessem Hospital
-   Medical Laboratory Technician | 6 Months
+🏥 Medical Laboratory Technician | 6 Months
+   Healthcare Laboratory
    
-   🔬 Advanced molecular biochemistry and hematology analyses
-   ⚗️ Analytical instrument operation and sample preparation
-   📋 Quality control protocols and diagnostic reporting
-   🛡️ Laboratory safety and regulatory compliance
-   📊 Data analysis and result interpretation
+   • Conducted biochemistry and hematology analyses
+   • Operated analytical instruments and equipment
+   • Performed sample preparation and processing
+   • Ensured accurate diagnostic reporting
+   • Maintained quality control standards
+   • Followed laboratory safety protocols
 
-TECHNICAL COMPETENCIES
+CORE COMPETENCIES
 ═══════════════════════════════════════════════════════════════
-🔬 Analytical Techniques:
+🔬 Analytical Chemistry:
    • HPLC (High-Performance Liquid Chromatography)
    • GC-MS (Gas Chromatography-Mass Spectrometry)
    • UV-Vis Spectroscopy
-   • FTIR (Fourier Transform Infrared Spectroscopy)
-   • Chromatographic separations
+   • Chromatographic techniques
    
-🛢️ Petroleum Analysis:
-   • Hydrocarbon characterization
-   • Fuel quality assessment
-   • Octane rating determination
-   • Distillation curve analysis
+🧪 Laboratory Diagnostics:
+   • Biochemistry analysis
+   • Hematology testing
+   • Sample preparation
+   • Quality control protocols
    
-💻 Laboratory Software & Data Analysis:
-   • ChemStation software
+📊 Data Analysis:
    • Statistical analysis
    • Method validation
-   • Technical reporting 
-   • ChemStation software
-   • Statistical analysis
-   • Method validation
+   • Result interpretation
    • Technical reporting
+   
+⚙️ Instrumentation:
+   • Mass spectrometers
+   • Chromatographs
+   • Spectrophotometers
+   • Laboratory equipment maintenance
 
-🌍 PROFESSIONAL LANGUAGES
+LANGUAGES
 ═══════════════════════════════════════════════════════════════
-• Arabic (Native) - ●●●●● Complete fluency
-• English (Intermediate) - ●●●○○ Technical proficiency
-• French (Intermediate) - ●●●○○ Professional communication
-
-CORE LABORATORY SKILLS
-═══════════════════════════════════════════════════════════════
-⚛️ Molecular Structure Analysis
-🧪 Chemical Bond Characterization
-📊 Quantitative Analysis
-🔬 Sample Preparation Protocols
-🛡️ Quality Assurance Systems
-📋 Regulatory Compliance (ISO 17025)
-⚗️ Method Development & Validation
-🧬 Biochemical Pathway Analysis
+• Arabic (Native) - Complete fluency
+• English (Intermediate) - Technical proficiency
+• French (Intermediate) - Professional communication
 
 PROFESSIONAL OBJECTIVES
 ═══════════════════════════════════════════════════════════════
-Seeking opportunities to apply advanced molecular chemistry expertise in:
-• Petroleum industry chemical analysis and quality control
-• Medical laboratory diagnostics and biochemical analysis
-• Research institutions focusing on molecular structure studies
-• Industrial laboratories requiring analytical chemistry expertise
-• Environmental analysis and chemical monitoring
+Seeking opportunities to apply analytical chemistry expertise in:
+• Medical laboratory diagnostics and analysis
+• Research institutions and pharmaceutical companies
+• Quality control and assurance roles
+• Industrial laboratories and testing facilities
+• Environmental analysis and monitoring
 
-AVAILABILITY & COLLABORATION
+AVAILABILITY
 ═══════════════════════════════════════════════════════════════
 ✅ Full-time laboratory positions
 ✅ Part-time analytical projects
 ✅ Research collaboration opportunities
 ✅ Consulting services for chemical analysis
-✅ Method development and validation projects
-
-PROFESSIONAL PHILOSOPHY
-═══════════════════════════════════════════════════════════════
-"Precision in analysis, excellence in results. Every molecule tells 
-a story, every chemical reaction reveals fundamental truths about 
-matter and energy. I am committed to advancing analytical chemistry 
-through rigorous methodology, continuous learning, and innovative 
-problem-solving approaches."
 
 ═══════════════════════════════════════════════════════════════
-Generated with Advanced Laboratory Portfolio System 🧪
 © 2024 Abdellah Recham - Professional Laboratory Services
 Contact: abdellah.recham@email.com | +213 XXX XXX XXX
 ═══════════════════════════════════════════════════════════════
@@ -1744,115 +1501,70 @@ Contact: abdellah.recham@email.com | +213 XXX XXX XXX
             const url = window.URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Abdellah_Recham_Laboratory_Chemistry_Resume.txt';
+            a.download = 'Abdellah_Recham_Laboratory_Resume.txt';
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             window.URL.revokeObjectURL(url);
 
-            // Show download notification
+            showNotification('Resume downloaded successfully!', 'success');
+        }
+
+        // Notification System
+        function showNotification(message, type = 'info') {
             const notification = document.createElement('div');
             notification.style.cssText = `
                 position: fixed;
                 top: 20px;
                 right: 20px;
-                background: rgba(26, 46, 26, 0.95);
-                color: var(--accent-green);
-                padding: 1.5rem;
-                border-radius: 15px;
-                border: 2px solid var(--accent-green);
-                box-shadow: var(--shadow-neon);
+                background: var(--bg-card);
+                border: 1px solid var(--border-hover);
+                color: var(--text-primary);
+                padding: 1rem 1.5rem;
+                border-radius: 0.5rem;
+                box-shadow: var(--shadow-card);
                 z-index: 10000;
-                font-family: 'Orbitron', monospace;
-                backdrop-filter: blur(10px);
-                animation: slideInRight 0.5s ease;
+                font-weight: 500;
+                animation: slideIn 0.3s ease;
             `;
+            
+            if (type === 'success') {
+                notification.style.borderColor = 'var(--accent-primary)';
+                notification.style.background = 'rgba(0, 255, 255, 0.1)';
+            }
+            
             notification.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <i class="fas fa-download" style="font-size: 1.5rem;"></i>
-                    <div>
-                        <h4 style="margin: 0; color: var(--accent-green);">Resume Downloaded!</h4>
-                        <p style="margin: 0; font-size: 0.9rem; color: var(--medium-gray);">Laboratory chemistry expertise ready</p>
-                    </div>
+                <div style="display: flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}" style="color: var(--accent-primary);"></i>
+                    ${message}
                 </div>
             `;
             
             document.body.appendChild(notification);
             
             setTimeout(() => {
-                notification.style.animation = 'slideOutRight 0.5s ease';
-                setTimeout(() => notification.remove(), 500);
+                notification.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notification.remove(), 300);
             }, 4000);
         }
 
-        // Parallax effect for hero section
-        window.addEventListener('scroll', function() {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        // Add CSS animations for notifications
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideIn {
+                from { transform: translateX(100%); opacity: 0; }
+                to { transform: translateX(0); opacity: 1; }
             }
-        });
-
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            createAdvancedMolecules();
-            
-            // Add CSS animations for notifications
-            const style = document.createElement('style');
-            style.textContent = `
-                @keyframes slideInRight {
-                    from { transform: translateX(100%); opacity: 0; }
-                    to { transform: translateX(0); opacity: 1; }
-                }
-                @keyframes slideOutRight {
-                    from { transform: translateX(0); opacity: 1; }
-                    to { transform: translateX(100%); opacity: 0; }
-                }
-            `;
-            document.head.appendChild(style);
-        });
-
-        // Enhanced typing effect for subtitle
-        function typeWriter(element, text, speed = 100) {
-            let i = 0;
-            element.innerHTML = '';
-            
-            function type() {
-                if (i < text.length) {
-                    element.innerHTML += text.charAt(i);
-                    i++;
-                    setTimeout(type, speed);
-                } else {
-                    // Add blinking cursor effect
-                    element.style.borderRight = '3px solid var(--accent-green)';
-                    element.style.animation = 'blink 1s infinite';
-                }
-            }
-            type();
-        }
-
-        // Initialize typing effect after loading
-        setTimeout(() => {
-            const subtitle = document.querySelector('.hero .subtitle');
-            if (subtitle) {
-                typeWriter(subtitle, 'Laboratory Technician & Molecular Chemistry Specialist', 80);
-            }
-        }, 2500);
-
-        // Add blink animation for cursor
-        const blinkStyle = document.createElement('style');
-        blinkStyle.textContent = `
-            @keyframes blink {
-                0%, 50% { border-color: var(--accent-green); }
-                51%, 100% { border-color: transparent; }
+            @keyframes slideOut {
+                from { transform: translateX(0); opacity: 1; }
+                to { transform: translateX(100%); opacity: 0; }
             }
         `;
-        document.head.appendChild(blinkStyle);
+        document.head.appendChild(style);
 
-        console.log('🧪 Advanced Dark Green Chemistry Portfolio Loaded Successfully!');
-        console.log('Molecular Formula: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP');
-        console.log('Laboratory Status: Ready for Analysis | Precision: Maximum | Innovation: Unlimited');
+        console.log('🧪 Dark Teal Laboratory Portfolio Loaded Successfully!');
+        console.log('Theme: Professional Dark with Teal Accents');
+        console.log('Status: Ready for Professional Opportunities');
     </script>
 </body>
 </html>
