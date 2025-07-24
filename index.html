@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abdellah Recham - Laboratory Technician | Molecular Chemistry Portfolio</title>
-    <meta name="description" content="Professional portfolio of Abdellah Recham, Laboratory Technician specializing in biochemistry, hematology, and molecular analysis. Expert in chemical structures and laboratory diagnostics.">
+    <title>Abdellah Recham - Laboratory Technician | Advanced Molecular Chemistry Portfolio</title>
+    <meta name="description" content="Professional portfolio of Abdellah Recham, Laboratory Technician specializing in biochemistry, hematology, and advanced molecular analysis. Expert in chemical structures and laboratory diagnostics.">
     <meta name="keywords" content="laboratory technician, biochemistry, hematology, molecular chemistry, chemical analysis, petroleum industry, chemistry, Abdellah Recham, Bouira">
     <meta name="author" content="Abdellah Recham">
     
     <!-- Open Graph meta tags -->
-    <meta property="og:title" content="Abdellah Recham - Molecular Chemistry Portfolio">
+    <meta property="og:title" content="Abdellah Recham - Advanced Molecular Chemistry Portfolio">
     <meta property="og:description" content="Professional portfolio showcasing expertise in molecular analysis, biochemistry, and laboratory diagnostics.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://abdellahre.github.io/testc">
+    <meta property="og:image" content="/images/abdellah-professional.png">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
@@ -20,7 +21,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -31,6 +32,7 @@
                     fontFamily: {
                         'inter': ['Inter', 'sans-serif'],
                         'mono': ['JetBrains Mono', 'monospace'],
+                        'orbitron': ['Orbitron', 'monospace'],
                     },
                     colors: {
                         'molecule': {
@@ -80,37 +82,76 @@
                             700: '#0369a1',
                             800: '#075985',
                             900: '#0c4a6e',
+                        },
+                        'hydrogen': {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#14532d',
                         }
                     },
                     animation: {
-                        'molecule-float': 'moleculeFloat 8s ease-in-out infinite',
-                        'atom-orbit': 'atomOrbit 4s linear infinite',
-                        'electron-spin': 'electronSpin 2s linear infinite',
-                        'bond-pulse': 'bondPulse 3s ease-in-out infinite',
-                        'chemical-reaction': 'chemicalReaction 6s ease-in-out infinite',
+                        'molecule-float': 'moleculeFloat 12s ease-in-out infinite',
+                        'atom-orbit': 'atomOrbit 6s linear infinite',
+                        'electron-spin': 'electronSpin 3s linear infinite',
+                        'bond-pulse': 'bondPulse 4s ease-in-out infinite',
+                        'chemical-reaction': 'chemicalReaction 8s ease-in-out infinite',
+                        'dna-helix': 'dnaHelix 10s linear infinite',
+                        'molecular-vibration': 'molecularVibration 2s ease-in-out infinite',
+                        'periodic-glow': 'periodicGlow 3s ease-in-out infinite',
+                        'formula-typing': 'formulaTyping 4s ease-in-out infinite',
                     },
                     keyframes: {
                         moleculeFloat: {
-                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
-                            '33%': { transform: 'translateY(-20px) rotate(120deg)' },
-                            '66%': { transform: 'translateY(-10px) rotate(240deg)' },
+                            '0%, 100%': { transform: 'translateY(0px) rotate(0deg) scale(1)' },
+                            '25%': { transform: 'translateY(-30px) rotate(90deg) scale(1.1)' },
+                            '50%': { transform: 'translateY(-20px) rotate(180deg) scale(0.9)' },
+                            '75%': { transform: 'translateY(-40px) rotate(270deg) scale(1.05)' },
                         },
                         atomOrbit: {
-                            '0%': { transform: 'rotate(0deg) translateX(30px) rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg) translateX(30px) rotate(-360deg)' },
+                            '0%': { transform: 'rotate(0deg) translateX(40px) rotate(0deg)' },
+                            '100%': { transform: 'rotate(360deg) translateX(40px) rotate(-360deg)' },
                         },
                         electronSpin: {
-                            '0%': { transform: 'rotate(0deg)' },
-                            '100%': { transform: 'rotate(360deg)' },
+                            '0%': { transform: 'rotate(0deg) scale(1)' },
+                            '50%': { transform: 'rotate(180deg) scale(1.2)' },
+                            '100%': { transform: 'rotate(360deg) scale(1)' },
                         },
                         bondPulse: {
-                            '0%, 100%': { opacity: 0.6, transform: 'scale(1)' },
-                            '50%': { opacity: 1, transform: 'scale(1.1)' },
+                            '0%, 100%': { opacity: 0.4, transform: 'scale(1) scaleX(1)' },
+                            '50%': { opacity: 1, transform: 'scale(1.1) scaleX(1.3)' },
                         },
                         chemicalReaction: {
-                            '0%': { transform: 'translateX(-100px) scale(0.8)', opacity: 0.5 },
-                            '50%': { transform: 'translateX(0px) scale(1)', opacity: 1 },
-                            '100%': { transform: 'translateX(100px) scale(0.8)', opacity: 0.5 },
+                            '0%': { transform: 'translateX(-150px) scale(0.6)', opacity: 0.3 },
+                            '25%': { transform: 'translateX(-50px) scale(0.9)', opacity: 0.8 },
+                            '50%': { transform: 'translateX(0px) scale(1.2)', opacity: 1 },
+                            '75%': { transform: 'translateX(50px) scale(0.9)', opacity: 0.8 },
+                            '100%': { transform: 'translateX(150px) scale(0.6)', opacity: 0.3 },
+                        },
+                        dnaHelix: {
+                            '0%': { transform: 'rotateY(0deg) rotateX(0deg)' },
+                            '100%': { transform: 'rotateY(360deg) rotateX(360deg)' },
+                        },
+                        molecularVibration: {
+                            '0%, 100%': { transform: 'translateX(0px) translateY(0px)' },
+                            '25%': { transform: 'translateX(2px) translateY(-2px)' },
+                            '50%': { transform: 'translateX(-2px) translateY(2px)' },
+                            '75%': { transform: 'translateX(2px) translateY(2px)' },
+                        },
+                        periodicGlow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(14, 165, 233, 0.5)' },
+                            '50%': { boxShadow: '0 0 40px rgba(14, 165, 233, 1), 0 0 60px rgba(16, 185, 129, 0.5)' },
+                        },
+                        formulaTyping: {
+                            '0%': { width: '0%' },
+                            '50%': { width: '100%' },
+                            '100%': { width: '0%' },
                         }
                     }
                 }
@@ -125,7 +166,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* Molecular Theme Styles */
+        /* Advanced Molecular Theme Styles */
         * {
             margin: 0;
             padding: 0;
@@ -134,15 +175,15 @@
         
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #1e293b 75%, #0f172a 100%);
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 15%, #334155 35%, #475569 50%, #334155 65%, #1e293b 85%, #0f172a 100%);
             background-size: 400% 400%;
-            animation: gradientShift 20s ease infinite;
+            animation: gradientShift 25s ease infinite;
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
         }
         
-        /* Molecular Background Pattern */
+        /* Advanced Molecular Background Pattern */
         body::before {
             content: '';
             position: fixed;
@@ -151,106 +192,239 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(239, 68, 68, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 40% 60%, rgba(16, 185, 129, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 15% 25%, rgba(14, 165, 233, 0.15) 0%, transparent 60%),
+                radial-gradient(circle at 85% 75%, rgba(239, 68, 68, 0.12) 0%, transparent 55%),
+                radial-gradient(circle at 45% 65%, rgba(34, 197, 94, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 75% 25%, rgba(168, 85, 247, 0.08) 0%, transparent 45%),
+                linear-gradient(45deg, transparent 40%, rgba(14, 165, 233, 0.03) 50%, transparent 60%);
             z-index: -2;
+        }
+        
+        /* Chemical Formula Background */
+        body::after {
+            content: 'C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-family: 'Orbitron', monospace;
+            font-size: 8rem;
+            color: rgba(14, 165, 233, 0.03);
+            font-weight: 300;
+            z-index: -1;
+            white-space: nowrap;
+            pointer-events: none;
         }
         
         @keyframes gradientShift {
             0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+            25% { background-position: 100% 25%; }
+            50% { background-position: 100% 75%; }
+            75% { background-position: 0% 75%; }
             100% { background-position: 0% 50%; }
         }
         
-        /* Molecular Structure Animations */
+        /* Advanced Molecular Structure Animations */
         .molecule-container {
             position: relative;
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
             margin: 0 auto;
         }
         
         .atom {
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: bold;
             color: white;
-            text-shadow: 0 0 10px currentColor;
+            text-shadow: 0 0 15px currentColor;
+            font-family: 'Orbitron', monospace;
+            animation: molecularVibration 2s ease-in-out infinite;
         }
         
         .atom-carbon {
-            background: radial-gradient(circle, #64748b, #334155);
-            box-shadow: 0 0 20px rgba(100, 116, 139, 0.6);
+            background: radial-gradient(circle, #64748b, #334155, #1e293b);
+            box-shadow: 
+                0 0 25px rgba(100, 116, 139, 0.8),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(100, 116, 139, 0.6);
         }
         
         .atom-oxygen {
-            background: radial-gradient(circle, #ef4444, #dc2626);
-            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+            background: radial-gradient(circle, #ef4444, #dc2626, #b91c1c);
+            box-shadow: 
+                0 0 25px rgba(239, 68, 68, 0.8),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(239, 68, 68, 0.6);
         }
         
         .atom-nitrogen {
-            background: radial-gradient(circle, #0ea5e9, #0284c7);
-            box-shadow: 0 0 20px rgba(14, 165, 233, 0.6);
+            background: radial-gradient(circle, #0ea5e9, #0284c7, #0369a1);
+            box-shadow: 
+                0 0 25px rgba(14, 165, 233, 0.8),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(14, 165, 233, 0.6);
         }
         
         .atom-hydrogen {
-            background: radial-gradient(circle, #10b981, #059669);
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
-            width: 15px;
-            height: 15px;
-            font-size: 8px;
+            background: radial-gradient(circle, #22c55e, #16a34a, #15803d);
+            box-shadow: 
+                0 0 25px rgba(34, 197, 94, 0.8),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(34, 197, 94, 0.6);
+            width: 18px;
+            height: 18px;
+            font-size: 9px;
+        }
+        
+        .atom-phosphorus {
+            background: radial-gradient(circle, #f59e0b, #d97706, #b45309);
+            box-shadow: 
+                0 0 25px rgba(245, 158, 11, 0.8),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(245, 158, 11, 0.6);
+        }
+        
+        .atom-sulfur {
+            background: radial-gradient(circle, #eab308, #ca8a04, #a16207);
+            box-shadow: 
+                0 0 25px rgba(234, 179, 8, 0.8),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(234, 179, 8, 0.6);
         }
         
         .chemical-bond {
             position: absolute;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
-            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), rgba(14, 165, 233, 0.6), rgba(255, 255, 255, 0.8), transparent);
+            height: 3px;
             transform-origin: left center;
-            animation: bondPulse 3s ease-in-out infinite;
+            animation: bondPulse 4s ease-in-out infinite;
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+        }
+        
+        .double-bond {
+            height: 2px;
+            margin-bottom: 2px;
+        }
+        
+        .triple-bond {
+            height: 1px;
+            margin-bottom: 1px;
         }
         
         .electron-orbit {
             position: absolute;
-            border: 1px solid rgba(14, 165, 233, 0.3);
+            border: 2px solid rgba(14, 165, 233, 0.4);
             border-radius: 50%;
-            animation: electronSpin 4s linear infinite;
+            animation: electronSpin 6s linear infinite;
+            border-style: dashed;
         }
         
         .electron {
             position: absolute;
-            width: 4px;
-            height: 4px;
-            background: #0ea5e9;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #0ea5e9, #0284c7);
             border-radius: 50%;
-            box-shadow: 0 0 10px #0ea5e9;
-            animation: atomOrbit 2s linear infinite;
+            box-shadow: 0 0 15px #0ea5e9;
+            animation: atomOrbit 3s linear infinite;
+        }
+        
+        /* Periodic Table Element */
+        .periodic-element {
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(14, 165, 233, 0.6);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: rgba(14, 165, 233, 0.1);
+            backdrop-filter: blur(10px);
+            font-family: 'Orbitron', monospace;
+            animation: periodicGlow 3s ease-in-out infinite;
+            transition: all 0.3s ease;
+        }
+        
+        .periodic-element:hover {
+            transform: scale(1.1);
+            background: rgba(14, 165, 233, 0.2);
+            border-color: rgba(14, 165, 233, 1);
+        }
+        
+        .element-symbol {
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+        }
+        
+        .element-number {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* DNA Helix Structure */
+        .dna-helix {
+            width: 100px;
+            height: 200px;
+            position: relative;
+            animation: dnaHelix 10s linear infinite;
+        }
+        
+        .dna-strand {
+            position: absolute;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #0ea5e9, #22c55e, #ef4444, #f59e0b);
+            border-radius: 2px;
+        }
+        
+        .dna-strand:first-child {
+            left: 20px;
+            transform: rotateY(0deg);
+        }
+        
+        .dna-strand:last-child {
+            right: 20px;
+            transform: rotateY(180deg);
+        }
+        
+        .dna-base {
+            position: absolute;
+            width: 60px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.6);
+            left: 20px;
         }
         
         /* Enhanced Glass Effects */
         .glass-effect {
             background: rgba(255, 255, 255, 0.08);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             border: 1px solid rgba(255, 255, 255, 0.15);
             box-shadow: 
                 0 8px 32px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 20px rgba(14, 165, 233, 0.1);
         }
         
         .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
             box-shadow: 
-                0 8px 32px rgba(0, 0, 0, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                0 8px 32px rgba(0, 0, 0, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1),
+                0 0 30px rgba(14, 165, 233, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -262,8 +436,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            transition: left 0.5s ease;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+            transition: left 0.6s ease;
         }
         
         .glass-card:hover::before {
@@ -271,29 +445,62 @@
         }
         
         .glass-card:hover {
-            transform: translateY(-8px) scale(1.02);
+            transform: translateY(-10px) scale(1.03);
             box-shadow: 
-                0 20px 60px rgba(14, 165, 233, 0.2),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            border-color: rgba(14, 165, 233, 0.3);
+                0 25px 70px rgba(14, 165, 233, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 0 50px rgba(14, 165, 233, 0.3);
+            border-color: rgba(14, 165, 233, 0.4);
         }
         
-        /* Molecular Gradient Text */
+        /* Advanced Molecular Gradient Text */
         .molecular-gradient {
-            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 25%, #ef4444 50%, #8b5cf6 75%, #0ea5e9 100%);
-            background-size: 300% 300%;
-            animation: gradientShift 8s ease infinite;
+            background: linear-gradient(135deg, 
+                #0ea5e9 0%, 
+                #22c55e 20%, 
+                #ef4444 40%, 
+                #f59e0b 60%, 
+                #8b5cf6 80%, 
+                #0ea5e9 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 10s ease infinite;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-family: 'Orbitron', monospace;
+        }
+        
+        /* Chemical Formula Display */
+        .chemical-formula {
+            font-family: 'Orbitron', monospace;
+            font-weight: 500;
+            color: rgba(14, 165, 233, 0.8);
+            text-shadow: 0 0 10px rgba(14, 165, 233, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .chemical-formula::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: rgba(14, 165, 233, 0.2);
+            animation: formulaTyping 4s ease-in-out infinite;
         }
         
         /* Enhanced Skill Bars with Molecular Theme */
         .skill-bar {
-            transition: width 2.5s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: width 3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
-            border-radius: 10px;
+            border-radius: 12px;
+            background: linear-gradient(90deg, 
+                rgba(14, 165, 233, 0.8), 
+                rgba(34, 197, 94, 0.8), 
+                rgba(239, 68, 68, 0.8));
         }
         
         .skill-bar::after {
@@ -303,8 +510,26 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            animation: shimmer 2s infinite;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            animation: shimmer 3s infinite;
+        }
+        
+        .skill-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, 
+                transparent 25%, 
+                rgba(255, 255, 255, 0.1) 25%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                transparent 50%, 
+                transparent 75%, 
+                rgba(255, 255, 255, 0.1) 75%);
+            background-size: 20px 20px;
+            animation: molecularPattern 2s linear infinite;
         }
         
         @keyframes shimmer {
@@ -312,7 +537,12 @@
             100% { left: 100%; }
         }
         
-        /* Molecular Particles */
+        @keyframes molecularPattern {
+            0% { background-position: 0 0; }
+            100% { background-position: 20px 20px; }
+        }
+        
+        /* Advanced Molecular Particles */
         .molecular-particles {
             position: fixed;
             top: 0;
@@ -330,46 +560,58 @@
         }
         
         .particle-carbon {
-            width: 8px;
-            height: 8px;
+            width: 10px;
+            height: 10px;
             background: radial-gradient(circle, #64748b, #334155);
-            box-shadow: 0 0 15px rgba(100, 116, 139, 0.6);
-            animation: moleculeFloat 20s linear infinite;
-        }
-        
-        .particle-oxygen {
-            width: 6px;
-            height: 6px;
-            background: radial-gradient(circle, #ef4444, #dc2626);
-            box-shadow: 0 0 15px rgba(239, 68, 68, 0.6);
+            box-shadow: 0 0 20px rgba(100, 116, 139, 0.8);
             animation: moleculeFloat 25s linear infinite;
         }
         
+        .particle-oxygen {
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #ef4444, #dc2626);
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.8);
+            animation: moleculeFloat 30s linear infinite;
+        }
+        
         .particle-nitrogen {
-            width: 7px;
-            height: 7px;
+            width: 9px;
+            height: 9px;
             background: radial-gradient(circle, #0ea5e9, #0284c7);
-            box-shadow: 0 0 15px rgba(14, 165, 233, 0.6);
-            animation: moleculeFloat 18s linear infinite;
+            box-shadow: 0 0 20px rgba(14, 165, 233, 0.8);
+            animation: moleculeFloat 22s linear infinite;
         }
         
         .particle-hydrogen {
-            width: 4px;
-            height: 4px;
-            background: radial-gradient(circle, #10b981, #059669);
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
-            animation: moleculeFloat 15s linear infinite;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #22c55e, #16a34a);
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.8);
+            animation: moleculeFloat 18s linear infinite;
+        }
+        
+        .particle-phosphorus {
+            width: 7px;
+            height: 7px;
+            background: radial-gradient(circle, #f59e0b, #d97706);
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.8);
+            animation: moleculeFloat 28s linear infinite;
         }
         
         /* Enhanced Button Styles */
         .btn-molecular {
-            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 50%, #0ea5e9 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease infinite;
             box-shadow: 
                 0 4px 15px rgba(14, 165, 233, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 0 20px rgba(14, 165, 233, 0.2);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            border: 1px solid rgba(14, 165, 233, 0.3);
         }
         
         .btn-molecular::before {
@@ -379,8 +621,8 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.5s ease;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
         }
         
         .btn-molecular:hover::before {
@@ -388,17 +630,18 @@
         }
         
         .btn-molecular:hover {
-            transform: translateY(-2px);
+            transform: translateY(-3px) scale(1.05);
             box-shadow: 
-                0 8px 25px rgba(14, 165, 233, 0.6),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+                0 10px 30px rgba(14, 165, 233, 0.6),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 0 40px rgba(14, 165, 233, 0.4);
         }
         
         .btn-outline-molecular {
             border: 2px solid;
-            border-image: linear-gradient(135deg, #0ea5e9, #10b981) 1;
+            border-image: linear-gradient(135deg, #0ea5e9, #22c55e, #ef4444) 1;
             background: transparent;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
@@ -410,8 +653,8 @@
             left: 0;
             width: 0;
             height: 100%;
-            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
-            transition: width 0.3s ease;
+            background: linear-gradient(135deg, #0ea5e9 0%, #22c55e 100%);
+            transition: width 0.4s ease;
             z-index: -1;
         }
         
@@ -420,32 +663,33 @@
         }
         
         .btn-outline-molecular:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);
             color: white;
         }
         
         /* Enhanced Form Styles */
         .form-input {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.06);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
             position: relative;
         }
         
         .form-input:focus {
             border-color: #0ea5e9;
             box-shadow: 
-                0 0 0 3px rgba(14, 165, 233, 0.1),
-                0 0 20px rgba(14, 165, 233, 0.2);
-            background: rgba(255, 255, 255, 0.08);
+                0 0 0 4px rgba(14, 165, 233, 0.15),
+                0 0 30px rgba(14, 165, 233, 0.3),
+                inset 0 0 20px rgba(14, 165, 233, 0.1);
+            background: rgba(255, 255, 255, 0.1);
         }
         
         /* Typing Animation */
         .typing-animation {
-            border-right: 3px solid #0ea5e9;
-            animation: blink 1.5s infinite;
+            border-right: 4px solid #0ea5e9;
+            animation: blink 2s infinite;
         }
         
         @keyframes blink {
@@ -455,17 +699,52 @@
         
         /* Loading Spinner */
         .spinner {
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            border: 4px solid rgba(255, 255, 255, 0.3);
             border-radius: 50%;
-            border-top: 3px solid #0ea5e9;
-            width: 24px;
-            height: 24px;
+            border-top: 4px solid #0ea5e9;
+            width: 28px;
+            height: 28px;
             animation: spin 1s linear infinite;
         }
         
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+        
+        /* Professional Image Styles */
+        .professional-image {
+            border-radius: 50%;
+            border: 4px solid rgba(14, 165, 233, 0.6);
+            box-shadow: 
+                0 0 30px rgba(14, 165, 233, 0.4),
+                inset 0 0 20px rgba(14, 165, 233, 0.1);
+            transition: all 0.4s ease;
+        }
+        
+        .professional-image:hover {
+            transform: scale(1.05);
+            border-color: rgba(14, 165, 233, 1);
+            box-shadow: 
+                0 0 50px rgba(14, 165, 233, 0.6),
+                inset 0 0 30px rgba(14, 165, 233, 0.2);
+        }
+        
+        .lab-image {
+            border-radius: 16px;
+            border: 2px solid rgba(14, 165, 233, 0.4);
+            box-shadow: 
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 20px rgba(14, 165, 233, 0.2);
+            transition: all 0.4s ease;
+        }
+        
+        .lab-image:hover {
+            transform: scale(1.02);
+            border-color: rgba(14, 165, 233, 0.8);
+            box-shadow: 
+                0 12px 48px rgba(0, 0, 0, 0.4),
+                0 0 40px rgba(14, 165, 233, 0.4);
         }
         
         /* Responsive Design */
@@ -479,14 +758,18 @@
             }
             
             .molecule-container {
-                width: 80px;
-                height: 80px;
+                width: 100px;
+                height: 100px;
             }
             
             .atom {
-                width: 16px;
-                height: 16px;
-                font-size: 8px;
+                width: 20px;
+                height: 20px;
+                font-size: 9px;
+            }
+            
+            body::after {
+                font-size: 4rem;
             }
         }
         
@@ -501,89 +784,71 @@
         
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 10px;
         }
         
         ::-webkit-scrollbar-track {
             background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
         }
         
         ::-webkit-scrollbar-thumb {
-            background: linear-gradient(135deg, #0ea5e9, #10b981);
-            border-radius: 4px;
+            background: linear-gradient(135deg, #0ea5e9, #22c55e);
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
         }
         
         ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(135deg, #0284c7, #059669);
-        }
-        
-        /* Placeholder Image Styles */
-        .placeholder-image {
-            background: linear-gradient(135deg, #334155 0%, #475569 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-size: 3rem;
-            border: 2px solid rgba(148, 163, 184, 0.3);
-        }
-        
-        .profile-placeholder {
-            background: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 4rem;
-            font-weight: bold;
-            text-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            background: linear-gradient(135deg, #0284c7, #16a34a);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.8);
         }
     </style>
 </head>
 <body class="text-white scroll-smooth font-inter">
-    <!-- Molecular Particle Background -->
+    <!-- Advanced Molecular Particle Background -->
     <div class="molecular-particles" id="molecular-particles"></div>
     
-    <!-- Enhanced Navigation with Molecular Theme -->
+    <!-- Enhanced Navigation with Advanced Molecular Theme -->
     <nav class="fixed top-0 w-full z-50 transition-all duration-500" id="navbar">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="text-3xl font-bold molecular-gradient flex items-center">
-                    <div class="molecule-container mr-3">
-                        <div class="atom atom-carbon" style="top: 40px; left: 40px;">C</div>
-                        <div class="atom atom-hydrogen" style="top: 20px; left: 20px;">H</div>
-                        <div class="atom atom-hydrogen" style="top: 20px; right: 20px;">H</div>
-                        <div class="atom atom-oxygen" style="bottom: 20px; left: 30px;">O</div>
+                    <div class="molecule-container mr-3" style="width: 50px; height: 50px;">
+                        <div class="atom atom-carbon" style="top: 15px; left: 15px; width: 20px; height: 20px; font-size: 10px;">C</div>
+                        <div class="atom atom-hydrogen" style="top: 5px; left: 5px; width: 12px; height: 12px; font-size: 8px;">H</div>
+                        <div class="atom atom-hydrogen" style="top: 5px; right: 5px; width: 12px; height: 12px; font-size: 8px;">H</div>
+                        <div class="atom atom-oxygen" style="bottom: 5px; left: 12px; width: 16px; height: 16px; font-size: 9px;">O</div>
+                        <div class="chemical-bond" style="top: 20px; left: 25px; width: 15px; transform: rotate(45deg);"></div>
                     </div>
                     AR
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#home" class="nav-link relative group px-4 py-2 rounded-lg transition-all duration-300">
-                        <span class="relative z-10 flex items-center">
+                        <span class="relative z-10 flex items-center font-orbitron">
                             <i class="fas fa-home mr-2"></i>Home
                         </span>
                         <span class="absolute inset-0 bg-gradient-to-r from-molecule-500 to-nitrogen-500 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
                     </a>
                     <a href="#about" class="nav-link relative group px-4 py-2 rounded-lg transition-all duration-300">
-                        <span class="relative z-10 flex items-center">
+                        <span class="relative z-10 flex items-center font-orbitron">
                             <i class="fas fa-user mr-2"></i>About
                         </span>
                         <span class="absolute inset-0 bg-gradient-to-r from-molecule-500 to-nitrogen-500 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
                     </a>
                     <a href="#experience" class="nav-link relative group px-4 py-2 rounded-lg transition-all duration-300">
-                        <span class="relative z-10 flex items-center">
+                        <span class="relative z-10 flex items-center font-orbitron">
                             <i class="fas fa-flask mr-2"></i>Experience
                         </span>
                         <span class="absolute inset-0 bg-gradient-to-r from-molecule-500 to-nitrogen-500 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
                     </a>
                     <a href="#skills" class="nav-link relative group px-4 py-2 rounded-lg transition-all duration-300">
-                        <span class="relative z-10 flex items-center">
+                        <span class="relative z-10 flex items-center font-orbitron">
                             <i class="fas fa-atom mr-2"></i>Skills
                         </span>
                         <span class="absolute inset-0 bg-gradient-to-r from-molecule-500 to-nitrogen-500 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
                     </a>
                     <a href="#contact" class="nav-link relative group px-4 py-2 rounded-lg transition-all duration-300">
-                        <span class="relative z-10 flex items-center">
+                        <span class="relative z-10 flex items-center font-orbitron">
                             <i class="fas fa-envelope mr-2"></i>Contact
                         </span>
                         <span class="absolute inset-0 bg-gradient-to-r from-molecule-500 to-nitrogen-500 opacity-0 group-hover:opacity-20 rounded-lg transition-opacity duration-300"></span>
@@ -599,58 +864,91 @@
         <!-- Enhanced Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden glass-effect border-t border-white/10">
             <div class="px-6 py-4 space-y-4">
-                <a href="#home" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                <a href="#home" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors font-orbitron">
                     <i class="fas fa-home mr-3 text-molecule-400"></i>Home
                 </a>
-                <a href="#about" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                <a href="#about" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors font-orbitron">
                     <i class="fas fa-user mr-3 text-nitrogen-400"></i>About
                 </a>
-                <a href="#experience" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                <a href="#experience" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors font-orbitron">
                     <i class="fas fa-flask mr-3 text-oxygen-400"></i>Experience
                 </a>
-                <a href="#skills" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
-                    <i class="fas fa-atom mr-3 text-green-400"></i>Skills
+                <a href="#skills" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors font-orbitron">
+                    <i class="fas fa-atom mr-3 text-hydrogen-400"></i>Skills
                 </a>
-                <a href="#contact" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors">
+                <a href="#contact" class="block py-3 px-4 rounded-lg hover:bg-white/10 transition-colors font-orbitron">
                     <i class="fas fa-envelope mr-3 text-purple-400"></i>Contact
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Enhanced Hero Section with Molecular Theme -->
+    <!-- Enhanced Hero Section with Advanced Molecular Theme -->
     <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <!-- Floating Molecular Structures -->
+        <!-- Advanced Floating Molecular Structures -->
         <div class="absolute inset-0 overflow-hidden">
-            <!-- Large Molecule Structure -->
+            <!-- Complex Organic Molecule -->
             <div class="absolute top-20 left-10 animate-molecule-float">
+                <div class="molecule-container" style="width: 160px; height: 160px;">
+                    <!-- Benzene Ring -->
+                    <div class="atom atom-carbon" style="top: 60px; left: 80px;">C</div>
+                    <div class="atom atom-carbon" style="top: 40px; left: 100px;">C</div>
+                    <div class="atom atom-carbon" style="top: 40px; left: 60px;">C</div>
+                    <div class="atom atom-carbon" style="top: 80px; left: 110px;">C</div>
+                    <div class="atom atom-carbon" style="top: 80px; left: 50px;">C</div>
+                    <div class="atom atom-carbon" style="top: 100px; left: 80px;">C</div>
+                    <!-- Functional Groups -->
+                    <div class="atom atom-oxygen" style="top: 20px; left: 100px;">O</div>
+                    <div class="atom atom-nitrogen" style="bottom: 20px; left: 80px;">N</div>
+                    <div class="atom atom-hydrogen" style="top: 10px; left: 120px;">H</div>
+                    <div class="atom atom-hydrogen" style="bottom: 10px; left: 60px;">H</div>
+                    <!-- Chemical Bonds -->
+                    <div class="chemical-bond" style="top: 50px; left: 90px; width: 20px; transform: rotate(30deg);"></div>
+                    <div class="chemical-bond" style="top: 70px; left: 70px; width: 25px; transform: rotate(-30deg);"></div>
+                    <div class="chemical-bond double-bond" style="top: 90px; left: 85px; width: 20px; transform: rotate(60deg);"></div>
+                </div>
+            </div>
+            
+            <!-- DNA Double Helix -->
+            <div class="absolute top-40 right-20 animate-molecule-float" style="animation-delay: -3s;">
+                <div class="dna-helix">
+                    <div class="dna-strand"></div>
+                    <div class="dna-strand"></div>
+                    <div class="dna-base" style="top: 20px;"></div>
+                    <div class="dna-base" style="top: 40px;"></div>
+                    <div class="dna-base" style="top: 60px;"></div>
+                    <div class="dna-base" style="top: 80px;"></div>
+                    <div class="dna-base" style="top: 100px;"></div>
+                    <div class="dna-base" style="top: 120px;"></div>
+                    <div class="dna-base" style="top: 140px;"></div>
+                    <div class="dna-base" style="top: 160px;"></div>
+                </div>
+            </div>
+            
+            <!-- Protein Structure -->
+            <div class="absolute bottom-20 left-1/4 animate-molecule-float" style="animation-delay: -6s;">
                 <div class="molecule-container" style="width: 120px; height: 120px;">
                     <div class="atom atom-carbon" style="top: 50px; left: 50px;">C</div>
-                    <div class="atom atom-oxygen" style="top: 20px; left: 30px;">O</div>
-                    <div class="atom atom-nitrogen" style="top: 80px; left: 20px;">N</div>
-                    <div class="atom atom-hydrogen" style="top: 10px; left: 70px;">H</div>
-                    <div class="atom atom-hydrogen" style="bottom: 10px; right: 10px;">H</div>
-                    <div class="chemical-bond" style="top: 35px; left: 40px; width: 30px; transform: rotate(45deg);"></div>
-                    <div class="chemical-bond" style="top: 65px; left: 35px; width: 25px; transform: rotate(-30deg);"></div>
+                    <div class="atom atom-nitrogen" style="top: 30px; left: 70px;">N</div>
+                    <div class="atom atom-oxygen" style="top: 70px; left: 30px;">O</div>
+                    <div class="atom atom-sulfur" style="bottom: 20px; right: 20px;">S</div>
+                    <div class="atom atom-phosphorus" style="top: 20px; left: 20px;">P</div>
+                    <div class="chemical-bond triple-bond" style="top: 40px; left: 60px; width: 15px; transform: rotate(45deg);"></div>
+                    <div class="chemical-bond" style="top: 60px; left: 40px; width: 20px; transform: rotate(-45deg);"></div>
                 </div>
             </div>
             
-            <!-- Medium Molecule Structure -->
-            <div class="absolute top-40 right-20 animate-molecule-float" style="animation-delay: -2s;">
-                <div class="molecule-container">
-                    <div class="atom atom-nitrogen" style="top: 40px; left: 40px;">N</div>
-                    <div class="atom atom-carbon" style="top: 20px; left: 60px;">C</div>
-                    <div class="atom atom-oxygen" style="bottom: 20px; left: 20px;">O</div>
-                    <div class="chemical-bond" style="top: 30px; left: 50px; width: 20px; transform: rotate(30deg);"></div>
-                </div>
-            </div>
-            
-            <!-- Small Molecule Structure -->
-            <div class="absolute bottom-20 left-1/4 animate-molecule-float" style="animation-delay: -4s;">
-                <div class="molecule-container" style="width: 80px; height: 80px;">
-                    <div class="atom atom-carbon" style="top: 30px; left: 30px;">C</div>
-                    <div class="atom atom-hydrogen" style="top: 10px; left: 10px;">H</div>
-                    <div class="atom atom-hydrogen" style="bottom: 10px; right: 10px;">H</div>
+            <!-- Periodic Table Elements -->
+            <div class="absolute top-60 right-40 animate-molecule-float" style="animation-delay: -2s;">
+                <div class="flex space-x-2">
+                    <div class="periodic-element">
+                        <div class="element-number">6</div>
+                        <div class="element-symbol">C</div>
+                    </div>
+                    <div class="periodic-element">
+                        <div class="element-number">8</div>
+                        <div class="element-symbol">O</div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -659,29 +957,33 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right" data-aos-duration="1000">
                     <div class="mb-6">
-                        <span class="inline-block px-6 py-3 glass-effect rounded-full text-sm font-medium border border-molecule-500/30 mb-4">
-                            ⚛️ Molecular Chemistry Expert
+                        <span class="inline-block px-6 py-3 glass-effect rounded-full text-sm font-medium border border-molecule-500/30 mb-4 font-orbitron">
+                            ⚛️ Advanced Molecular Chemistry Expert
                         </span>
                     </div>
                     <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
                         Hi, I'm <span class="molecular-gradient">Abdellah</span>
                     </h1>
-                    <h2 class="text-2xl md:text-3xl text-gray-300 mb-6 font-medium font-mono">
+                    <h2 class="text-2xl md:text-3xl text-gray-300 mb-6 font-medium font-orbitron">
                         <span id="typing-text" class="typing-animation">Laboratory Technician</span>
                     </h2>
+                    <div class="chemical-formula text-lg mb-4">
+                        C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
+                    </div>
                     <p class="text-xl text-gray-400 mb-8 leading-relaxed max-w-2xl">
-                        Passionate about <span class="text-molecule-400 font-semibold">molecular analysis</span> and 
-                        <span class="text-nitrogen-400 font-semibold">chemical structures</span>. Specializing in 
-                        <span class="text-oxygen-400 font-semibold">biochemistry</span> and 
-                        <span class="text-green-400 font-semibold">hematology</span> with expertise in laboratory diagnostics 
-                        and petroleum industry applications.
+                        Passionate about <span class="text-molecule-400 font-semibold">advanced molecular analysis</span> and 
+                        <span class="text-nitrogen-400 font-semibold">complex chemical structures</span>. Specializing in 
+                        <span class="text-oxygen-400 font-semibold">biochemistry</span>, 
+                        <span class="text-hydrogen-400 font-semibold">hematology</span>, and 
+                        <span class="text-yellow-400 font-semibold">petroleum chemistry</span> with expertise in laboratory diagnostics 
+                        and industrial applications.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 mb-8">
-                        <a href="#contact" class="btn-molecular px-8 py-4 rounded-xl font-semibold text-center inline-flex items-center justify-center group">
+                        <a href="#contact" class="btn-molecular px-8 py-4 rounded-xl font-semibold text-center inline-flex items-center justify-center group font-orbitron">
                             <span>Get In Touch</span>
                             <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
                         </a>
-                        <button onclick="downloadResume()" class="btn-outline-molecular px-8 py-4 rounded-xl font-semibold text-center inline-flex items-center justify-center group">
+                        <button onclick="downloadResume()" class="btn-outline-molecular px-8 py-4 rounded-xl font-semibold text-center inline-flex items-center justify-center group font-orbitron">
                             <i class="fas fa-download mr-2 group-hover:animate-bounce"></i>
                             <span>Download Resume</span>
                         </button>
@@ -689,49 +991,77 @@
                     
                     <!-- Enhanced Social Links with Molecular Icons -->
                     <div class="flex space-x-4">
-                        <a href="https://linkedin.com/in/abdellah-recham" target="_blank" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-molecule-500/20 transition-all duration-300 group">
+                        <a href="https://linkedin.com/in/abdellah-recham" target="_blank" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-molecule-500/20 transition-all duration-300 group relative">
                             <i class="fab fa-linkedin text-xl group-hover:scale-110 transition-transform text-molecule-400"></i>
+                            <div class="absolute -top-1 -right-1">
+                                <div class="atom atom-carbon" style="width: 12px; height: 12px; font-size: 6px;">C</div>
+                            </div>
                         </a>
-                        <a href="mailto:abdellah.recham@email.com" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-nitrogen-500/20 transition-all duration-300 group">
+                        <a href="mailto:abdellah.recham@email.com" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-nitrogen-500/20 transition-all duration-300 group relative">
                             <i class="fas fa-envelope text-xl group-hover:scale-110 transition-transform text-nitrogen-400"></i>
+                            <div class="absolute -top-1 -right-1">
+                                <div class="atom atom-nitrogen" style="width: 12px; height: 12px; font-size: 6px;">N</div>
+                            </div>
                         </a>
-                        <a href="https://github.com/abdellahre" target="_blank" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-oxygen-500/20 transition-all duration-300 group">
+                        <a href="https://github.com/abdellahre" target="_blank" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-oxygen-500/20 transition-all duration-300 group relative">
                             <i class="fab fa-github text-xl group-hover:scale-110 transition-transform text-oxygen-400"></i>
+                            <div class="absolute -top-1 -right-1">
+                                <div class="atom atom-oxygen" style="width: 12px; height: 12px; font-size: 6px;">O</div>
+                            </div>
                         </a>
-                        <a href="#" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-green-500/20 transition-all duration-300 group">
-                            <i class="fas fa-atom text-xl group-hover:scale-110 transition-transform text-green-400"></i>
+                        <a href="#" class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-hydrogen-500/20 transition-all duration-300 group relative">
+                            <i class="fas fa-atom text-xl group-hover:scale-110 transition-transform text-hydrogen-400"></i>
+                            <div class="absolute -top-1 -right-1">
+                                <div class="atom atom-hydrogen" style="width: 12px; height: 12px; font-size: 6px;">H</div>
+                            </div>
                         </a>
                     </div>
                 </div>
                 
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200" class="relative">
                     <div class="relative w-80 h-80 mx-auto">
-                        <!-- Animated Electron Orbits -->
-                        <div class="electron-orbit absolute inset-0 border-2 border-molecule-500/30"></div>
-                        <div class="electron-orbit absolute inset-4 border-2 border-nitrogen-500/30" style="animation-direction: reverse;"></div>
-                        <div class="electron-orbit absolute inset-8 border-2 border-oxygen-500/30"></div>
+                        <!-- Advanced Electron Orbits -->
+                        <div class="electron-orbit absolute inset-0 border-2 border-molecule-500/40"></div>
+                        <div class="electron-orbit absolute inset-4 border-2 border-nitrogen-500/40" style="animation-direction: reverse; animation-duration: 8s;"></div>
+                        <div class="electron-orbit absolute inset-8 border-2 border-oxygen-500/40" style="animation-duration: 4s;"></div>
+                        <div class="electron-orbit absolute inset-12 border-2 border-hydrogen-500/40" style="animation-direction: reverse; animation-duration: 10s;"></div>
                         
-                        <!-- Electrons -->
+                        <!-- Multiple Electrons -->
                         <div class="electron absolute top-0 left-1/2 transform -translate-x-1/2 bg-molecule-500"></div>
                         <div class="electron absolute top-4 left-1/2 transform -translate-x-1/2 bg-nitrogen-500" style="animation-delay: 1s;"></div>
                         <div class="electron absolute top-8 left-1/2 transform -translate-x-1/2 bg-oxygen-500" style="animation-delay: 2s;"></div>
+                        <div class="electron absolute top-12 left-1/2 transform -translate-x-1/2 bg-hydrogen-500" style="animation-delay: 3s;"></div>
                         
-                        <!-- Main Profile Image Placeholder -->
-                        <div class="absolute inset-12 rounded-full overflow-hidden glass-effect">
-                            <div class="profile-placeholder w-full h-full">
-                                AR
-                            </div>
+                        <!-- Main Professional Profile Image -->
+                        <div class="absolute inset-16 rounded-full overflow-hidden glass-effect">
+                            <img src="/images/abdellah-professional.png" alt="Abdellah Recham - Professional Photo" 
+                                 class="professional-image w-full h-full object-cover">
                         </div>
                         
                         <!-- Floating Molecular Badges -->
-                        <div class="absolute -top-4 -right-4 glass-effect rounded-xl p-3 animate-bounce" style="animation-duration: 3s;">
-                            <div class="atom atom-carbon text-xs">C</div>
+                        <div class="absolute -top-4 -right-4 glass-effect rounded-xl p-3 animate-bounce" style="animation-duration: 4s;">
+                            <div class="periodic-element" style="width: 40px; height: 40px;">
+                                <div class="element-number" style="font-size: 8px;">6</div>
+                                <div class="element-symbol" style="font-size: 12px;">C</div>
+                            </div>
                         </div>
-                        <div class="absolute -bottom-4 -left-4 glass-effect rounded-xl p-3 animate-bounce" style="animation-delay: 1s; animation-duration: 3s;">
-                            <div class="atom atom-oxygen text-xs">O</div>
+                        <div class="absolute -bottom-4 -left-4 glass-effect rounded-xl p-3 animate-bounce" style="animation-delay: 1s; animation-duration: 4s;">
+                            <div class="periodic-element" style="width: 40px; height: 40px;">
+                                <div class="element-number" style="font-size: 8px;">8</div>
+                                <div class="element-symbol" style="font-size: 12px;">O</div>
+                            </div>
                         </div>
-                        <div class="absolute top-1/2 -right-8 glass-effect rounded-xl p-3 animate-bounce" style="animation-delay: 2s; animation-duration: 3s;">
-                            <div class="atom atom-nitrogen text-xs">N</div>
+                        <div class="absolute top-1/2 -right-8 glass-effect rounded-xl p-3 animate-bounce" style="animation-delay: 2s; animation-duration: 4s;">
+                            <div class="periodic-element" style="width: 40px; height: 40px;">
+                                <div class="element-number" style="font-size: 8px;">7</div>
+                                <div class="element-symbol" style="font-size: 12px;">N</div>
+                            </div>
+                        </div>
+                        <div class="absolute top-1/2 -left-8 glass-effect rounded-xl p-3 animate-bounce" style="animation-delay: 3s; animation-duration: 4s;">
+                            <div class="periodic-element" style="width: 40px; height: 40px;">
+                                <div class="element-number" style="font-size: 8px;">1</div>
+                                <div class="element-symbol" style="font-size: 12px;">H</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -739,93 +1069,122 @@
         </div>
     </section>
 
-    <!-- Enhanced About Section with Molecular Theme -->
+    <!-- Enhanced About Section with Real Laboratory Images -->
     <section id="about" class="py-20 relative">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16 font-orbitron" data-aos="fade-up">
                 About <span class="molecular-gradient">Me</span>
             </h2>
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div data-aos="fade-right" data-aos-duration="1000">
                     <div class="grid grid-cols-2 gap-4">
                         <div class="glass-card rounded-2xl overflow-hidden">
-                            <div class="placeholder-image h-48">
-                                <i class="fas fa-microscope"></i>
-                            </div>
+                            <img src="/images/abdellah-lab-work.png" alt="Abdellah in Laboratory" 
+                                 class="lab-image w-full h-48 object-cover">
                             <div class="p-4">
-                                <h4 class="font-semibold text-molecule-400 flex items-center">
-                                    <div class="atom atom-carbon text-xs mr-2">C</div>
+                                <h4 class="font-semibold text-molecule-400 flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 24px; height: 24px;">
+                                        <div class="element-symbol" style="font-size: 10px;">C</div>
+                                    </div>
                                     Laboratory Analysis
                                 </h4>
                                 <p class="text-sm text-gray-400">Precision in molecular testing</p>
+                                <div class="chemical-formula text-xs mt-2">C₆H₁₂O₆ Analysis</div>
                             </div>
                         </div>
                         <div class="glass-card rounded-2xl overflow-hidden">
-                            <div class="placeholder-image h-48">
-                                <i class="fas fa-atom"></i>
-                            </div>
+                            <img src="/images/abdellah-lab-portrait.png" alt="Abdellah Laboratory Portrait" 
+                                 class="lab-image w-full h-48 object-cover">
                             <div class="p-4">
-                                <h4 class="font-semibold text-nitrogen-400 flex items-center">
-                                    <div class="atom atom-nitrogen text-xs mr-2">N</div>
+                                <h4 class="font-semibold text-nitrogen-400 flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 24px; height: 24px;">
+                                        <div class="element-symbol" style="font-size: 10px;">N</div>
+                                    </div>
                                     Chemical Research
                                 </h4>
                                 <p class="text-sm text-gray-400">Innovation in chemistry</p>
+                                <div class="chemical-formula text-xs mt-2">NH₃ + HCl → NH₄Cl</div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
-                    <h3 class="text-3xl font-bold mb-6 molecular-gradient">Professional Journey</h3>
+                    <h3 class="text-3xl font-bold mb-6 molecular-gradient font-orbitron">Professional Journey</h3>
                     <p class="text-gray-300 text-lg mb-6 leading-relaxed">
                         Bachelor's degree holder in <span class="text-molecule-400 font-semibold">Fundamental Chemistry</span> with hands-on experience in medical laboratory analysis. 
-                        I specialize in <span class="text-nitrogen-400 font-semibold">molecular structures</span>, 
-                        <span class="text-oxygen-400 font-semibold">biochemistry</span>, and 
-                        <span class="text-green-400 font-semibold">hematology</span>, bringing precision and accuracy to every analysis.
+                        I specialize in <span class="text-nitrogen-400 font-semibold">complex molecular structures</span>, 
+                        <span class="text-oxygen-400 font-semibold">advanced biochemistry</span>, and 
+                        <span class="text-hydrogen-400 font-semibold">hematological analysis</span>, bringing precision and accuracy to every molecular investigation.
                     </p>
                     <p class="text-gray-300 text-lg mb-8 leading-relaxed">
-                        My passion lies in understanding <span class="text-molecule-400 font-semibold">chemical bonds</span> and 
-                        <span class="text-nitrogen-400 font-semibold">molecular interactions</span>, particularly in the 
-                        <span class="text-oxygen-400 font-semibold">oil and petroleum industry</span>. I'm a fast learner with strong adaptability and proficiency in 
-                        computer and programming tools for molecular modeling.
+                        My passion lies in understanding <span class="text-molecule-400 font-semibold">chemical bond formations</span>, 
+                        <span class="text-nitrogen-400 font-semibold">molecular interactions</span>, and 
+                        <span class="text-yellow-400 font-semibold">petroleum hydrocarbon chemistry</span>. I'm a fast learner with strong adaptability and proficiency in 
+                        computer tools for molecular modeling and chemical analysis.
                     </p>
                     
                     <!-- Enhanced stats with molecular theme -->
                     <div class="grid grid-cols-2 gap-6 mb-8">
                         <div class="glass-card rounded-xl p-6 text-center">
                             <div class="flex items-center justify-center mb-3">
-                                <div class="atom atom-carbon text-sm mr-2">C</div>
+                                <div class="periodic-element mr-2" style="width: 32px; height: 32px;">
+                                    <div class="element-number" style="font-size: 8px;">6</div>
+                                    <div class="element-symbol"
+
+ style="font-size: 8px;">6</div>
+                                    <div class="element-symbol" style="font-size: 12px;">C</div>
+                                </div>
                                 <div class="text-4xl font-bold molecular-gradient">4+</div>
                             </div>
-                            <div class="text-gray-400 font-medium">Years of Study</div>
+                            <div class="text-gray-400 font-medium font-orbitron">Years of Study</div>
                             <div class="text-sm text-gray-500">Chemistry Degree</div>
+                            <div class="chemical-formula text-xs mt-1">C₆H₆ Benzene</div>
                         </div>
                         <div class="glass-card rounded-xl p-6 text-center">
                             <div class="flex items-center justify-center mb-3">
-                                <div class="atom atom-oxygen text-sm mr-2">O</div>
+                                <div class="periodic-element mr-2" style="width: 32px; height: 32px;">
+                                    <div class="element-number" style="font-size: 8px;">8</div>
+                                    <div class="element-symbol" style="font-size: 12px;">O</div>
+                                </div>
                                 <div class="text-4xl font-bold molecular-gradient">6+</div>
                             </div>
-                            <div class="text-gray-400 font-medium">Months Experience</div>
+                            <div class="text-gray-400 font-medium font-orbitron">Months Experience</div>
                             <div class="text-sm text-gray-500">Hospital Laboratory</div>
+                            <div class="chemical-formula text-xs mt-1">H₂O₂ Analysis</div>
                         </div>
                     </div>
                     
                     <!-- Key molecular strengths -->
                     <div class="space-y-4">
                         <div class="flex items-center space-x-3">
-                            <div class="atom atom-carbon text-xs">C</div>
+                            <div class="periodic-element" style="width: 24px; height: 24px;">
+                                <div class="element-symbol" style="font-size: 10px;">C</div>
+                            </div>
                             <span class="text-gray-300">Strong analytical and molecular problem-solving skills</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="atom atom-nitrogen text-xs">N</div>
+                            <div class="periodic-element" style="width: 24px; height: 24px;">
+                                <div class="element-symbol" style="font-size: 10px;">N</div>
+                            </div>
                             <span class="text-gray-300">Proficient in laboratory techniques and chemical instrumentation</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="atom atom-oxygen text-xs">O</div>
+                            <div class="periodic-element" style="width: 24px; height: 24px;">
+                                <div class="element-symbol" style="font-size: 10px;">O</div>
+                            </div>
                             <span class="text-gray-300">Fast learner with adaptability to new molecular environments</span>
                         </div>
                         <div class="flex items-center space-x-3">
-                            <div class="atom atom-hydrogen text-xs">H</div>
+                            <div class="periodic-element" style="width: 24px; height: 24px;">
+                                <div class="element-symbol" style="font-size: 10px;">H</div>
+                            </div>
                             <span class="text-gray-300">Expert in chemical bond analysis and molecular structures</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <div class="periodic-element" style="width: 24px; height: 24px;">
+                                <div class="element-symbol" style="font-size: 10px;">P</div>
+                            </div>
+                            <span class="text-gray-300">Specialized in petroleum chemistry and hydrocarbon analysis</span>
                         </div>
                     </div>
                 </div>
@@ -833,22 +1192,28 @@
         </div>
     </section>
 
-    <!-- Enhanced Experience Section with Molecular Timeline -->
+    <!-- Enhanced Experience Section with Advanced Molecular Timeline -->
     <section id="experience" class="py-20 bg-carbon-900/30">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16 font-orbitron" data-aos="fade-up">
                 My <span class="molecular-gradient">Experience</span>
             </h2>
             <div class="max-w-4xl mx-auto relative">
-                <!-- Molecular Timeline -->
-                <div class="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-molecule-500 via-nitrogen-500 to-oxygen-500 opacity-30 hidden lg:block"></div>
+                <!-- Advanced Molecular Timeline -->
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-2 h-full bg-gradient-to-b from-molecule-500 via-nitrogen-500 via-oxygen-500 to-hydrogen-500 opacity-40 hidden lg:block rounded-full"></div>
                 
                 <!-- Timeline Molecules -->
                 <div class="absolute left-1/2 transform -translate-x-1/2 top-20 hidden lg:block">
-                    <div class="atom atom-carbon">C</div>
+                    <div class="periodic-element">
+                        <div class="element-number">6</div>
+                        <div class="element-symbol">C</div>
+                    </div>
                 </div>
                 <div class="absolute left-1/2 transform -translate-x-1/2 bottom-20 hidden lg:block">
-                    <div class="atom atom-oxygen">O</div>
+                    <div class="periodic-element">
+                        <div class="element-number">8</div>
+                        <div class="element-symbol">O</div>
+                    </div>
                 </div>
                 
                 <!-- Education -->
@@ -856,39 +1221,59 @@
                     <div class="glass-card rounded-2xl p-8 lg:ml-8">
                         <div class="flex flex-col lg:flex-row lg:items-center mb-6">
                             <div class="flex items-center mb-4 lg:mb-0">
-                                <div class="w-16 h-16 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                                <div class="w-16 h-16 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg relative">
                                     <i class="fas fa-graduation-cap text-2xl"></i>
+                                    <div class="absolute -top-2 -right-2">
+                                        <div class="periodic-element" style="width: 20px; height: 20px;">
+                                            <div class="element-symbol" style="font-size: 8px;">C</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-bold">Bachelor's in Fundamental Chemistry</h3>
+                                    <h3 class="text-2xl font-bold font-orbitron">Bachelor's in Fundamental Chemistry</h3>
                                     <p class="text-molecule-400 font-medium">University of Bouira Akli Mohand Oulhadj</p>
                                 </div>
                             </div>
                             <div class="lg:ml-auto">
-                                <span class="bg-gradient-to-r from-molecule-500/20 to-nitrogen-500/20 text-molecule-300 px-4 py-2 rounded-full text-sm font-medium border border-molecule-500/30">
+                                <span class="bg-gradient-to-r from-molecule-500/20 to-nitrogen-500/20 text-molecule-300 px-4 py-2 rounded-full text-sm font-medium border border-molecule-500/30 font-orbitron">
                                     2020-2024
                                 </span>
                             </div>
                         </div>
+                        <div class="chemical-formula text-lg mb-4">
+                            CH₄ + 2O₂ → CO₂ + 2H₂O (Combustion Analysis)
+                        </div>
                         <p class="text-gray-300 leading-relaxed mb-4">
-                            Comprehensive study of <span class="text-molecule-400 font-semibold">molecular structures</span>, 
-                            <span class="text-nitrogen-400 font-semibold">chemical bonds</span>, and 
-                            <span class="text-oxygen-400 font-semibold">analytical chemistry</span>. 
+                            Comprehensive study of <span class="text-molecule-400 font-semibold">complex molecular structures</span>, 
+                            <span class="text-nitrogen-400 font-semibold">advanced chemical bonds</span>, and 
+                            <span class="text-oxygen-400 font-semibold">analytical chemistry techniques</span>. 
                             Developed strong problem-solving skills and a scientific mindset applicable across various industrial 
-                            settings, including energy and petrochemical sectors.
+                            settings, including energy and petrochemical sectors with focus on hydrocarbon chemistry.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-molecule-500/20 text-molecule-300 px-3 py-1 rounded-lg text-sm flex items-center">
-                                <div class="atom atom-carbon text-xs mr-1">C</div>
+                            <span class="bg-molecule-500/20 text-molecule-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">C</div>
+                                </div>
                                 Analytical Chemistry
                             </span>
-                            <span class="bg-nitrogen-500/20 text-nitrogen-300 px-3 py-1 rounded-lg text-sm flex items-center">
-                                <div class="atom atom-nitrogen text-xs mr-1">N</div>
+                            <span class="bg-nitrogen-500/20 text-nitrogen-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">N</div>
+                                </div>
                                 Physical Chemistry
                             </span>
-                            <span class="bg-oxygen-500/20 text-oxygen-300 px-3 py-1 rounded-lg text-sm flex items-center">
-                                <div class="atom atom-oxygen text-xs mr-1">O</div>
+                            <span class="bg-oxygen-500/20 text-oxygen-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">O</div>
+                                </div>
                                 Laboratory Techniques
+                            </span>
+                            <span class="bg-yellow-500/20 text-yellow-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">S</div>
+                                </div>
+                                Petroleum Chemistry
                             </span>
                         </div>
                     </div>
@@ -899,53 +1284,77 @@
                     <div class="glass-card rounded-2xl p-8 lg:mr-8">
                         <div class="flex flex-col lg:flex-row lg:items-center mb-6">
                             <div class="flex items-center mb-4 lg:mb-0">
-                                <div class="w-16 h-16 bg-gradient-to-r from-nitrogen-500 to-oxygen-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg">
+                                <div class="w-16 h-16 bg-gradient-to-r from-nitrogen-500 to-oxygen-500 rounded-2xl flex items-center justify-center mr-6 shadow-lg relative">
                                     <i class="fas fa-flask text-2xl"></i>
+                                    <div class="absolute -top-2 -right-2">
+                                        <div class="periodic-element" style="width: 20px; height: 20px;">
+                                            <div class="element-symbol" style="font-size: 8px;">O</div>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div>
-                                    <h3 class="text-2xl font-bold">Medical Laboratory Technician</h3>
+                                    <h3 class="text-2xl font-bold font-orbitron">Medical Laboratory Technician</h3>
                                     <p class="text-nitrogen-400 font-medium">Ain Bessem Hospital</p>
                                 </div>
                             </div>
                             <div class="lg:ml-auto">
-                                <span class="bg-gradient-to-r from-nitrogen-500/20 to-oxygen-500/20 text-nitrogen-300 px-4 py-2 rounded-full text-sm font-medium border border-nitrogen-500/30">
+                                <span class="bg-gradient-to-r from-nitrogen-500/20 to-oxygen-500/20 text-nitrogen-300 px-4 py-2 rounded-full text-sm font-medium border border-nitrogen-500/30 font-orbitron">
                                     6 Months
                                 </span>
                             </div>
                         </div>
+                        <div class="chemical-formula text-lg mb-4">
+                            C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP (Glucose Analysis)
+                        </div>
                         <ul class="text-gray-300 space-y-3 mb-4">
                             <li class="flex items-start">
-                                <div class="atom atom-carbon text-xs mr-3 mt-1 flex-shrink-0"></div>
-                                <span>Conducted <span class="text-molecule-400 font-semibold">molecular biochemistry</span> and hematology analyses as part of clinical diagnostics team</span>
+                                <div class="periodic-element mr-3 mt-1 flex-shrink-0" style="width: 20px; height: 20px;">
+                                    <div class="element-symbol" style="font-size: 8px;">C</div>
+                                </div>
+                                <span>Conducted <span class="text-molecule-400 font-semibold">advanced molecular biochemistry</span> and hematology analyses as part of clinical diagnostics team</span>
                             </li>
                             <li class="flex items-start">
-                                <div class="atom atom-nitrogen text-xs mr-3 mt-1 flex-shrink-0"></div>
-                                <span>Operated analytical instruments and performed <span class="text-nitrogen-400 font-semibold">chemical sample preparations</span> with precision</span>
+                                <div class="periodic-element mr-3 mt-1 flex-shrink-0" style="width: 20px; height: 20px;">
+                                    <div class="element-symbol" style="font-size: 8px;">N</div>
+                                </div>
+                                <span>Operated analytical instruments and performed <span class="text-nitrogen-400 font-semibold">complex chemical sample preparations</span> with precision</span>
                             </li>
                             <li class="flex items-start">
-                                <div class="atom atom-oxygen text-xs mr-3 mt-1 flex-shrink-0"></div>
-                                <span>Ensured accurate data entry and reporting for <span class="text-oxygen-400 font-semibold">molecular diagnostics</span></span>
+                                <div class="periodic-element mr-3 mt-1 flex-shrink-0" style="width: 20px; height: 20px;">
+                                    <div class="element-symbol" style="font-size: 8px;">O</div>
+                                </div>
+                                <span>Ensured accurate data entry and reporting for <span class="text-oxygen-400 font-semibold">molecular diagnostics</span> and patient care</span>
                             </li>
                             <li class="flex items-start">
-                                <div class="atom atom-hydrogen text-xs mr-3 mt-1 flex-shrink-0"></div>
-                                <span>Maintained quality control standards in <span class="text-green-400 font-semibold">chemical laboratory procedures</span></span>
+                                <div class="periodic-element mr-3 mt-1 flex-shrink-0" style="width: 20px; height: 20px;">
+                                    <div class="element-symbol" style="font-size: 8px;">H</div>
+                                </div>
+                                <span>Maintained quality control standards in <span class="text-hydrogen-400 font-semibold">chemical laboratory procedures</span> and safety protocols</span>
                             </li>
                         </ul>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-nitrogen-500/20 text-nitrogen-300 px-3 py-1 rounded-lg text-sm flex items-center">
-                                <div class="atom atom-nitrogen text-xs mr-1">N</div>
+                            <span class="bg-nitrogen-500/20 text-nitrogen-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">N</div>
+                                </div>
                                 Biochemistry
                             </span>
-                            <span class="bg-molecule-500/20 text-molecule-300 px-3 py-1 rounded-lg text-sm flex items-center">
-                                <div class="atom atom-carbon text-xs mr-1">C</div>
+                            <span class="bg-molecule-500/20 text-molecule-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">C</div>
+                                </div>
                                 Hematology
                             </span>
-                            <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-lg text-sm flex items-center">
-                                <div class="atom atom-hydrogen text-xs mr-1">H</div>
+                            <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">H</div>
+                                </div>
                                 Quality Control
                             </span>
-                            <span class="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-lg text-sm flex items-center">
-                                <div class="atom atom-oxygen text-xs mr-1">O</div>
+                            <span class="bg-orange-500/20 text-orange-300 px-3 py-1 rounded-lg text-sm flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">O</div>
+                                </div>
                                 Data Analysis
                             </span>
                         </div>
@@ -955,10 +1364,10 @@
         </div>
     </section>
 
-    <!-- Enhanced Skills Section with Molecular Elements -->
+    <!-- Enhanced Skills Section with Advanced Molecular Elements -->
     <section id="skills" class="py-20">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16 font-orbitron" data-aos="fade-up">
                 Technical <span class="molecular-gradient">Skills</span>
             </h2>
             <div class="grid lg:grid-cols-3 gap-8">
@@ -968,47 +1377,71 @@
                         <div class="w-20 h-20 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative">
                             <i class="fas fa-microscope text-3xl"></i>
                             <div class="absolute -top-2 -right-2">
-                                <div class="atom atom-carbon text-xs">C</div>
+                                <div class="periodic-element" style="width: 24px; height: 24px;">
+                                    <div class="element-number" style="font-size: 6px;">6</div>
+                                    <div class="element-symbol" style="font-size: 10px;">C</div>
+                                </div>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold molecular-gradient">Laboratory Techniques</h3>
-                        <p class="text-gray-400 mt-2">Molecular analysis methods</p>
+                        <h3 class="text-2xl font-bold molecular-gradient font-orbitron">Laboratory Techniques</h3>
+                        <p class="text-gray-400 mt-2">Advanced molecular analysis methods</p>
+                        <div class="chemical-formula text-sm mt-2">C₆H₆ + Br₂ → C₆H₅Br + HBr</div>
                     </div>
                     <div class="space-y-6">
                         <div class="skill-item">
                             <div class="flex justify-between mb-3">
-                                <span class="font-medium flex items-center">
-                                    <div class="atom atom-carbon text-xs mr-2">C</div>
+                                <span class="font-medium flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">C</div>
+                                    </div>
                                     Spectrophotometry
                                 </span>
-                                <span class="text-molecule-400 font-bold">90%</span>
+                                <span class="text-molecule-400 font-bold font-orbitron">90%</span>
                             </div>
-                            <div class="w-full bg-carbon-700/50 rounded-full h-3 overflow-hidden">
-                                <div class="skill-bar bg-gradient-to-r from-molecule-500 to-nitrogen-500 h-3 rounded-full shadow-lg" style="width: 0%" data-width="90%"></div>
+                            <div class="w-full bg-carbon-700/50 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar bg-gradient-to-r from-molecule-500 to-nitrogen-500 h-4 rounded-full shadow-lg" style="width: 0%" data-width="90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-3">
-                                <span class="font-medium flex items-center">
-                                    <div class="atom atom-nitrogen text-xs mr-2">N</div>
+                                <span class="font-medium flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">N</div>
+                                    </div>
                                     Sample Preparation
                                 </span>
-                                <span class="text-nitrogen-400 font-bold">85%</span>
+                                <span class="text-nitrogen-400 font-bold font-orbitron">85%</span>
                             </div>
-                            <div class="w-full bg-carbon-700/50 rounded-full h-3 overflow-hidden">
-                                <div class="skill-bar bg-gradient-to-r from-nitrogen-500 to-oxygen-500 h-3 rounded-full shadow-lg" style="width: 0%" data-width="85%"></div>
+                            <div class="w-full bg-carbon-700/50 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar bg-gradient-to-r from-nitrogen-500 to-oxygen-500 h-4 rounded-full shadow-lg" style="width: 0%" data-width="85%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <div class="flex justify-between mb-3">
-                                <span class="font-medium flex items-center">
-                                    <div class="atom atom-oxygen text-xs mr-2">O</div>
+                                <span class="font-medium flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">O</div>
+                                    </div>
                                     Centrifugation
                                 </span>
-                                <span class="text-oxygen-400 font-bold">80%</span>
+                                <span class="text-oxygen-400 font-bold font-orbitron">80%</span>
                             </div>
-                            <div class="w-full bg-carbon-700/50 rounded-full h-3 overflow-hidden">
-                                <div class="skill-bar bg-gradient-to-r from-oxygen-500 to-molecule-500 h-3 rounded-full shadow-lg" style="width: 0%" data-width="80%"></div>
+                            <div class="w-full bg-carbon-700/50 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar bg-gradient-to-r from-oxygen-500 to-molecule-500 h-4 rounded-full shadow-lg" style="width: 0%" data-width="80%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="flex justify-between mb-3">
+                                <span class="font-medium flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">H</div>
+                                    </div>
+                                    Chromatography
+                                </span>
+                                <span class="text-hydrogen-400 font-bold font-orbitron">75%</span>
+                            </div>
+                            <div class="w-full bg-carbon-700/50 rounded-full h-4 overflow-hidden">
+                                <div class="skill-bar bg-gradient-to-r from-hydrogen-500 to-molecule-500 h-4 rounded-full shadow-lg" style="width: 0%" data-width="75%"></div>
                             </div>
                         </div>
                     </div>
@@ -1020,32 +1453,44 @@
                         <div class="w-20 h-20 bg-gradient-to-r from-nitrogen-500 to-oxygen-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative">
                             <i class="fas fa-laptop-code text-3xl"></i>
                             <div class="absolute -top-2 -right-2">
-                                <div class="atom atom-nitrogen text-xs">N</div>
+                                <div class="periodic-element" style="width: 24px; height: 24px;">
+                                    <div class="element-number" style="font-size: 6px;">7</div>
+                                    <div class="element-symbol" style="font-size: 10px;">N</div>
+                                </div>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold molecular-gradient">Computer Skills</h3>
+                        <h3 class="text-2xl font-bold molecular-gradient font-orbitron">Computer Skills</h3>
                         <p class="text-gray-400 mt-2">Digital molecular tools</p>
+                        <div class="chemical-formula text-sm mt-2">C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O</div>
                     </div>
                     <div class="grid grid-cols-2 gap-3">
-                        <div class="bg-molecule-500/20 text-molecule-300 px-4 py-3 rounded-xl text-center border border-molecule-500/30 hover:bg-molecule-500/30 transition-colors">
+                        <div class="bg-molecule-500/20 text-molecule-300 px-4 py-4 rounded-xl text-center border border-molecule-500/30 hover:bg-molecule-500/30 transition-colors">
                             <i class="fas fa-file-excel mb-2 text-lg"></i>
-                            <div class="text-sm font-medium">MS Office</div>
-                            <div class="atom atom-carbon text-xs mt-1">C</div>
+                            <div class="text-sm font-medium font-orbitron">MS Office</div>
+                            <div class="periodic-element mt-2 mx-auto" style="width: 20px; height: 20px;">
+                                <div class="element-symbol" style="font-size: 8px;">C</div>
+                            </div>
                         </div>
-                        <div class="bg-nitrogen-500/20 text-nitrogen-300 px-4 py-3 rounded-xl text-center border border-nitrogen-500/30 hover:bg-nitrogen-500/30 transition-colors">
+                        <div class="bg-nitrogen-500/20 text-nitrogen-300 px-4 py-4 rounded-xl text-center border border-nitrogen-500/30 hover:bg-nitrogen-500/30 transition-colors">
                             <i class="fas fa-chart-bar mb-2 text-lg"></i>
-                            <div class="text-sm font-medium">Data Analysis</div>
-                            <div class="atom atom-nitrogen text-xs mt-1">N</div>
+                            <div class="text-sm font-medium font-orbitron">Data Analysis</div>
+                            <div class="periodic-element mt-2 mx-auto" style="width: 20px; height: 20px;">
+                                <div class="element-symbol" style="font-size: 8px;">N</div>
+                            </div>
                         </div>
-                        <div class="bg-purple-500/20 text-purple-300 px-4 py-3 rounded-xl text-center border border-purple-500/30 hover:bg-purple-500/30 transition-colors">
+                        <div class="bg-purple-500/20 text-purple-300 px-4 py-4 rounded-xl text-center border border-purple-500/30 hover:bg-purple-500/30 transition-colors">
                             <i class="fas fa-desktop mb-2 text-lg"></i>
-                            <div class="text-sm font-medium">Lab Software</div>
-                            <div class="atom atom-oxygen text-xs mt-1">O</div>
+                            <div class="text-sm font-medium font-orbitron">Lab Software</div>
+                            <div class="periodic-element mt-2 mx-auto" style="width: 20px; height: 20px;">
+                                <div class="element-symbol" style="font-size: 8px;">O</div>
+                            </div>
                         </div>
-                        <div class="bg-orange-500/20 text-orange-300 px-4 py-3 rounded-xl text-center border border-orange-500/30 hover:bg-orange-500/30 transition-colors">
+                        <div class="bg-orange-500/20 text-orange-300 px-4 py-4 rounded-xl text-center border border-orange-500/30 hover:bg-orange-500/30 transition-colors">
                             <i class="fas fa-database mb-2 text-lg"></i>
-                            <div class="text-sm font-medium">Database</div>
-                            <div class="atom atom-hydrogen text-xs mt-1">H</div>
+                            <div class="text-sm font-medium font-orbitron">Database</div>
+                            <div class="periodic-element mt-2 mx-auto" style="width: 20px; height: 20px;">
+                                <div class="element-symbol" style="font-size: 8px;">H</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1056,17 +1501,23 @@
                         <div class="w-20 h-20 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg relative">
                             <i class="fas fa-globe text-3xl"></i>
                             <div class="absolute -top-2 -right-2">
-                                <div class="atom atom-hydrogen text-xs">H</div>
+                                <div class="periodic-element" style="width: 24px; height: 24px;">
+                                    <div class="element-number" style="font-size: 6px;">1</div>
+                                    <div class="element-symbol" style="font-size: 10px;">H</div>
+                                </div>
                             </div>
                         </div>
-                        <h3 class="text-2xl font-bold molecular-gradient">Languages</h3>
+                        <h3 class="text-2xl font-bold molecular-gradient font-orbitron">Languages</h3>
                         <p class="text-gray-400 mt-2">Communication bonds</p>
+                        <div class="chemical-formula text-sm mt-2">NaCl → Na⁺ + Cl⁻</div>
                     </div>
                     <div class="space-y-6">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-3">
-                                <div class="atom atom-carbon text-xs">C</div>
-                                <span class="font-medium">Arabic</span>
+                                <div class="periodic-element" style="width: 24px; height: 24px;">
+                                    <div class="element-symbol" style="font-size: 10px;">C</div>
+                                </div>
+                                <span class="font-medium font-orbitron">Arabic</span>
                             </div>
                             <div class="flex space-x-1">
                                 <div class="w-3 h-3 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full"></div>
@@ -1078,8 +1529,10 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-3">
-                                <div class="atom atom-nitrogen text-xs">N</div>
-                                <span class="font-medium">English</span>
+                                <div class="periodic-element" style="width: 24px; height: 24px;">
+                                    <div class="element-symbol" style="font-size: 10px;">N</div>
+                                </div>
+                                <span class="font-medium font-orbitron">English</span>
                             </div>
                             <div class="flex space-x-1">
                                 <div class="w-3 h-3 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-full"></div>
@@ -1091,8 +1544,10 @@
                         </div>
                         <div class="flex items-center justify-between">
                             <div class="flex items-center space-x-3">
-                                <div class="atom atom-oxygen text-xs">O</div>
-                                <span class="font-medium">French</span>
+                                <div class="periodic-element" style="width: 24px; height: 24px;">
+                                    <div class="element-symbol" style="font-size: 10px;">O</div>
+                                </div>
+                                <span class="font-medium font-orbitron">French</span>
                             </div>
                             <div class="flex space-x-1">
                                 <div class="w-3 h-3 bg-gradient-to-r from-oxygen-500 to-pink-500 rounded-full"></div>
@@ -1108,33 +1563,38 @@
         </div>
     </section>
 
-    <!-- Enhanced Contact Section with Molecular Theme -->
+    <!-- Enhanced Contact Section with Advanced Molecular Theme -->
     <section id="contact" class="py-20 bg-carbon-900/30">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16" data-aos="fade-up">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-16 font-orbitron" data-aos="fade-up">
                 Get In <span class="molecular-gradient">Touch</span>
             </h2>
             <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
                 <!-- Contact Information -->
                 <div data-aos="fade-right" data-aos-duration="1000">
-                    <h3 class="text-3xl font-bold mb-6 molecular-gradient">Let's Connect</h3>
+                    <h3 class="text-3xl font-bold mb-6 molecular-gradient font-orbitron">Let's Connect</h3>
+                    <div class="chemical-formula text-lg mb-4">
+                        H₂SO₄ + 2NaOH → Na₂SO₄ + 2H₂O
+                    </div>
                     <p class="text-gray-300 mb-8 leading-relaxed text-lg">
-                        Ready to discuss opportunities in <span class="text-molecule-400 font-semibold">molecular analysis</span>, 
+                        Ready to discuss opportunities in <span class="text-molecule-400 font-semibold">advanced molecular analysis</span>, 
                         <span class="text-nitrogen-400 font-semibold">medical diagnostics</span>, or the 
                         <span class="text-oxygen-400 font-semibold">petroleum industry</span>? 
-                        Let's connect and explore how my expertise can contribute to your team.
+                        Let's connect and explore how my expertise can contribute to your team's molecular success.
                     </p>
                     
                     <div class="space-y-6 mb-8">
                         <div class="flex items-center space-x-4 group">
-                            <div class="w-14 h-14 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
+                            <div class="w-16 h-16 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
                                 <i class="fas fa-envelope text-xl"></i>
-                                <div class="absolute -top-1 -right-1">
-                                    <div class="atom atom-carbon text-xs">C</div>
+                                <div class="absolute -top-2 -right-2">
+                                    <div class="periodic-element" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">C</div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
-                                <p class="text-gray-400 text-sm font-medium">Email Address</p>
+                                <p class="text-gray-400 text-sm font-medium font-orbitron">Email Address</p>
                                 <a href="mailto:abdellah.recham@email.com" class="text-white font-semibold hover:text-molecule-400 transition-colors text-lg">
                                     abdellah.recham@email.com
                                 </a>
@@ -1142,14 +1602,16 @@
                         </div>
                         
                         <div class="flex items-center space-x-4 group">
-                            <div class="w-14 h-14 bg-gradient-to-r from-nitrogen-500 to-oxygen-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
+                            <div class="w-16 h-16 bg-gradient-to-r from-nitrogen-500 to-oxygen-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
                                 <i class="fas fa-phone text-xl"></i>
-                                <div class="absolute -top-1 -right-1">
-                                    <div class="atom atom-nitrogen text-xs">N</div>
+                                <div class="absolute -top-2 -right-2">
+                                    <div class="periodic-element" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">N</div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
-                                <p class="text-gray-400 text-sm font-medium">Phone Number</p>
+                                <p class="text-gray-400 text-sm font-medium font-orbitron">Phone Number</p>
                                 <a href="tel:+213XXXXXXXXX" class="text-white font-semibold hover:text-nitrogen-400 transition-colors text-lg">
                                     +213 XXX XXX XXX
                                 </a>
@@ -1157,27 +1619,31 @@
                         </div>
                         
                         <div class="flex items-center space-x-4 group">
-                            <div class="w-14 h-14 bg-gradient-to-r from-oxygen-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
+                            <div class="w-16 h-16 bg-gradient-to-r from-oxygen-500 to-purple-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
                                 <i class="fas fa-map-marker-alt text-xl"></i>
-                                <div class="absolute -top-1 -right-1">
-                                    <div class="atom atom-oxygen text-xs">O</div>
+                                <div class="absolute -top-2 -right-2">
+                                    <div class="periodic-element" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">O</div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
-                                <p class="text-gray-400 text-sm font-medium">Location</p>
+                                <p class="text-gray-400 text-sm font-medium font-orbitron">Location</p>
                                 <p class="text-white font-semibold text-lg">Bouira, Algeria</p>
                             </div>
                         </div>
                         
                         <div class="flex items-center space-x-4 group">
-                            <div class="w-14 h-14 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
+                            <div class="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform relative">
                                 <i class="fab fa-linkedin text-xl"></i>
-                                <div class="absolute -top-1 -right-1">
-                                    <div class="atom atom-hydrogen text-xs">H</div>
+                                <div class="absolute -top-2 -right-2">
+                                    <div class="periodic-element" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">H</div>
+                                    </div>
                                 </div>
                             </div>
                             <div>
-                                <p class="text-gray-400 text-sm font-medium">LinkedIn Profile</p>
+                                <p class="text-gray-400 text-sm font-medium font-orbitron">LinkedIn Profile</p>
                                 <a href="https://linkedin.com/in/abdellah-recham" target="_blank" class="text-white font-semibold hover:text-purple-400 transition-colors text-lg">
                                     linkedin.com/in/abdellah-recham
                                 </a>
@@ -1185,45 +1651,65 @@
                         </div>
                     </div>
 
-                    <!-- Professional Status with Molecular Theme -->
+                    <!-- Professional Status with Advanced Molecular Theme -->
                     <div class="glass-card rounded-2xl p-6">
                         <div class="flex items-center gap-3 mb-4">
-                            <div class="w-4 h-4 bg-nitrogen-500 rounded-full animate-pulse relative">
+                            <div class="w-6 h-6 bg-nitrogen-500 rounded-full animate-pulse relative">
                                 <div class="absolute inset-0 bg-nitrogen-500 rounded-full animate-ping"></div>
+                                <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                                    <div class="periodic-element" style="width: 16px; height: 16px;">
+                                        <div class="element-symbol" style="font-size: 6px;">N</div>
+                                    </div>
+                                </div>
                             </div>
-                            <h4 class="text-xl font-bold molecular-gradient">Available for Work</h4>
+                            <h4 class="text-xl font-bold molecular-gradient font-orbitron">Available for Work</h4>
+                        </div>
+                        <div class="chemical-formula text-sm mb-3">
+                            C₈H₁₈ + 12.5O₂ → 8CO₂ + 9H₂O (Octane Combustion)
                         </div>
                         <p class="text-gray-300 leading-relaxed mb-4">
                             Currently seeking opportunities in <span class="text-molecule-400 font-semibold">medical laboratories</span>, 
                             <span class="text-nitrogen-400 font-semibold">research institutions</span>, 
-                            or <span class="text-oxygen-400 font-semibold">petroleum industry</span>. Open to both full-time positions and consulting projects.
+                            or <span class="text-oxygen-400 font-semibold">petroleum industry</span>. Open to both full-time positions and consulting projects 
+                            involving molecular analysis and chemical research.
                         </p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="bg-molecule-500/20 text-molecule-300 px-3 py-1 rounded-lg text-sm border border-molecule-500/30 flex items-center">
-                                <div class="atom atom-carbon text-xs mr-1">C</div>
+                            <span class="bg-molecule-500/20 text-molecule-300 px-3 py-1 rounded-lg text-sm border border-molecule-500/30 flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">C</div>
+                                </div>
                                 Full-time
                             </span>
-                            <span class="bg-nitrogen-500/20 text-nitrogen-300 px-3 py-1 rounded-lg text-sm border border-nitrogen-500/30 flex items-center">
-                                <div class="atom atom-nitrogen text-xs mr-1">N</div>
+                            <span class="bg-nitrogen-500/20 text-nitrogen-300 px-3 py-1 rounded-lg text-sm border border-nitrogen-500/30 flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">N</div>
+                                </div>
                                 Part-time
                             </span>
-                            <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-lg text-sm border border-purple-500/30 flex items-center">
-                                <div class="atom atom-oxygen text-xs mr-1">O</div>
+                            <span class="bg-purple-500/20 text-purple-300 px-3 py-1 rounded-lg text-sm border border-purple-500/30 flex items-center font-orbitron">
+                                <div class="periodic-element mr-1" style="width: 16px; height: 16px;">
+                                    <div class="element-symbol" style="font-size: 6px;">O</div>
+                                </div>
                                 Consulting
                             </span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Enhanced Contact Form with Molecular Theme -->
+                <!-- Enhanced Contact Form with Advanced Molecular Theme -->
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
                     <div class="glass-card rounded-2xl p-8">
-                        <h3 class="text-3xl font-bold mb-6 molecular-gradient">Send a Message</h3>
+                        <h3 class="text-3xl font-bold mb-6 molecular-gradient font-orbitron">Send a Message</h3>
+                        <div class="chemical-formula text-sm mb-6">
+                            CH₃COOH + NaOH → CH₃COONa + H₂O
+                        </div>
                         <form id="contact-form" class="space-y-6">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
-                                    <label for="name" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center">
-                                        <div class="atom atom-carbon text-xs mr-2">C</div>
+                                    <label for="name" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center font-orbitron">
+                                        <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                            <div class="element-symbol" style="font-size: 8px;">C</div>
+                                        </div>
                                         Full Name *
                                     </label>
                                     <input type="text" id="name" name="name" required 
@@ -1231,8 +1717,10 @@
                                            placeholder="Your full name">
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center">
-                                        <div class="atom atom-nitrogen text-xs mr-2">N</div>
+                                    <label for="email" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center font-orbitron">
+                                        <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                            <div class="element-symbol" style="font-size: 8px;">N</div>
+                                        </div>
                                         Email Address *
                                     </label>
                                     <input type="email" id="email" name="email" required 
@@ -1242,8 +1730,10 @@
                             </div>
                             
                             <div>
-                                <label for="subject" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center">
-                                    <div class="atom atom-oxygen text-xs mr-2">O</div>
+                                <label for="subject" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">O</div>
+                                    </div>
                                     Subject
                                 </label>
                                 <input type="text" id="subject" name="subject" 
@@ -1252,8 +1742,10 @@
                             </div>
                             
                             <div>
-                                <label for="message" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center">
-                                    <div class="atom atom-hydrogen text-xs mr-2">H</div>
+                                <label for="message" class="block text-sm font-semibold mb-3 text-gray-300 flex items-center font-orbitron">
+                                    <div class="periodic-element mr-2" style="width: 20px; height: 20px;">
+                                        <div class="element-symbol" style="font-size: 8px;">H</div>
+                                    </div>
                                     Message *
                                 </label>
                                 <textarea id="message" name="message" rows="6" required 
@@ -1262,7 +1754,7 @@
                             </div>
                             
                             <button type="submit" 
-                                    class="btn-molecular w-full px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center text-lg">
+                                    class="btn-molecular w-full px-8 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center text-lg font-orbitron">
                                 <span id="submit-text">Send Message</span>
                                 <div id="submit-spinner" class="spinner ml-3 hidden"></div>
                                 <i id="submit-icon" class="fas fa-paper-plane ml-3"></i>
@@ -1277,50 +1769,82 @@
         </div>
     </section>
 
-    <!-- Enhanced Footer with Molecular Theme -->
+    <!-- Enhanced Footer with Advanced Molecular Theme -->
     <footer class="py-12 bg-carbon-900/50 border-t border-white/10">
         <div class="container mx-auto px-6">
             <div class="text-center mb-8">
-                <div class="text-4xl font-bold molecular-gradient mb-4 flex items-center justify-center">
-                    <div class="molecule-container mr-3">
-                        <div class="atom atom-carbon" style="top: 40px; left: 40px;">C</div>
-                        <div class="atom atom-hydrogen" style="top: 20px; left: 20px;">H</div>
-                        <div class="atom atom-oxygen" style="bottom: 20px; right: 20px;">O</div>
+                <div class="text-4xl font-bold molecular-gradient mb-4 flex items-center justify-center font-orbitron">
+                    <div class="molecule-container mr-3" style="width: 60px; height: 60px;">
+                        <div class="atom atom-carbon" style="top: 20px; left: 20px; width: 20px; height: 20px; font-size: 10px;">C</div>
+                        <div class="atom atom-hydrogen" style="top: 5px; left: 5px; width: 12px; height: 12px; font-size: 8px;">H</div>
+                        <div class="atom atom-oxygen" style="bottom: 5px; right: 5px; width: 16px; height: 16px; font-size: 9px;">O</div>
+                        <div class="chemical-bond" style="top: 25px; left: 30px; width: 15px; transform: rotate(45deg);"></div>
                     </div>
                     Abdellah Recham
                 </div>
-                <p class="text-gray-400 text-lg">Laboratory Technician & Molecular Chemistry Specialist</p>
+                <p class="text-gray-400 text-lg">Laboratory Technician & Advanced Molecular Chemistry Specialist</p>
+                <div class="chemical-formula text-sm mt-2">
+                    C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
+                </div>
             </div>
             
             <div class="flex justify-center space-x-6 mb-8">
                 <a href="https://linkedin.com/in/abdellah-recham" target="_blank" 
-                   class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-molecule-500/20 transition-all duration-300 group">
+                   class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-molecule-500/20 transition-all duration-300 group relative">
                     <i class="fab fa-linkedin text-xl group-hover:scale-110 transition-transform text-molecule-400"></i>
+                    <div class="absolute -top-1 -right-1">
+                        <div class="periodic-element" style="width: 12px; height: 12px;">
+                            <div class="element-symbol" style="font-size: 6px;">C</div>
+                        </div>
+                    </div>
                 </a>
                 <a href="mailto:abdellah.recham@email.com" 
-                   class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-nitrogen-500/20 transition-all duration-300 group">
+                   class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-nitrogen-500/20 transition-all duration-300 group relative">
                     <i class="fas fa-envelope text-xl group-hover:scale-110 transition-transform text-nitrogen-400"></i>
+                    <div class="absolute -top-1 -right-1">
+                        <div class="periodic-element" style="width: 12px; height: 12px;">
+                            <div class="element-symbol" style="font-size: 6px;">N</div>
+                        </div>
+                    </div>
                 </a>
                 <a href="https://github.com/abdellahre" target="_blank" 
-                   class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-oxygen-500/20 transition-all duration-300 group">
+                   class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-oxygen-500/20 transition-all duration-300 group relative">
                     <i class="fab fa-github text-xl group-hover:scale-110 transition-transform text-oxygen-400"></i>
+                    <div class="absolute -top-1 -right-1">
+                        <div class="periodic-element" style="width: 12px; height: 12px;">
+                            <div class="element-symbol" style="font-size: 6px;">O</div>
+                        </div>
+                    </div>
                 </a>
                 <a href="#" 
-                   class="w-12 h-12 glass-effect rounded-xl flex items-center justify-center hover:bg-green-500/20 transition-all duration-300 group">
-                    <i class="fas fa-atom text-xl group-hover:scale-110 transition-transform text-green-400"></i>
+                   class="w-14 h-14 glass-effect rounded-xl flex items-center justify-center hover:bg-hydrogen-500/20 transition-all duration-300 group relative">
+                    <i class="fas fa-atom text-xl group-hover:scale-110 transition-transform text-hydrogen-400"></i>
+                    <div class="absolute -top-1 -right-1">
+                        <div class="periodic-element" style="width: 12px; height: 12px;">
+                            <div class="element-symbol" style="font-size: 6px;">H</div>
+                        </div>
+                    </div>
                 </a>
             </div>
             
             <div class="text-center text-gray-400">
                 <p>&copy; 2024 Abdellah Recham. All rights reserved.</p>
-                <p class="text-sm mt-2">Built with passion for molecular science and technology ⚛️</p>
+                <p class="text-sm mt-2 font-orbitron">Built with passion for molecular science and technology ⚛️</p>
+                <div class="chemical-formula text-xs mt-2">
+                    2H₂ + O₂ → 2H₂O (Hydrogen Fuel Cell)
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Enhanced Scroll to Top Button -->
-    <button id="scroll-to-top" class="fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-xl flex items-center justify-center opacity-0 transition-all duration-300 hover:scale-110 z-50 shadow-lg">
+    <button id="scroll-to-top" class="fixed bottom-8 right-8 w-16 h-16 bg-gradient-to-r from-molecule-500 to-nitrogen-500 rounded-xl flex items-center justify-center opacity-0 transition-all duration-300 hover:scale-110 z-50 shadow-lg relative">
         <i class="fas fa-arrow-up text-xl"></i>
+        <div class="absolute -top-2 -right-2">
+            <div class="periodic-element" style="width: 16px; height: 16px;">
+                <div class="element-symbol" style="font-size: 6px;">↑</div>
+            </div>
+        </div>
     </button>
 
     <!-- Scripts -->
@@ -1328,13 +1852,13 @@
     <script>
         // Initialize AOS with enhanced settings
         AOS.init({
-            duration: 1200,
+            duration: 1500,
             once: true,
             offset: 100,
             easing: 'ease-out-cubic'
         });
 
-        // Enhanced typing animation with molecular terms
+        // Enhanced typing animation with advanced molecular terms
         const typingText = document.getElementById('typing-text');
         const titles = [
             'Laboratory Technician',
@@ -1342,7 +1866,11 @@
             'Chemistry Specialist',
             'Chemical Bond Expert',
             'Biochemistry Professional',
-            'Molecular Diagnostician'
+            'Molecular Diagnostician',
+            'Petroleum Chemist',
+            'Analytical Scientist',
+            'Spectroscopy Expert',
+            'Chromatography Specialist'
         ];
         let titleIndex = 0;
         let charIndex = 0;
@@ -1360,13 +1888,13 @@
             }
 
             if (!isDeleting && charIndex === currentTitle.length) {
-                setTimeout(() => isDeleting = true, 2500);
+                setTimeout(() => isDeleting = true, 3000);
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 titleIndex = (titleIndex + 1) % titles.length;
             }
 
-            setTimeout(typeAnimation, isDeleting ? 50 : 120);
+            setTimeout(typeAnimation, isDeleting ? 50 : 150);
         }
 
         typeAnimation();
@@ -1429,7 +1957,7 @@
                         const width = bar.getAttribute('data-width');
                         setTimeout(() => {
                             bar.style.width = width;
-                        }, index * 200);
+                        }, index * 300);
                     });
                 }
             });
@@ -1478,7 +2006,10 @@
                             <div class="w-8 h-8 bg-nitrogen-500 rounded-full flex items-center justify-center">
                                 <i class="fas fa-check text-white"></i>
                             </div>
-                            <h4 class="text-lg font-semibold text-nitrogen-400">Molecular Message Transmitted!</h4>
+                            <h4 class="text-lg font-semibold text-nitrogen-400 font-orbitron">Molecular Message Transmitted!</h4>
+                        </div>
+                        <div class="chemical-formula text-sm mb-2">
+                            C₂H₅OH + 3O₂ → 2CO₂ + 3H₂O (Message Processed)
                         </div>
                         <p class="text-gray-300">Thank you ${data.name}! Your message has been received through our molecular communication network. I'll get back to you within 24 hours.</p>
                     </div>
@@ -1498,7 +2029,7 @@
                 setTimeout(() => {
                     formResponse.classList.add('hidden');
                 }, 8000);
-            }, 2500);
+            }, 3000);
         });
 
         // Enhanced scroll to top button
@@ -1522,30 +2053,35 @@
         });
 
         // Enhanced molecular particle system
-        function createMolecularParticles() {
+        function createAdvancedMolecularParticles() {
             const particlesContainer = document.getElementById('molecular-particles');
-            const particleCount = 80;
-            const particleTypes = ['particle-carbon', 'particle-oxygen', 'particle-nitrogen', 'particle-hydrogen'];
+            const particleCount = 120;
+            const particleTypes = ['particle-carbon', 'particle-oxygen', 'particle-nitrogen', 'particle-hydrogen', 'particle-phosphorus'];
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
                 const randomType = particleTypes[Math.floor(Math.random() * particleTypes.length)];
                 particle.className = `molecular-particle ${randomType}`;
                 particle.style.left = Math.random() * 100 + '%';
-                particle.style.animationDelay = Math.random() * 30 + 's';
-                particle.style.animationDuration = (Math.random() * 20 + 20) + 's';
+                particle.style.animationDelay = Math.random() * 40 + 's';
+                particle.style.animationDuration = (Math.random() * 25 + 25) + 's';
+                
+                // Add random molecular vibration
+                particle.style.setProperty('--vibration-x', (Math.random() - 0.5) * 4 + 'px');
+                particle.style.setProperty('--vibration-y', (Math.random() - 0.5) * 4 + 'px');
+                
                 particlesContainer.appendChild(particle);
             }
         }
 
-        createMolecularParticles();
+        createAdvancedMolecularParticles();
 
-        // Enhanced resume download function with molecular theme
+        // Enhanced resume download function with advanced molecular theme
         function downloadResume() {
             // Create comprehensive molecular-themed resume content
             const resumeContent = `
 ⚛️ ABDELLAH RECHAM ⚛️
-Laboratory Technician & Molecular Chemistry Specialist
+Advanced Laboratory Technician & Molecular Chemistry Specialist
 ═══════════════════════════════════════════════════════════════
 
 MOLECULAR CONTACT INFORMATION
@@ -1557,179 +2093,47 @@ MOLECULAR CONTACT INFORMATION
 
 PROFESSIONAL MOLECULAR SUMMARY
 ═══════════════════════════════════════════════════════════════
-Bachelor's degree holder in Fundamental Chemistry with specialized knowledge 
-in molecular structures, chemical bonds, and laboratory analysis. Expert in 
-biochemistry and hematology with hands-on experience in medical diagnostics. 
+Bachelor's degree holder in Fundamental Chemistry with specialized expertise 
+in advanced molecular structures, complex chemical bonds, and laboratory analysis. 
+Expert in biochemistry and hematology with hands-on experience in medical diagnostics. 
 Passionate about applying molecular science and analytical skills in the 
 oil and petroleum industry. Strong adaptability, fast learner in technical 
 environments, and proficient in computer tools for molecular modeling and 
 data-driven chemical analysis.
+
+CHEMICAL FORMULAS & EXPERTISE
+═══════════════════════════════════════════════════════════════
+• Glucose Metabolism: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
+• Petroleum Chemistry: C₈H₁₈ + 12.5O₂ → 8CO₂ + 9H₂O
+• Acid-Base Reactions: HCl + NaOH → NaCl + H₂O
+• Organic Synthesis: C₆H₆ + Br₂ → C₆H₅Br + HBr
 
 EDUCATION - MOLECULAR FOUNDATION
 ═══════════════════════════════════════════════════════════════
 🎓 University of Bouira Akli Mohand Oulhadj
    Bachelor's in Fundamental Chemistry | 2020-2024
    
-   C • Solid foundation in analytical and physical chemistry
-   N • Molecular structures and chemical bond analysis
-   O • Laboratory techniques and data interpretation
-   H • Strong problem-solving skills and scientific mindset
-   ⚛️ • Applicable across various industrial settings
+   C₆ • Advanced molecular structures and chemical bond analysis
+   N₇ • Complex organic and inorganic chemistry
+   O₈ • Laboratory techniques and analytical instrumentation
+   H₁ • Strong problem-solving skills and scientific methodology
+   ⚛️ • Applicable across petrochemical and medical industries
 
 WORK EXPERIENCE - MOLECULAR APPLICATIONS
 ═══════════════════════════════════════════════════════════════
 🏥 Ain Bessem Hospital
    Medical Laboratory Technician | 6 Months
    
-   C • Conducted molecular biochemistry and hematology analyses
-   N • Operated analytical instruments and chemical sample preparation
-   O • Ensured accurate data entry and molecular diagnostics reporting
-   H • Maintained quality control standards in chemical procedures
+   C₆ • Conducted advanced molecular biochemistry and hematology analyses
+   N₇ • Operated sophisticated analytical instruments and sample preparation
+   O₈ • Ensured accurate molecular diagnostics and patient reporting
+   H₁ • Maintained stringent quality control in chemical procedures
+   P₁₅ • Specialized in phosphate and enzyme analysis
 
 TECHNICAL MOLECULAR SKILLS
 ═══════════════════════════════════════════════════════════════
-🔬 Laboratory Techniques:
-   C • Spectrophotometry (90%) - Molecular absorption analysis
-   N • Sample Preparation (85%) - Chemical compound isolation
-   O • Centrifugation (80%) - Molecular separation techniques
-   H • Quality Control Procedures - Chemical accuracy standards
-   ⚛️ • Biochemical Analysis - Molecular diagnostics
-   🧪 • Hematological Testing - Blood chemistry analysis
-
-💻 Computer & Molecular Modeling:
-   C • MS Office Suite (Advanced) - Data analysis and reporting
-   N • Data Analysis Tools - Statistical molecular analysis
-   O • Laboratory Software - Chemical database management
-   H • Database Management - Molecular structure databases
-   ⚛️ • Statistical Analysis - Chemical data interpretation
-
-MOLECULAR COMMUNICATION LANGUAGES
-═══════════════════════════════════════════════════════════════
-🌍 Arabic: Native (C-C-C-C-C bonds - Perfect fluency)
-🌍 English: Intermediate (C-N-O bonds - Strong communication)
-🌍 French: Intermediate (C-O-H bonds - Effective interaction)
-
-CAREER MOLECULAR OBJECTIVES
-═══════════════════════════════════════════════════════════════
-Seeking opportunities in:
-⚛️ Medical Laboratory Molecular Analysis
-🛢️ Petroleum Industry Chemical Applications
-🔬 Research and Development - Molecular Innovation
-✅ Quality Control and Chemical Assurance
-📊 Data Analysis and Molecular Interpretation
-🧪 Chemical Bond Analysis and Structure Determination
-
-MOLECULAR AVAILABILITY STATUS
-═══════════════════════════════════════════════════════════════
-✅ Available for full-time molecular positions
-✅ Open to chemical consulting projects
-✅ Ready for immediate molecular start
-✅ Willing to relocate for chemical opportunities
-⚛️ Passionate about molecular science applications
-
-MOLECULAR SPECIALIZATIONS
-═══════════════════════════════════════════════════════════════
-• Chemical Bond Analysis (C-C, C-N, C-O, C-H bonds)
-• Molecular Structure Determination
-• Biochemical Pathway Analysis
-• Petroleum Hydrocarbon Chemistry
-• Medical Diagnostic Chemistry
-• Quality Control Chemical Standards
-• Laboratory Safety and Chemical Handling
-• Data-Driven Molecular Decision Making
-
-Generated from Molecular Portfolio: https://abdellahre.github.io/testc
-Date: ${new Date().toLocaleDateString()}
-⚛️ Powered by Molecular Chemistry Expertise ⚛️
-            `;
-
-            // Create and trigger download
-            const link = document.createElement('a');
-            link.href = 'data:text/plain;charset=utf-8,' + encodeURIComponent(resumeContent);
-            link.download = 'Abdellah_Recham_Molecular_Chemistry_Resume.txt';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-
-            // Show molecular download feedback
-            const downloadBtn = event.target.closest('button') || event.target.closest('a');
-            const originalText = downloadBtn.innerHTML;
-            downloadBtn.innerHTML = '<div class="atom atom-carbon text-xs mr-2">C</div>Downloaded!';
-            downloadBtn.classList.add('bg-nitrogen-500');
-            
-            setTimeout(() => {
-                downloadBtn.innerHTML = originalText;
-                downloadBtn.classList.remove('bg-nitrogen-500');
-            }, 2000);
-        }
-
-        // Enhanced molecular mouse interaction effects
-        document.addEventListener('mousemove', (e) => {
-            const molecules = document.querySelectorAll('.molecule-container');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-            
-            molecules.forEach((molecule, index) => {
-                const speed = (index + 1) * 0.3;
-                const xOffset = (x - 0.5) * 15 * speed;
-                const yOffset = (y - 0.5) * 15 * speed;
-                molecule.style.transform = `translate(${xOffset}px, ${yOffset}px) rotate(${x * 360}deg)`;
-            });
-        });
-
-        // Add molecular loading screen
-        window.addEventListener('load', () => {
-            const loader = document.createElement('div');
-            loader.className = 'fixed inset-0 bg-carbon-900 flex items-center justify-center z-50 transition-opacity duration-500';
-            loader.innerHTML = `
-                <div class="text-center">
-                    <div class="molecule-container mb-8" style="width: 120px; height: 120px;">
-                        <div class="atom atom-carbon animate-spin" style="top: 50px; left: 50px;">C</div>
-                        <div class="atom atom-oxygen animate-bounce" style="top: 20px; left: 30px;">O</div>
-                        <div class="atom atom-nitrogen animate-pulse" style="bottom: 20px; right: 20px;">N</div>
-                        <div class="atom atom-hydrogen animate-ping" style="top: 10px; right: 10px;">H</div>
-                    </div>
-                    <div class="text-2xl font-bold molecular-gradient">Loading Molecular Portfolio...</div>
-                    <div class="text-sm text-gray-400 mt-2">Initializing chemical bonds ⚛️</div>
-                </div>
-            `;
-            document.body.appendChild(loader);
-            
-            setTimeout(() => {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    document.body.removeChild(loader);
-                }, 500);
-            }, 1500);
-        });
-
-        // Add molecular keyboard navigation
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                mobileMenu.classList.add('hidden');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.add('fa-bars');
-                icon.classList.remove('fa-times');
-            }
-        });
-
-        // Add molecular focus management for accessibility
-        const focusableElements = document.querySelectorAll('a, button, input, textarea, select');
-        focusableElements.forEach(element => {
-            element.addEventListener('focus', () => {
-                element.style.outline = '2px solid #0ea5e9';
-                element.style.outlineOffset = '2px';
-                element.style.boxShadow = '0 0 20px rgba(14, 165, 233, 0.3)';
-            });
-            element.addEventListener('blur', () => {
-                element.style.outline = 'none';
-                element.style.boxShadow = 'none';
-            });
-        });
-
-        console.log('⚛️ Abdellah Recham Molecular Portfolio Loaded Successfully!');
-        console.log('🧪 Ready for new opportunities in molecular analysis and petroleum industry');
-        console.log('🔬 Molecular bonds initialized: C-H, C-O, C-N, H-O');
-    </script>
-</body>
-</html>
+🔬 Advanced Laboratory Techniques:
+   C₆ • Spectrophotometry (90%) - UV-Vis molecular absorption analysis
+   N₇ • Sample Preparation (85%) - Complex compound isolation
+   O₈ • Centrifugation (80%) - Molecular separation techniques
+   H₁ • Chromatography (75%) - HPL
