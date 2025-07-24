@@ -1,37 +1,21 @@
 {
   "name": "abdellah-recham-portfolio",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "private": true,
-  "description": "Professional portfolio website for Abdellah Recham - Laboratory Technician",
-  "keywords": [
-    "portfolio",
-    "laboratory-technician",
-    "chemistry",
-    "medical-laboratory",
-    "biochemistry",
-    "hematology",
-    "nextjs",
-    "react",
-    "tailwindcss"
-  ],
   "homepage": "https://abdellahre.github.io/testc",
   "repository": {
     "type": "git",
-    "url": "https://github.com/abdellahre/testc"
-  },
-  "author": {
-    "name": "Abdellah Recham",
-    "email": "abdellah.recham@email.com"
+    "url": "https://github.com/abdellahre/testc.git"
   },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "export": "next build",
+    "export": "next export",
     "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
-    "@emotion/is-prop-valid": "latest",
+    "@emotion/is-prop-valid": "^1.3.1",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-accordion": "latest",
     "@radix-ui/react-alert-dialog": "latest",
@@ -64,7 +48,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "latest",
-    "date-fns": "4.1.0",
+    "date-fns": "^4.1.0",
     "embla-carousel-react": "latest",
     "framer-motion": "latest",
     "geist": "latest",

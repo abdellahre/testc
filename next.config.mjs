@@ -11,9 +11,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  // Remove basePath and assetPrefix for now to avoid routing issues
-  // basePath: process.env.NODE_ENV === 'production' ? '/testc' : '',
-  // assetPrefix: process.env.NODE_ENV === 'production' ? '/testc/' : '',
+  // Remove basePath and assetPrefix for GitHub Pages auto-detection
 }
 
 export default nextConfig
