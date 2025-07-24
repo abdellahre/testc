@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Mail, Phone, MapPin, Linkedin } from "lucide-react"
+import { Mail, Phone, MapPin, Linkedin } from 'lucide-react'
 import ContactFormHandler from "./contact-form-handler"
 
 export default function ContactSection() {

@@ -1,10 +1,32 @@
 {
-  "name": "my-v0-project",
-  "version": "0.1.0",
+  "name": "abdellah-recham-portfolio",
+  "version": "1.0.0",
   "private": true,
+  "description": "Professional portfolio website for Abdellah Recham - Laboratory Technician",
+  "keywords": [
+    "portfolio",
+    "laboratory-technician",
+    "chemistry",
+    "medical-laboratory",
+    "biochemistry",
+    "hematology",
+    "nextjs",
+    "react",
+    "tailwindcss"
+  ],
+  "homepage": "https://abdellahre.github.io/testc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/abdellahre/testc"
+  },
+  "author": {
+    "name": "Abdellah Recham",
+    "email": "abdellah.recham@email.com"
+  },
   "scripts": {
     "build": "next build",
     "dev": "next dev",
+    "export": "next build",
     "lint": "next lint",
     "start": "next start"
   },

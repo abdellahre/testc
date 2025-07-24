@@ -11,8 +11,9 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/portfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/portfolio/' : '',
+  // Remove basePath and assetPrefix for now to avoid routing issues
+  // basePath: process.env.NODE_ENV === 'production' ? '/testc' : '',
+  // assetPrefix: process.env.NODE_ENV === 'production' ? '/testc/' : '',
 }
 
 export default nextConfig
