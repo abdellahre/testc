@@ -30,17 +30,17 @@ export default function Navigation() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#030303]/80 backdrop-blur-md border-b border-white/[0.1]" : "bg-transparent"
+        scrolled ? "bg-[#0a0f0f]/95 backdrop-blur-md border-b border-slate-800/50" : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
-            className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 to-emerald-300"
+            className="text-xl font-bold text-cyan-400"
           >
             Abdellah Recham
           </motion.div>
@@ -54,7 +54,7 @@ export default function Navigation() {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + index * 0.1 }}
-                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
+                className="text-slate-300 hover:text-cyan-400 transition-colors text-sm font-medium"
               >
                 {item.name}
               </motion.a>
@@ -63,21 +63,22 @@ export default function Navigation() {
 
           {/* Desktop CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button size="sm" variant="outline" className="border-white/20 text-white hover:bg-white/10 bg-transparent">
+            <Button
+              size="sm"
+              variant="outline"
+              className="border-slate-600 text-slate-300 hover:bg-slate-800 bg-transparent"
+            >
               <Download className="w-4 h-4 mr-2" />
               Resume
             </Button>
-            <Button
-              size="sm"
-              className="bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-600 hover:to-emerald-600 text-white border-0"
-            >
+            <Button size="sm" className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-medium">
               <Mail className="w-4 h-4 mr-2" />
               Contact
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="sm" className="md:hidden text-white" onClick={() => setIsOpen(!isOpen)}>
+          <Button variant="ghost" size="sm" className="md:hidden text-slate-300" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </Button>
         </div>
@@ -90,32 +91,29 @@ export default function Navigation() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#030303]/95 backdrop-blur-md border-b border-white/[0.1]"
+            className="md:hidden bg-[#0a0f0f]/95 backdrop-blur-md border-b border-slate-800/50"
           >
-            <div className="container mx-auto px-4 py-4 space-y-4">
+            <div className="container mx-auto px-6 py-4 space-y-4">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block text-white/70 hover:text-white transition-colors py-2"
+                  className="block text-slate-300 hover:text-cyan-400 transition-colors py-2"
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <div className="flex flex-col space-y-2 pt-4 border-t border-white/[0.1]">
+              <div className="flex flex-col space-y-2 pt-4 border-t border-slate-800">
                 <Button
                   size="sm"
                   variant="outline"
-                  className="border-white/20 text-white hover:bg-white/10 bg-transparent"
+                  className="border-slate-600 text-slate-300 hover:bg-slate-800 bg-transparent"
                 >
                   <Download className="w-4 h-4 mr-2" />
                   Download Resume
                 </Button>
-                <Button
-                  size="sm"
-                  className="bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-600 hover:to-emerald-600 text-white border-0"
-                >
+                <Button size="sm" className="bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-medium">
                   <Mail className="w-4 h-4 mr-2" />
                   Get In Touch
                 </Button>

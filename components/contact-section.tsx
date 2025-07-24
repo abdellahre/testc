@@ -35,8 +35,8 @@ const contactInfo = [
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      <div className="container mx-auto px-4">
+    <section id="contact" className="py-20 bg-[#0a0f0f]">
+      <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,9 +79,9 @@ export default function ContactSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4, delay: 0.1 * index }}
                   viewport={{ once: true }}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/50 hover:bg-slate-700/50 transition-colors group"
+                  className="flex items-center gap-4 p-4 rounded-lg bg-slate-800/30 border border-slate-700/50 hover:bg-slate-700/30 hover:border-cyan-500/50 transition-all duration-300 group"
                 >
-                  <div className="p-3 rounded-lg bg-gradient-to-r from-cyan-500 to-emerald-500 text-white group-hover:scale-110 transition-transform">
+                  <div className="p-3 rounded-lg bg-cyan-500 text-slate-900 group-hover:scale-110 transition-transform">
                     <item.icon className="h-5 w-5" />
                   </div>
                   <div>
@@ -101,7 +101,7 @@ export default function ContactSection() {
             >
               <Button
                 size="lg"
-                className="w-full bg-gradient-to-r from-cyan-500 to-emerald-500 hover:from-cyan-600 hover:to-emerald-600 text-white font-semibold"
+                className="w-full bg-cyan-500 hover:bg-cyan-600 text-slate-900 font-semibold"
                 onClick={() => window.open("/resume.pdf", "_blank")}
               >
                 <Download className="mr-2 h-5 w-5" />
@@ -118,7 +118,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
           >
             <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <ContactFormHandler className="bg-slate-800/50 border-slate-700" />
+            <ContactFormHandler className="bg-slate-800/30 border-slate-700/50" />
           </motion.div>
         </div>
 
@@ -130,7 +130,7 @@ export default function ContactSection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <Card className="bg-slate-800/30 border-slate-700 max-w-2xl mx-auto">
+          <Card className="bg-slate-800/30 border-slate-700/50 max-w-2xl mx-auto">
             <CardContent className="p-8">
               <h4 className="text-xl font-semibold text-white mb-4">Professional Availability</h4>
               <p className="text-slate-300">
