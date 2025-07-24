@@ -23,6 +23,10 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    
     <style>
         :root {
             /* Dark Teal Theme Colors */
@@ -190,6 +194,78 @@
             white-space: nowrap;
             pointer-events: none;
             user-select: none;
+        }
+
+        /* 3D Molecule Containers */
+        .molecule-3d-container {
+            width: 100%;
+            height: 300px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-primary);
+            border-radius: 1rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: grab;
+        }
+
+        .molecule-3d-container:hover {
+            border-color: var(--border-hover);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .molecule-3d-container:active {
+            cursor: grabbing;
+        }
+
+        .molecule-3d-canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .molecule-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(10, 15, 15, 0.9));
+            padding: 1rem;
+            color: var(--text-primary);
+        }
+
+        .molecule-name {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--accent-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .molecule-formula {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* 3D Molecules Grid */
+        .molecules-3d-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Small 3D molecule for hero section */
+        .hero-molecule-3d {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 120px;
+            height: 120px;
+            background: rgba(30, 41, 59, 0.2);
+            border: 1px solid var(--border-primary);
+            border-radius: 50%;
+            overflow: hidden;
         }
 
         /* Navigation */
@@ -428,6 +504,7 @@
         .hero-image {
             display: flex;
             justify-content: center;
+            position: relative;
         }
 
         .image-container {
@@ -950,6 +1027,10 @@
             .formula-bg {
                 font-size: 4rem;
             }
+
+            .molecules-3d-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -996,6 +1077,14 @@
 
             .formula-bg {
                 font-size: 2rem;
+            }
+
+            .hero-molecule-3d {
+                display: none;
+            }
+
+            .molecule-3d-container {
+                height: 250px;
             }
         }
 
@@ -1090,8 +1179,8 @@
             <a href="#" class="logo">Abdellah Recham</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
+                <li><a href="#molecules">Molecules</a></li>
                 <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -1167,6 +1256,8 @@
                     <div class="image-card">
                         <img src="public/images/abdellah-professional.png" alt="Abdellah Recham - Professional Portrait">
                     </div>
+                    <!-- Small 3D Molecule -->
+                    <div class="hero-molecule-3d" id="heroMolecule3D"></div>
                 </div>
             </div>
         </div>
@@ -1237,6 +1328,64 @@
                         <div class="stat-number">4</div>
                         <div class="stat-label">Years Study</div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3D Molecules Section -->
+    <section class="section" id="molecules">
+        <h2 class="section-title fade-in">Interactive Molecular Structures</h2>
+        <p class="section-subtitle fade-in">
+            Explore key molecules in biochemistry and medical analysis through interactive 3D models
+        </p>
+
+        <div class="molecules-3d-grid">
+            <div class="molecule-3d-container fade-in" id="waterMolecule">
+                <canvas class="molecule-3d-canvas"></canvas>
+                <div class="molecule-info">
+                    <div class="molecule-name">Water</div>
+                    <div class="molecule-formula">H₂O</div>
+                </div>
+            </div>
+
+            <div class="molecule-3d-container fade-in" id="glucoseMolecule">
+                <canvas class="molecule-3d-canvas"></canvas>
+                <div class="molecule-info">
+                    <div class="molecule-name">Glucose</div>
+                    <div class="molecule-formula">C₆H₁₂O₆</div>
+                </div>
+            </div>
+
+            <div class="molecule-3d-container fade-in" id="caffeineMolecule">
+                <canvas class="molecule-3d-canvas"></canvas>
+                <div class="molecule-info">
+                    <div class="molecule-name">Caffeine</div>
+                    <div class="molecule-formula">C₈H₁₀N₄O₂</div>
+                </div>
+            </div>
+
+            <div class="molecule-3d-container fade-in" id="aspirinMolecule">
+                <canvas class="molecule-3d-canvas"></canvas>
+                <div class="molecule-info">
+                    <div class="molecule-name">Aspirin</div>
+                    <div class="molecule-formula">C₉H₈O₄</div>
+                </div>
+            </div>
+
+            <div class="molecule-3d-container fade-in" id="ethanolMolecule">
+                <canvas class="molecule-3d-canvas"></canvas>
+                <div class="molecule-info">
+                    <div class="molecule-name">Ethanol</div>
+                    <div class="molecule-formula">C₂H₆O</div>
+                </div>
+            </div>
+
+            <div class="molecule-3d-container fade-in" id="dnaBaseMolecule">
+                <canvas class="molecule-3d-canvas"></canvas>
+                <div class="molecule-info">
+                    <div class="molecule-name">Adenine</div>
+                    <div class="molecule-formula">C₅H₅N₅</div>
                 </div>
             </div>
         </div>
@@ -1441,6 +1590,12 @@
     </footer>
 
     <script>
+        // Global variables for 3D scenes
+        let scenes = {};
+        let renderers = {};
+        let cameras = {};
+        let controls = {};
+
         // Loading Screen
         window.addEventListener('load', function() {
             setTimeout(() => {
@@ -1483,269 +1638,223 @@
             }
         }
 
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const offsetTop = target.offsetTop - 70;
-                    window.scrollTo({
-                        top: offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
+        // 3D Molecule Creation Functions
+        function createAtom(x, y, z, color, size = 0.5) {
+            const geometry = new THREE.SphereGeometry(size, 16, 16);
+            const material = new THREE.MeshPhongMaterial({ 
+                color: color,
+                shininess: 100,
+                transparent: true,
+                opacity: 0.9
             });
-        });
-
-        // Fade In Animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Contact Form
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const button = this.querySelector('button[type="submit"]');
-            const originalText = button.innerHTML;
-            
-            // Show processing state
-            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-            button.disabled = true;
-            
-            // Get form data
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData);
-            
-            // Simulate form submission
-            setTimeout(() => {
-                // Show success state
-                button.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                button.style.background = 'var(--accent-secondary)';
-                
-                // Show success notification
-                showNotification('Message sent successfully! I\'ll get back to you soon.', 'success');
-                
-                // Reset form and button
-                this.reset();
-                setTimeout(() => {
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    button.style.background = '';
-                }, 3000);
-                
-            }, 2000);
-        });
-
-        // Mobile Menu Toggle
-        document.getElementById('mobileMenu').addEventListener('click', function() {
-            // Mobile menu functionality would go here
-            console.log('Mobile menu clicked');
-        });
-
-        // Resume Download Function
-        function downloadResume() {
-            const resumeContent = `
-ABDELLAH RECHAM
-Laboratory Technician & Chemistry Specialist
-═══════════════════════════════════════════════════════════════
-
-CONTACT INFORMATION
-📧 Email: abdellah.recham@email.com
-📱 Phone: +213 XXX XXX XXX
-📍 Location: Bouira, Algeria
-💼 LinkedIn: linkedin.com/in/abdellah-recham
-🌐 Portfolio: https://abdellahre.github.io/testc
-
-PROFESSIONAL SUMMARY
-═══════════════════════════════════════════════════════════════
-Dedicated Laboratory Technician with a Bachelor's degree in Fundamental 
-Chemistry and hands-on experience in medical laboratory analysis. 
-Specialized in biochemistry and hematology with expertise in analytical 
-instruments, quality control protocols, and clinical diagnostics.
-
-EDUCATION
-═══════════════════════════════════════════════════════════════
-🎓 University of Bouira Akli Mohand Oulhadj
-   Bachelor's in Fundamental Chemistry | 2020-2024
-   
-   • Advanced analytical and physical chemistry
-   • Laboratory techniques and instrumentation
-   • Scientific methodology and problem-solving
-   • Quality control and safety protocols
-
-PROFESSIONAL EXPERIENCE
-═══════════════════════════════════════════════════════════════
-🏥 Medical Laboratory Technician | 6 Months
-   Healthcare Laboratory
-   
-   • Conducted biochemistry and hematology analyses
-   • Operated analytical instruments and equipment
-   • Performed sample preparation and processing
-   • Ensured accurate diagnostic reporting
-   • Maintained quality control standards
-   • Followed laboratory safety protocols
-
-CORE COMPETENCIES
-═══════════════════════════════════════════════════════════════
-🔬 Analytical Chemistry:
-   • HPLC (High-Performance Liquid Chromatography)
-   • GC-MS (Gas Chromatography-Mass Spectrometry)
-   • UV-Vis Spectroscopy
-   • Chromatographic techniques
-   
-🧪 Laboratory Diagnostics:
-   • Biochemistry analysis
-   • Hematology testing
-   • Sample preparation
-   • Quality control protocols
-   
-📊 Data Analysis:
-   • Statistical analysis
-   • Method validation
-   • Result interpretation
-   • Technical reporting
-   
-⚙️ Instrumentation:
-   • Mass spectrometers
-   • Chromatographs
-   • Spectrophotometers
-   • Laboratory equipment maintenance
-
-CHEMICAL FORMULAS & EXPERTISE
-═══════════════════════════════════════════════════════════════
-• Glucose Metabolism: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
-• Protein Analysis: Complex amino acid structures and peptide bonds
-• Lipid Chemistry: Fatty acid composition and metabolic pathways
-• Enzyme Kinetics: Michaelis-Menten kinetics and inhibition studies
-
-LANGUAGES
-═══════════════════════════════════════════════════════════════
-• Arabic (Native) - Complete fluency
-• English (Intermediate) - Technical proficiency
-• French (Intermediate) - Professional communication
-
-PROFESSIONAL OBJECTIVES
-═══════════════════════════════════════════════════════════════
-Seeking opportunities to apply analytical chemistry expertise in:
-• Medical laboratory diagnostics and analysis
-• Research institutions and pharmaceutical companies
-• Quality control and assurance roles
-• Industrial laboratories and testing facilities
-• Environmental analysis and monitoring
-
-AVAILABILITY
-═══════════════════════════════════════════════════════════════
-✅ Full-time laboratory positions
-✅ Part-time analytical projects
-✅ Research collaboration opportunities
-✅ Consulting services for chemical analysis
-
-═══════════════════════════════════════════════════════════════
-© 2024 Abdellah Recham - Professional Laboratory Services
-Contact: abdellah.recham@email.com | +213 XXX XXX XXX
-═══════════════════════════════════════════════════════════════
-            `;
-
-            // Create and download the resume
-            const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
-            const url = window.URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Abdellah_Recham_Laboratory_Resume.txt';
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            window.URL.revokeObjectURL(url);
-
-            showNotification('Resume downloaded successfully!', 'success');
+            const atom = new THREE.Mesh(geometry, material);
+            atom.position.set(x, y, z);
+            return atom;
         }
 
-        // Notification System
-        function showNotification(message, type = 'info') {
-            const notification = document.createElement('div');
-            notification.style.cssText = `
-                position: fixed;
-                top: 20px;
-                right: 20px;
-                background: var(--bg-card);
-                border: 1px solid var(--border-hover);
-                color: var(--text-primary);
-                padding: 1rem 1.5rem;
-                border-radius: 0.5rem;
-                box-shadow: var(--shadow-card);
-                z-index: 10000;
-                font-weight: 500;
-                animation: slideIn 0.3s ease;
-            `;
+        function createBond(start, end, color = 0x888888) {
+            const direction = new THREE.Vector3().subVectors(end, start);
+            const length = direction.length();
+            const geometry = new THREE.CylinderGeometry(0.1, 0.1, length, 8);
+            const material = new THREE.MeshPhongMaterial({ color: color });
+            const bond = new THREE.Mesh(geometry, material);
             
-            if (type === 'success') {
-                notification.style.borderColor = 'var(--accent-primary)';
-                notification.style.background = 'rgba(0, 255, 255, 0.1)';
-            }
+            bond.position.copy(start).add(direction.multiplyScalar(0.5));
+            bond.lookAt(end);
+            bond.rotateX(Math.PI / 2);
             
-            notification.innerHTML = `
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <i class="fas fa-${type === 'success' ? 'check-circle' : 'info-circle'}" style="color: var(--accent-primary);"></i>
-                    ${message}
-                </div>
-            `;
-            
-            document.body.appendChild(notification);
-            
-            setTimeout(() => {
-                notification.style.animation = 'slideOut 0.3s ease';
-                setTimeout(() => notification.remove(), 300);
-            }, 4000);
+            return bond;
         }
 
-        // Add CSS animations for notifications
-        const style = document.createElement('style');
-        style.textContent = `
-            @keyframes slideIn {
-                from { transform: translateX(100%); opacity: 0; }
-                to { transform: translateX(0); opacity: 1; }
-            }
-            @keyframes slideOut {
-                from { transform: translateX(0); opacity: 1; }
-                to { transform: translateX(100%); opacity: 0; }
-            }
-        `;
-        document.head.appendChild(style);
+        function createWaterMolecule() {
+            const group = new THREE.Group();
+            
+            // Oxygen atom (red)
+            const oxygen = createAtom(0, 0, 0, 0xff4444, 0.8);
+            group.add(oxygen);
+            
+            // Hydrogen atoms (white)
+            const hydrogen1 = createAtom(-1.2, 0.8, 0, 0xffffff, 0.4);
+            const hydrogen2 = createAtom(1.2, 0.8, 0, 0xffffff, 0.4);
+            group.add(hydrogen1);
+            group.add(hydrogen2);
+            
+            // Bonds
+            const bond1 = createBond(oxygen.position, hydrogen1.position);
+            const bond2 = createBond(oxygen.position, hydrogen2.position);
+            group.add(bond1);
+            group.add(bond2);
+            
+            return group;
+        }
 
-        // Initialize everything when DOM is loaded
-        document.addEventListener('DOMContentLoaded', function() {
-            createMolecules();
-        });
+        function createGlucoseMolecule() {
+            const group = new THREE.Group();
+            
+            // Carbon ring (simplified hexagon)
+            const carbonPositions = [
+                [1, 0, 0], [0.5, 0.866, 0], [-0.5, 0.866, 0],
+                [-1, 0, 0], [-0.5, -0.866, 0], [0.5, -0.866, 0]
+            ];
+            
+            const carbons = [];
+            carbonPositions.forEach((pos, i) => {
+                const carbon = createAtom(pos[0], pos[1], pos[2], 0x64748b, 0.6);
+                carbons.push(carbon);
+                group.add(carbon);
+            });
+            
+            // Add some oxygen atoms
+            const oxygen1 = createAtom(2, 0, 0, 0xff4444, 0.7);
+            const oxygen2 = createAtom(-2, 0, 0, 0xff4444, 0.7);
+            group.add(oxygen1);
+            group.add(oxygen2);
+            
+            // Bonds between carbons
+            for (let i = 0; i < carbons.length; i++) {
+                const nextIndex = (i + 1) % carbons.length;
+                const bond = createBond(carbons[i].position, carbons[nextIndex].position);
+                group.add(bond);
+            }
+            
+            // Bonds to oxygens
+            const bond1 = createBond(carbons[0].position, oxygen1.position);
+            const bond2 = createBond(carbons[3].position, oxygen2.position);
+            group.add(bond1);
+            group.add(bond2);
+            
+            return group;
+        }
 
-        console.log('🧪 Dark Teal Laboratory Portfolio with Chemistry Molecules Loaded!');
-        console.log('Theme: Professional Dark with Teal Accents + Floating Molecules');
-        console.log('Chemical Formula: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP');
-        console.log('Status: Ready for Professional Opportunities');
-    </script>
-</body>
-</html>
+        function createCaffeineMolecule() {
+            const group = new THREE.Group();
+            
+            // Simplified caffeine structure
+            const atoms = [
+                // Ring 1
+                [0, 0, 0, 0x64748b], // C
+                [1, 0, 0, 0x3b82f6], // N
+                [1.5, 1, 0, 0x64748b], // C
+                [1, 2, 0, 0x3b82f6], // N
+                [0, 2, 0, 0x64748b], // C
+                [-0.5, 1, 0, 0x64748b], // C
+                
+                // Additional atoms
+                [2.5, 0.5, 0, 0x64748b], // C
+                [-1.5, 1, 0, 0xff4444], // O
+                [1.5, 3, 0, 0x64748b], // C
+            ];
+            
+            atoms.forEach(atom => {
+                const sphere = createAtom(atom[0], atom[1], atom[2], atom[3], 0.5);
+                group.add(sphere);
+            });
+            
+            // Add some bonds
+            const bondPairs = [
+                [0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 0],
+                [1, 6], [5, 7], [3, 8]
+            ];
+            
+            bondPairs.forEach(pair => {
+                const start = new THREE.Vector3(atoms[pair[0]][0], atoms[pair[0]][1], atoms[pair[0]][2]);
+                const end = new THREE.Vector3(atoms[pair[1]][0], atoms[pair[1]][1], atoms[pair[1]][2]);
+                const bond = createBond(start, end);
+                group.add(bond);
+            });
+            
+            return group;
+        }
+
+        function createAspirinMolecule() {
+            const group = new THREE.Group();
+            
+            // Benzene ring
+            const ringPositions = [
+                [1, 0, 0], [0.5, 0.866, 0], [-0.5, 0.866, 0],
+                [-1, 0, 0], [-0.5, -0.866, 0], [0.5, -0.866, 0]
+            ];
+            
+            const carbons = [];
+            ringPositions.forEach((pos, i) => {
+                const carbon = createAtom(pos[0], pos[1], pos[2], 0x64748b, 0.6);
+                carbons.push(carbon);
+                group.add(carbon);
+            });
+            
+            // Carboxyl group
+            const carboxylC = createAtom(2, 0, 0, 0x64748b, 0.6);
+            const carboxylO1 = createAtom(2.8, 0.8, 0, 0xff4444, 0.7);
+            const carboxylO2 = createAtom(2.8, -0.8, 0, 0xff4444, 0.7);
+            group.add(carboxylC);
+            group.add(carboxylO1);
+            group.add(carboxylO2);
+            
+            // Acetyl group
+            const acetylC = createAtom(-2, 0, 0, 0x64748b, 0.6);
+            const acetylO = createAtom(-2.8, 0, 0, 0xff4444, 0.7);
+            group.add(acetylC);
+            group.add(acetylO);
+            
+            // Bonds in ring
+            for (let i = 0; i < carbons.length; i++) {
+                const nextIndex = (i + 1) % carbons.length;
+                const bond = createBond(carbons[i].position, carbons[nextIndex].position);
+                group.add(bond);
+            }
+            
+            // Bonds to functional groups
+            const bond1 = createBond(carbons[0].position, carboxylC.position);
+            const bond2 = createBond(carboxylC.position, carboxylO1.position);
+            const bond3 = createBond(carboxylC.position, carboxylO2.position);
+            const bond4 = createBond(carbons[3].position, acetylC.position);
+            const bond5 = createBond(acetylC.position, acetylO.position);
+            group.add(bond1);
+            group.add(bond2);
+            group.add(bond3);
+            group.add(bond4);
+            group.add(bond5);
+            
+            return group;
+        }
+
+        function createEthanolMolecule() {
+            const group = new THREE.Group();
+            
+            // Carbon atoms
+            const carbon1 = createAtom(-0.8, 0, 0, 0x64748b, 0.6);
+            const carbon2 = createAtom(0.8, 0, 0, 0x64748b, 0.6);
+            group.add(carbon1);
+            group.add(carbon2);
+            
+            // Oxygen atom
+            const oxygen = createAtom(1.8, 0, 0, 0xff4444, 0.7);
+            group.add(oxygen);
+            
+            // Hydrogen atom on oxygen
+            const hydrogen = createAtom(2.4, 0.6, 0, 0xffffff, 0.4);
+            group.add(hydrogen);
+            
+            // Bonds
+            const bond1 = createBond(carbon1.position, carbon2.position);
+            const bond2 = createBond(carbon2.position, oxygen.position);
+            const bond3 = createBond(oxygen.position, hydrogen.position);
+            group.add(bond1);
+            group.add(bond2);
+            group.add(bond3);
+            
+            return group;
+        }
+
+        function createAdenineMolecule() {
+            const group = new THREE.Group();
+            
+            // Purine ring system (simplified)
+            const atoms = [
+                // 6-membered ring
+                [0, 0, 0, 0x64748b], // C
+                [1, 0, 0, 0x3b82f6], // N
+                [1.5, 1, 0, 0x64748b], // C
+                [1, 2, 0, 0x3b82f6], // N
+                [0, 2, 0, 0x64748b], // C
+                [-0.5, 1, 0, 0x3b82f
