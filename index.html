@@ -44,6 +44,12 @@
             
             --shadow-glow: 0 0 20px rgba(0, 255, 255, 0.2);
             --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+            
+            /* Chemistry Colors */
+            --carbon-color: #64748b;
+            --oxygen-color: #ef4444;
+            --nitrogen-color: #3b82f6;
+            --hydrogen-color: #ffffff;
         }
 
         * {
@@ -58,6 +64,7 @@
             color: var(--text-primary);
             background: var(--bg-primary);
             overflow-x: hidden;
+            position: relative;
         }
 
         /* Subtle background pattern */
@@ -71,8 +78,118 @@
             background: 
                 radial-gradient(circle at 50% 50%, rgba(0, 255, 255, 0.03) 0%, transparent 50%),
                 radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.02) 0%, transparent 50%);
-            z-index: -1;
+            z-index: -2;
             pointer-events: none;
+        }
+
+        /* Chemistry Molecules Background */
+        .molecules-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .molecule {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            opacity: 0.4;
+            animation: float 25s infinite linear;
+        }
+
+        .molecule.carbon {
+            background: var(--carbon-color);
+            box-shadow: 0 0 10px rgba(100, 116, 139, 0.3);
+        }
+
+        .molecule.oxygen {
+            background: var(--oxygen-color);
+            box-shadow: 0 0 10px rgba(239, 68, 68, 0.3);
+            width: 10px;
+            height: 10px;
+        }
+
+        .molecule.nitrogen {
+            background: var(--nitrogen-color);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+            width: 9px;
+            height: 9px;
+        }
+
+        .molecule.hydrogen {
+            background: var(--hydrogen-color);
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+            width: 6px;
+            height: 6px;
+        }
+
+        .molecule.teal {
+            background: var(--accent-primary);
+            box-shadow: 0 0 12px rgba(0, 255, 255, 0.4);
+        }
+
+        /* Chemical bonds */
+        .molecule::before {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 25px;
+            background: linear-gradient(180deg, currentColor, transparent);
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%) rotate(45deg);
+            opacity: 0.3;
+        }
+
+        .molecule::after {
+            content: '';
+            position: absolute;
+            width: 2px;
+            height: 20px;
+            background: linear-gradient(180deg, currentColor, transparent);
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-45deg);
+            opacity: 0.2;
+        }
+
+        @keyframes float {
+            0% { 
+                transform: translateY(100vh) rotate(0deg) scale(0.8); 
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.4;
+            }
+            90% {
+                opacity: 0.4;
+            }
+            100% { 
+                transform: translateY(-100px) rotate(360deg) scale(1.2); 
+                opacity: 0;
+            }
+        }
+
+        /* Chemical formula watermark */
+        .formula-bg {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 8rem;
+            color: rgba(0, 255, 255, 0.02);
+            font-weight: 300;
+            z-index: -1;
+            white-space: nowrap;
+            pointer-events: none;
+            user-select: none;
         }
 
         /* Navigation */
@@ -197,6 +314,7 @@
             justify-content: center;
             padding: 2rem;
             background: var(--bg-primary);
+            position: relative;
         }
 
         .hero-container {
@@ -343,6 +461,7 @@
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .section-title {
@@ -827,6 +946,10 @@
             .hero-image {
                 order: -1;
             }
+
+            .formula-bg {
+                font-size: 4rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -869,6 +992,10 @@
 
             .hero-actions {
                 flex-direction: column;
+            }
+
+            .formula-bg {
+                font-size: 2rem;
             }
         }
 
@@ -950,6 +1077,12 @@
         <div class="loader"></div>
         <div class="loading-text">Loading Laboratory Portfolio...</div>
     </div>
+
+    <!-- Chemistry Molecules Background -->
+    <div class="molecules-bg" id="moleculesBg"></div>
+
+    <!-- Chemical Formula Background -->
+    <div class="formula-bg">C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O</div>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -1315,6 +1448,41 @@
             }, 1500);
         });
 
+        // Create Chemistry Molecules Background
+        function createMolecules() {
+            const bg = document.getElementById('moleculesBg');
+            const moleculeCount = 60;
+            const moleculeTypes = ['carbon', 'oxygen', 'nitrogen', 'hydrogen', 'teal'];
+            const typeWeights = [0.3, 0.2, 0.15, 0.25, 0.1]; // Probability weights
+
+            for (let i = 0; i < moleculeCount; i++) {
+                const molecule = document.createElement('div');
+                
+                // Select molecule type based on weights
+                const random = Math.random();
+                let cumulativeWeight = 0;
+                let selectedType = 'carbon';
+                
+                for (let j = 0; j < moleculeTypes.length; j++) {
+                    cumulativeWeight += typeWeights[j];
+                    if (random <= cumulativeWeight) {
+                        selectedType = moleculeTypes[j];
+                        break;
+                    }
+                }
+                
+                molecule.className = `molecule ${selectedType}`;
+                molecule.style.left = Math.random() * 100 + '%';
+                molecule.style.animationDelay = Math.random() * 25 + 's';
+                molecule.style.animationDuration = (Math.random() * 15 + 20) + 's';
+                
+                // Add some variation to starting positions
+                molecule.style.transform = `translateY(${Math.random() * 100}vh)`;
+                
+                bg.appendChild(molecule);
+            }
+        }
+
         // Navbar Scroll Effect
         window.addEventListener('scroll', function() {
             const navbar = document.getElementById('navbar');
@@ -1468,6 +1636,13 @@ CORE COMPETENCIES
    • Spectrophotometers
    • Laboratory equipment maintenance
 
+CHEMICAL FORMULAS & EXPERTISE
+═══════════════════════════════════════════════════════════════
+• Glucose Metabolism: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP
+• Protein Analysis: Complex amino acid structures and peptide bonds
+• Lipid Chemistry: Fatty acid composition and metabolic pathways
+• Enzyme Kinetics: Michaelis-Menten kinetics and inhibition studies
+
 LANGUAGES
 ═══════════════════════════════════════════════════════════════
 • Arabic (Native) - Complete fluency
@@ -1562,8 +1737,14 @@ Contact: abdellah.recham@email.com | +213 XXX XXX XXX
         `;
         document.head.appendChild(style);
 
-        console.log('🧪 Dark Teal Laboratory Portfolio Loaded Successfully!');
-        console.log('Theme: Professional Dark with Teal Accents');
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            createMolecules();
+        });
+
+        console.log('🧪 Dark Teal Laboratory Portfolio with Chemistry Molecules Loaded!');
+        console.log('Theme: Professional Dark with Teal Accents + Floating Molecules');
+        console.log('Chemical Formula: C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O + ATP');
         console.log('Status: Ready for Professional Opportunities');
     </script>
 </body>
